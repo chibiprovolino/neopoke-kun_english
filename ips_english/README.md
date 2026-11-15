@@ -5,8 +5,8 @@ Any IPS tool works (Flips, Lunar IPS, or an online patcher).
 
 | Patch | What you get | Patched CRC32 | Patched MD5 |
 | --- | --- | --- | --- |
-| `neopoke_en_beta1.ips` | The English translation | `5889381A` | `1c31cec72d53f78386ebaf65ddfba357` |
-| `neopoke_en_fastunlock_beta1.ips` | The translation plus the bonus patch: new events appear much faster, so minigames unlock sooner (see `docs/events-unlocks-fastunlock.md`) | `8057E673` | `446cdbdc189a33bfd4639b95fa11dd0a` |
+| `neopoke_en_beta1.ips` | The English translation | `BE0E1AB6` | `e33ca19773adf510bc73e0b947c42319` |
+| `neopoke_en_fastunlock_beta1.ips` | The translation plus the bonus patch: new events appear much faster, so minigames unlock sooner (see `docs/events-unlocks-fastunlock.md`) | `66D0C4DF` | `23b74408b4497cc3b22fefe51e0664b4` |
 
 ## All-minigames saves
 
@@ -23,7 +23,7 @@ Mednafen finds a save by the ROM's file name and MD5. Rename the save to `<ROM f
 Mednafen's `sav` folder. For a patched ROM called `neopoke_en.ngc`:
 
 ```
-neopoke_en.1c31cec72d53f78386ebaf65ddfba357.flash
+neopoke_en.e33ca19773adf510bc73e0b947c42319.flash
 ```
 
 Delete or move any save Mednafen already made for that ROM first. Other emulators that use the NeoPop flash format may
