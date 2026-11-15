@@ -5,10 +5,10 @@ Any IPS tool works (Flips, Lunar IPS, or an online patcher).
 
 | Patch | What you get | Patched CRC32 | Patched MD5 |
 | --- | --- | --- | --- |
-| `neopoke_en_v1beta.ips` | The English translation | `BE0E1AB6` | `e33ca19773adf510bc73e0b947c42319` |
-| `neopoke_en_fastunlock_v1beta.ips` | The translation plus the bonus patch: new events appear much faster, so minigames unlock sooner (see `docs/events-unlocks-fastunlock.md`) | `66D0C4DF` | `23b74408b4497cc3b22fefe51e0664b4` |
-| `neopoke_en_v1beta_allgames.ips` | The translation with all minigames already unlocked (see below) | `1333CEE7` | `0b7ff4816a49dc0ed7819aa111d715e8` |
-| `neopoke_en_fastunlock_v1beta_allgames.ips` | The translation plus the bonus patch, all minigames already unlocked | `CBED108E` | `c0fe688542f0f89180d4a904fa5daa1d` |
+| `neopoke_en_v1beta.ips` | The English translation | `894C776B` | `8f5ccbcd58ebe5d70c104fce56e1385f` |
+| `neopoke_en_fastunlock_v1beta.ips` | The translation plus the bonus patch: new events appear much faster, so minigames unlock sooner (see `docs/events-unlocks-fastunlock.md`) | `5192A902` | `f8517d652f4a6f0818b22632424ec63c` |
+| `neopoke_en_v1beta_allgames.ips` | The translation with all minigames already unlocked (see below) | `2471A33A` | `7a4325adb18cdf25757ddb4b4fd28e25` |
+| `neopoke_en_fastunlock_v1beta_allgames.ips` | The translation plus the bonus patch, all minigames already unlocked | `FCAF7D53` | `ccb2423f2ebddf25c5e31014c7a856b7` |
 
 ## All-minigames saves
 
@@ -32,7 +32,7 @@ Mednafen finds a save by the ROM's file name and MD5. Rename the save to `<ROM f
 Mednafen's `sav` folder. For a patched ROM called `neopoke_en.ngc`:
 
 ```
-neopoke_en.e33ca19773adf510bc73e0b947c42319.flash
+neopoke_en.8f5ccbcd58ebe5d70c104fce56e1385f.flash
 ```
 
 Delete or move any save Mednafen already made for that ROM first. Other emulators that use the NeoPop flash format may

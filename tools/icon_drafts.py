@@ -76,6 +76,9 @@ def fit8(t, field, vis=None):
         out.append(line + _pad(free))
     return "\n".join(out), -worst
 FIELDS = {i: None for i in list(range(69, 84)) + list(range(373, 380))}
+# D&DQ monster names (384-393, under the battle picture): 4 kana = 32 px; the renderer only clears what it draws, so a short
+# name ("Orc") left stale tiles after it until padded (reported on hardware).
+FIELDS.update({i: 32 for i in range(384, 394)})
 FIELDS.update({i: 104 for i in list(range(407, 438)) + list(range(548, 575))})
 # Intro/ending: the text starts at x=8 and the renderer clips at x=104, but the picture in the top right covers
 # x>=96 while the text scrolls up past it (seen in MAME, intro after one A press on the GO screen), so only 88 px
