@@ -6,7 +6,7 @@ sys.path.insert(0, "tools")
 from icons import WIDTHS
 src = sys.argv[1] if len(sys.argv) > 1 else "build/page_lines.json"
 dst = sys.argv[2] if len(sys.argv) > 2 else "script/voff_script.md"
-W = open("rom/original.ngc", "rb").read()[WIDTHS:WIDTHS + 0x200]
+import vwf; W = vwf.fix8(open("rom/original.ngc", "rb").read()[WIDTHS:WIDTHS + 0x200])
 def px(t, gap=4):
     t = t.rstrip(" "); lead = len(t) - len(t.lstrip(" "))
     return lead * 8 + sum(gap if c == " " else W[ord(c)] for c in t[lead:])

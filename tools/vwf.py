@@ -13,6 +13,14 @@ CODE=0x1F5000; WID=0x1F5200; COPY=0x1F5400; NCH=0x200
 SAVE_AREA=0x1F8000
 F8=0xC2018; W8=0x128a2          # the game's 8x8 font and its width table
 W8V=0x1F7400; SPACE8=4          # copy of that table for dialog text: same widths, but a 4 px space (the game's is 8)
+# The game's 8x8 widths give every letter its ink width + 1 px, except "o" (no gap: "ol" read as "d", e.g. "Golem")
+# and D G K O S V v (2 px gap). FIX8 evens them out; applied to the ROM table (all 8x8 renderers) and the dialog copy.
+FIX8={ord(c):w for c,w in zip("oDGKOSVv",(5,5,5,6,5,4,5,5))}
+def fix8(w):
+    """-> the 8x8 width table (bytes-like, indexed by code) with FIX8 applied, as a bytearray."""
+    w=bytearray(w)
+    for c,v in FIX8.items(): w[c]=v
+    return w
 ROMFONT=0xC4006; NCOPY=0x80
 GAP=1; SPACE=5; PITCH=12
 BIG="[10][F1]"                  # put at the start of a string to draw it in the big font
@@ -165,13 +173,14 @@ def metrics(d):
 
 def widths8(d):
     """8x8 font advance widths used for dialog text: the game's own, except the space."""
-    w=bytearray(d[W8:W8+NCH]); w[0x20]=SPACE8
+    w=fix8(d[W8:W8+NCH]); w[0x20]=SPACE8
     return bytes(w)
 
 def apply(d):
     code=build_code(); wid,cp=metrics(d)
     assert CODE+len(code)<=WID and WID+NCH<=COPY and COPY+len(cp)<=SAVE_AREA
     d[CODE:CODE+len(code)]=code; d[WID:WID+NCH]=wid; d[COPY:COPY+len(cp)]=cp
+    for c,v in FIX8.items(): d[W8+c]=v
     assert COPY+len(cp)<=W8V and W8V+NCH<=SAVE_AREA; d[W8V:W8V+NCH]=widths8(d)
     # hook at 0x212428: jp VWF   (keep ld (XIZ+0x2c),XWA before it)
     j=CPU(CODE); d[0x12428:0x1242c]=bytes([0x1b,j&0xff,(j>>8)&0xff,j>>16])

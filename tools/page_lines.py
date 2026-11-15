@@ -13,7 +13,7 @@ src = sys.argv[1] if len(sys.argv) > 1 else "script/page.json"
 dst = sys.argv[2] if len(sys.argv) > 2 else "build/page_lines.json"
 sys.path.insert(0, "tools")
 from icons import WIDTHS
-rom = open("rom/original.ngc", "rb").read(); W = rom[WIDTHS:WIDTHS + 0x200]
+rom = open("rom/original.ngc", "rb").read(); import vwf; W = vwf.fix8(rom[WIDTHS:WIDTHS + 0x200])
 S = json.load(open("script/strings.json", encoding="utf-8"))
 L = json.load(open("review/lines.json", encoding="utf-8"))
 P = {l["key"]: l for l in json.load(open(src, encoding="utf-8"))["lines"]}

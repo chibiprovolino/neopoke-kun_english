@@ -12,7 +12,8 @@ import fields_cfc2 as fc
 FIELD = 64
 src = sys.argv[1] if len(sys.argv) > 1 else "build/tr_drafts.json"
 dst = sys.argv[2] if len(sys.argv) > 2 else "build/tr_drafts_icons.json"
-W = bytearray(open("rom/original.ngc", "rb").read()[WIDTHS:WIDTHS + 0x200])
+import vwf
+W = vwf.fix8(open("rom/original.ngc", "rb").read()[WIDTHS:WIDTHS + 0x200])
 for lab, rows in load().items(): W[LABEL[lab]] = width(rows)
 HEART = "♥"   # 2-byte code 0x12A, the game's own glyph
 d = json.load(open(src, encoding="utf-8"))
@@ -82,6 +83,35 @@ for i, field in FIELDS.items():
         a = int(_strs[i]["off"], 16); field = -(-_jpw(_rom[a:_rom.index(b"\0", a)]) // 8) * 8
     d[str(i)], ex = fit8(d[str(i)], field)
     if ex > 0: over.append((i, "8x8", d[str(i)], ex))
+# Minigame-menu labels (ids 0-29) use this renderer too, into a 6-tile (48 px) slot (tiles 0x1A0+8*k, first 6 mapped).
+# Every Japanese label is 49+ px so it touches all 6 tiles; shorter English ones ("Shot", "S.M.D", "S.P.D") left the
+# 6th tile showing stale art on the first draw (a page switch hid it by overwriting it); longer ones were clipped.
+# Each label is stripped of its leading/trailing spaces and blanks, inner 8 px spaces become 4 px blanks (down to 2 px,
+# which still shows a 3 px gap since glyph widths include 1 px), then it is centred in the slot and padded to 48 px.
+MENU_SLOT = 48
+for i in range(0, 30):
+    if str(i) not in d: continue
+    core = re.sub(r"^(?:\[1[89A-F]\]| )+|(?:\[1[89A-F]\]| )+$", "", d[str(i)])
+    for sp in (4, 3, 2):
+        t = core.replace(" ", "[%02X]" % (0x18 + sp))
+        if _px(t) <= MENU_SLOT: break
+    # glyph widths end in a 1 px gap, so a label 1 px over the slot only loses that empty column ("Rocketman", 49 px)
+    free = MENU_SLOT - _px(t)
+    if free < -1: over.append((i, "menu", t, -free))
+    free = max(free, 0)
+    d[str(i)] = _pad(free // 2) + t + _pad(free - free // 2)
+# Minigame instructions (ids 637-666): the first line is the title, and the menu's pointing hand sits over the start
+# of it (to about 12 px into the line). The Japanese centred it in the 144 px window with 12 px spaces; English spaces
+# are 4 px, so the same spaces left titles under the hand. Re-centre each title in 144 px, never starting before 12 px.
+import vwf
+_w8 = vwf.widths8(bytearray(_rom))
+for i in range(637, 667):
+    if str(i) not in d: continue
+    title, _, rest = d[str(i)].partition("\n")
+    title = title.strip(" ")
+    w = sum(_w8[ord(c)] for c in title)
+    lead = max(3, round(max(12, (144 - w) / 2) / 4))
+    d[str(i)] = " " * lead + title + ("\n" + rest if rest else "")
 d["_cfc2"] = cmap
 json.dump(d, open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"{len(vals)} fields -> {dst} ({len(cmap)} CFC2 letters in {len(fc.SLOTS)} slots)")

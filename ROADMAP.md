@@ -258,3 +258,19 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
   neopoke_en_redesign and their _allgames variants. Base ROM CRC32 6DF986A3.
 - Not reached yet: later story pages (need stage clears), intro, ending. Waiting on the V.OFF title shows no attract demo.
   Code at 0x6C4A3 loads ids 437 then 438 (ld BC,#id; call 0x212290) for the first story page.
+
+## Minigame-menu stray tile (2026-11-15)
+- Menu labels (ids 0-29) are drawn by the 8x8 renderer into a 6-tile (48 px) slot and it only clears tiles it draws.
+  "Shot", "S.M.D", "S.P.D" (35-40 px) never touched the 6th tile, so it showed stale art on the first draw (a page switch
+  overwrote it); labels over 48 px were clipped. `tools/icon_drafts.py` now strips each label's leading/trailing
+  spaces and blanks, turns inner spaces into 4 px blanks (3, then 2 px if needed: only "Sasuke inO"), centres it and pads it
+  to 48 px. Rebuilt neopoke_en(_redesign)(_allgames) + IPS; all 6 pages checked in MAME (`work/gfxsurvey/x_stray3.lua`).
+- Label 6 is now "SasukeInO" (exactly 48 px; user's choice; also saved on the Script Desk page, rev/s006 v2).
+  The game's 8x8 "g" (looks like "&") stays as is (user decision).
+- Minigame instructions 637-666: the menu hand covers the first ~12 px of the title line. `icon_drafts.py` re-centres each
+  title in the 144 px window with 4 px spaces, never before 12 px (Japanese: 12 px spaces did this). Checked on Yusaku's screen.
+- 8x8 widths: the game's table has "o" = 4 with a 4 px glyph (no gap: "Golem" read "Gdem") and D G K O S V v with 2 px gaps.
+  `vwf.FIX8` sets them to ink + 1 (o D G O V v 5, K 6, S 4) in the ROM table and the dialog copy; icon_drafts/page_lines/
+  voff_dump measure with `vwf.fix8`. "Rocketman" is now 49 px (allowed: the extra column is the gap). D&DQ not seen in MAME.
+- Story line 465 is now "But the records believed to" (126/144 px; user approved, also on the Script Desk page rev/s465 v2).
+  V.OFF: 0 lines over. build/page_lines.json refreshed (the Script Desk page's lines.json not republished).
