@@ -1,0 +1,81 @@
+<title>Neo Poke-kun Scene Catalogue</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column of scene cards; each card is a title row, one sentence, a film strip that scrolls sideways, then a two-column list of conditions. */
+:root {
+  --bg: #f3f4f8; --surface: #ffffff; --fg: #1b2030; --muted: #5b6377; --line: #d5d9e4;
+  --accent: #1f6fd0; --chip-bg: #e3ecfa; --chip-fg: #154f96; --screen: #0c0f18;
+  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #10131c; --surface: #181c28; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2b3144;
+  --accent: #6fb0ff; --chip-bg: #1d2c47; --chip-fg: #a9cdff; --screen: #05070c; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #10131c; --surface: #181c28; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2b3144;
+  --accent: #6fb0ff; --chip-bg: #1d2c47; --chip-fg: #a9cdff; --screen: #05070c; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 400 15px/1.55 var(--body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 28px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 22px; font-weight: 700; }
+h3 { font-size: 16px; font-weight: 500; }
+p { margin: 0; max-width: 68ch; }
+.intro { display: flex; flex-direction: column; gap: 12px; }
+.intro ul { margin: 0; padding-left: 20px; max-width: 68ch; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+.n { font: 500 13px var(--mono); color: var(--muted); }
+.tools { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; border-bottom: 1px solid var(--line); }
+.tools nav { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.tools a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.tools a:hover, .tools a:focus-visible { text-decoration: underline; }
+.tools input { flex: 1 1 200px; min-width: 0; font: inherit; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; }
+.tools input:focus-visible, .strip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+section { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 70px; }
+.lead { color: var(--muted); }
+.ev { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; scroll-margin-top: 70px; }
+.ev header { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: baseline; }
+.chip { font: 500 12px var(--body); background: var(--chip-bg); color: var(--chip-fg); border-radius: 999px; padding: 2px 9px; }
+.strip { overflow-x: auto; background: var(--screen); border-radius: 4px; }
+.strip img { display: block; max-width: none; image-rendering: pixelated; height: 152px; width: auto; }
+dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 20px; font-size: 13.5px; }
+dl div { display: grid; grid-template-columns: 9.5em 1fr; gap: 8px; min-width: 0; }
+dt { color: var(--muted); }
+dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.none { color: var(--muted); }
+@media (max-width: 480px) { h1 { font-size: 24px; } dl div { grid-template-columns: 8em 1fr; } }
+</style>
+<div class="wrap">
+  <div class="intro">
+    <h1>Neo Poke-kun Scene Catalogue</h1>
+    <p>All {{COUNT}} scenes the room in Ganbare Neo Poke-kun can play, each with snapshots, one sentence on what happens, and the conditions the game checks before it can appear.</p>
+    <ul>
+      <li>Each scene was forced in MAME on the original ROM, so it plays here even where its real conditions were not met. The clock was the PC's, which is why the room is always shown at night.</li>
+      <li>The sentences are my reading of small sprites, not text from the game. Names with a question mark are guesses at which dating-profile character it is.</li>
+      <li>Mood runs backwards in this game: negative is happy. Counter A is the hidden score that unlocks minigames.</li>
+      <li>Scroll each strip sideways to see every frame. Frames run left to right.</li>
+    </ul>
+  </div>
+  <div class="tools">
+    <nav>{{NAV}}</nav>
+    <input id="q" type="search" placeholder="Filter, for example: futon, rabbit, v21" aria-label="Filter scenes">
+  </div>
+  {{BODY}}
+  <p class="none" id="empty" hidden>No scene matches that filter.</p>
+</div>
+<script>
+(function () {
+  var q = document.getElementById('q'), cards = Array.prototype.slice.call(document.querySelectorAll('.ev')), empty = document.getElementById('empty');
+  q.addEventListener('input', function () {
+    var words = q.value.toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
+    cards.forEach(function (c) {
+      var hay = c.id + ' ' + c.getAttribute('data-t');
+      var ok = words.every(function (w) { return hay.indexOf(w) >= 0; });
+      c.hidden = !ok; if (ok) shown++;
+    });
+    document.querySelectorAll('section').forEach(function (s) { s.hidden = !s.querySelector('.ev:not([hidden])'); });
+    empty.hidden = shown > 0;
+  });
+})();
+</script>

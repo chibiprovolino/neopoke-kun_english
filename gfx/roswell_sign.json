@@ -1,0 +1,300 @@
+{
+ "name": "roswell_sign",
+ "screen": "Minigame \"Roswell\" (stage sign)",
+ "japanese": "ネオカーニバル",
+ "meaning": "Neo Carnival",
+ "png": "roswell_sign.png",
+ "preview_4x": "roswell_sign_ref.png",
+ "size_px": [
+  112,
+  16
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1e555b",
+  "cpu": "0x3e555b",
+  "count": 85,
+  "bytes": 1360,
+  "end_rom": "0x1e5aab",
+  "odd_address": true,
+  "used_by_this_item": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30
+  ],
+  "shared_with_rest_of_screen": [
+   1
+  ]
+ },
+ "map": {
+  "rom": "0x1c77ec",
+  "cpu": "0x3c77ec",
+  "format": "word",
+  "header": null,
+  "width": 20,
+  "height": 19,
+  "entry": "VRAM map entry = ROM word + 0x160 (tile base; tile index = word & 0x1FF counts from the start of the tile block)",
+  "loader": "screen table record 0x1C0274 (pointer list at 0x1C0000): +0 map ptr, +4 tile ptr, +8 w, +10 h, +12 tile count, +14 flags",
+  "record_rom": "0x1c0274"
+ },
+ "rect_in_map": {
+  "x": 3,
+  "y": 0,
+  "w": 14,
+  "h": 2
+ },
+ "cells": [
+  [
+   2,
+   1,
+   0,
+   0
+  ],
+  [
+   3,
+   1,
+   0,
+   0
+  ],
+  [
+   4,
+   1,
+   0,
+   0
+  ],
+  [
+   5,
+   1,
+   0,
+   0
+  ],
+  [
+   6,
+   1,
+   0,
+   0
+  ],
+  [
+   7,
+   1,
+   0,
+   0
+  ],
+  [
+   8,
+   1,
+   0,
+   0
+  ],
+  [
+   9,
+   1,
+   0,
+   0
+  ],
+  [
+   10,
+   1,
+   0,
+   0
+  ],
+  [
+   11,
+   1,
+   0,
+   0
+  ],
+  [
+   12,
+   1,
+   0,
+   0
+  ],
+  [
+   13,
+   1,
+   0,
+   0
+  ],
+  [
+   14,
+   1,
+   0,
+   0
+  ],
+  [
+   1,
+   1,
+   0,
+   0
+  ],
+  [
+   17,
+   1,
+   0,
+   0
+  ],
+  [
+   18,
+   1,
+   0,
+   0
+  ],
+  [
+   19,
+   1,
+   0,
+   0
+  ],
+  [
+   20,
+   1,
+   0,
+   0
+  ],
+  [
+   21,
+   1,
+   0,
+   0
+  ],
+  [
+   22,
+   1,
+   0,
+   0
+  ],
+  [
+   23,
+   1,
+   0,
+   0
+  ],
+  [
+   24,
+   1,
+   0,
+   0
+  ],
+  [
+   25,
+   1,
+   0,
+   0
+  ],
+  [
+   26,
+   1,
+   0,
+   0
+  ],
+  [
+   27,
+   1,
+   0,
+   0
+  ],
+  [
+   28,
+   1,
+   0,
+   0
+  ],
+  [
+   29,
+   1,
+   0,
+   0
+  ],
+  [
+   30,
+   1,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p2",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     255,
+     204,
+     204
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 1,
+    "colour": 1,
+    "rgb": [
+     255,
+     136,
+     170
+    ],
+    "rgb444": "0xA8F"
+   },
+   {
+    "index": 2,
+    "palette": 1,
+    "colour": 2,
+    "rgb": [
+     255,
+     102,
+     153
+    ],
+    "rgb444": "0x96F"
+   },
+   {
+    "index": 3,
+    "palette": 1,
+    "colour": 3,
+    "rgb": [
+     255,
+     34,
+     102
+    ],
+    "rgb444": "0x62F"
+   }
+  ],
+  "source": "o_g24/v4570.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   112,
+   16
+  ],
+  "note": "Stay inside the 112x16 px area. The tile block holds 85 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

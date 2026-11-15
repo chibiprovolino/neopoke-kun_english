@@ -1,0 +1,239 @@
+{
+ "name": "doki_menu_continue",
+ "screen": "Minigame \"Doki Doki Street\" (title menu, line 2)",
+ "japanese": "つづきから",
+ "meaning": "Continue (from where you left off)",
+ "png": "doki_menu_continue.png",
+ "preview_4x": "doki_menu_continue_ref.png",
+ "size_px": [
+  80,
+  16
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1e14bb",
+  "cpu": "0x3e14bb",
+  "count": 134,
+  "bytes": 2144,
+  "end_rom": "0x1e1d1b",
+  "odd_address": true,
+  "used_by_this_item": [
+   106,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115,
+   116,
+   117,
+   118,
+   119,
+   120,
+   121,
+   122
+  ],
+  "shared_with_rest_of_screen": []
+ },
+ "map": {
+  "rom": "0x1caa64",
+  "cpu": "0x3caa64",
+  "format": "word",
+  "header": null,
+  "width": 20,
+  "height": 19,
+  "entry": "VRAM map entry = ROM word + 0x100 (tile base; tile index = word & 0x1FF counts from the start of the tile block)",
+  "loader": "screen table record 0x1C0384 (pointer list at 0x1C0000): +0 map ptr, +4 tile ptr, +8 w, +10 h, +12 tile count, +14 flags",
+  "record_rom": "0x1c0384"
+ },
+ "rect_in_map": {
+  "x": 7,
+  "y": 13,
+  "w": 10,
+  "h": 2
+ },
+ "cells": [
+  [
+   106,
+   4,
+   0,
+   0
+  ],
+  [
+   107,
+   4,
+   0,
+   0
+  ],
+  [
+   106,
+   4,
+   0,
+   0
+  ],
+  [
+   108,
+   4,
+   0,
+   0
+  ],
+  [
+   109,
+   4,
+   0,
+   0
+  ],
+  [
+   110,
+   4,
+   0,
+   0
+  ],
+  [
+   111,
+   4,
+   0,
+   0
+  ],
+  [
+   112,
+   4,
+   0,
+   0
+  ],
+  [
+   113,
+   4,
+   0,
+   0
+  ],
+  [
+   114,
+   4,
+   0,
+   0
+  ],
+  [
+   115,
+   4,
+   0,
+   0
+  ],
+  [
+   116,
+   4,
+   0,
+   0
+  ],
+  [
+   115,
+   4,
+   0,
+   0
+  ],
+  [
+   116,
+   4,
+   0,
+   0
+  ],
+  [
+   117,
+   4,
+   0,
+   0
+  ],
+  [
+   118,
+   4,
+   0,
+   0
+  ],
+  [
+   119,
+   4,
+   0,
+   0
+  ],
+  [
+   120,
+   4,
+   0,
+   0
+  ],
+  [
+   121,
+   4,
+   0,
+   0
+  ],
+  [
+   122,
+   4,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p2",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     0,
+     0,
+     0
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 4,
+    "colour": 1,
+    "rgb": [
+     68,
+     119,
+     170
+    ],
+    "rgb444": "0xA74"
+   },
+   {
+    "index": 2,
+    "palette": 4,
+    "colour": 2,
+    "rgb": [
+     187,
+     221,
+     255
+    ],
+    "rgb444": "0xFDB"
+   },
+   {
+    "index": 3,
+    "palette": 4,
+    "colour": 3,
+    "rgb": [
+     221,
+     238,
+     255
+    ],
+    "rgb444": "0xFED"
+   }
+  ],
+  "source": "o_doki/v5900.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   80,
+   16
+  ],
+  "note": "Stay inside the 80x16 px area. The tile block holds 134 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

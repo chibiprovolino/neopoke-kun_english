@@ -1,0 +1,143 @@
+{
+ "name": "garou_name_andy",
+ "screen": "Minigame \"Garou\" (player select + fight HUD)",
+ "japanese": "アンディ",
+ "meaning": "Andy",
+ "png": "garou_name_andy.png",
+ "preview_4x": "garou_name_andy_ref.png",
+ "size_px": [
+  40,
+  8
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x10014f",
+  "cpu": "0x30014f",
+  "count": 5,
+  "bytes": 80,
+  "end_rom": "0x10019f",
+  "odd_address": true,
+  "used_by_this_item": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "shared_with_rest_of_screen": []
+ },
+ "map": {
+  "rom": "0xdde7b",
+  "cpu": "0x2dde7b",
+  "format": "byte",
+  "header": [
+   0,
+   0,
+   5,
+   1
+  ],
+  "width": 5,
+  "height": 1,
+  "entry": "one byte per cell = tile index into the tile block; the palette is chosen by the game code (palette 0 on p1 here)",
+  "loader": "object command at 0xD3264: [op16][map16][01 00][tile ptr 24][00][count16]; the tile block of command k uses the map field of command k+1 (map = 0xD0000 + map16)",
+  "command_rom": "0xd3264",
+  "vram_first_tile_in_dump": 136
+ },
+ "rect_in_map": {
+  "x": 0,
+  "y": 0,
+  "w": 5,
+  "h": 1
+ },
+ "cells": [
+  [
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   2,
+   0,
+   0,
+   0
+  ],
+  [
+   3,
+   0,
+   0,
+   0
+  ],
+  [
+   4,
+   0,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p1",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     0,
+     102,
+     255
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 0,
+    "colour": 1,
+    "rgb": [
+     255,
+     255,
+     0
+    ],
+    "rgb444": "0x0FF"
+   },
+   {
+    "index": 2,
+    "palette": 0,
+    "colour": 2,
+    "rgb": [
+     255,
+     0,
+     0
+    ],
+    "rgb444": "0x00F"
+   },
+   {
+    "index": 3,
+    "palette": 0,
+    "colour": 3,
+    "rgb": [
+     170,
+     0,
+     0
+    ],
+    "rgb444": "0x00A"
+   }
+  ],
+  "source": "o_garou2/v6710.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   40,
+   8
+  ],
+  "note": "Stay inside the 40x8 px area. The tile block holds 5 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

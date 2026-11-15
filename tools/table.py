@@ -1,0 +1,11 @@
+T={}
+for i in range(0x20,0x7f): T[i]=chr(i)
+hira="あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんぁぃぅぇぉゃゅょっがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ"
+kata="アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンァィゥェォャュョッガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ"
+for k,c in enumerate(hira+kata): T[0x80+k]=c
+for k,c in enumerate("ー。「」、・←→↑↓♥"): T[0x120+k]=c
+for k,c in enumerate("ヴヺ□□人類平和何兵器異星戦争地球力"): T[0x12E+k]=c
+for k,c in enumerate("日々時間空彼方大決用応！国家半自上主来者名海代"): T[0x140+k]=c
+for k,c in enumerate("０１２３４５６７８９：Ｘ－"): T[0x1D0+k]=c
+for k,c in enumerate("ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ"): T[0x1E1+k]=c
+for c in (0x1C0,0x1C1,0x1C2): T[c]="{%X}"%c

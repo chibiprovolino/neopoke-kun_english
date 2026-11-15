@@ -1,0 +1,320 @@
+{
+ "name": "catalog_bubble",
+ "screen": "Love Love Profile catalog (speech bubble)",
+ "japanese": "あやしいカタは おことわりします。",
+ "meaning": "Suspicious persons will be turned away. (lit. \"We decline suspicious people.\")",
+ "png": "catalog_bubble.png",
+ "preview_4x": "catalog_bubble_ref.png",
+ "size_px": [
+  72,
+  24
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1e0ca0",
+  "cpu": "0x3e0ca0",
+  "count": 81,
+  "bytes": 1296,
+  "end_rom": "0x1e11b0",
+  "odd_address": false,
+  "used_by_this_item": [
+   29,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   53,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66
+  ],
+  "shared_with_rest_of_screen": [
+   29,
+   42,
+   53
+  ]
+ },
+ "map": {
+  "rom": "0x1cdb4c",
+  "cpu": "0x3cdb4c",
+  "format": "word",
+  "header": null,
+  "width": 20,
+  "height": 19,
+  "entry": "VRAM map entry = ROM word + 0x1 (tile base; tile index = word & 0x1FF counts from the start of the tile block)",
+  "loader": "screen table record 0x1C0424 (pointer list at 0x1C0000): +0 map ptr, +4 tile ptr, +8 w, +10 h, +12 tile count, +14 flags",
+  "record_rom": "0x1c0424"
+ },
+ "rect_in_map": {
+  "x": 3,
+  "y": 14,
+  "w": 9,
+  "h": 3
+ },
+ "cells": [
+  [
+   43,
+   5,
+   0,
+   0
+  ],
+  [
+   44,
+   5,
+   0,
+   0
+  ],
+  [
+   45,
+   5,
+   0,
+   0
+  ],
+  [
+   46,
+   5,
+   0,
+   0
+  ],
+  [
+   47,
+   5,
+   0,
+   0
+  ],
+  [
+   48,
+   5,
+   0,
+   0
+  ],
+  [
+   49,
+   5,
+   0,
+   0
+  ],
+  [
+   50,
+   5,
+   0,
+   0
+  ],
+  [
+   42,
+   0,
+   1,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   29,
+   0,
+   0,
+   0
+  ],
+  [
+   53,
+   0,
+   0,
+   0
+  ],
+  [
+   59,
+   5,
+   0,
+   0
+  ],
+  [
+   60,
+   5,
+   0,
+   0
+  ],
+  [
+   61,
+   5,
+   0,
+   0
+  ],
+  [
+   62,
+   5,
+   0,
+   0
+  ],
+  [
+   63,
+   5,
+   0,
+   0
+  ],
+  [
+   46,
+   5,
+   0,
+   0
+  ],
+  [
+   64,
+   5,
+   0,
+   0
+  ],
+  [
+   65,
+   5,
+   0,
+   0
+  ],
+  [
+   66,
+   5,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p2",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     255,
+     0,
+     255
+    ],
+    "note": "transparent (colour 0 of every palette); shown as magenta, because the backdrop colour equals an ink colour"
+   },
+   {
+    "index": 1,
+    "palette": 0,
+    "colour": 1,
+    "rgb": [
+     255,
+     0,
+     119
+    ],
+    "rgb444": "0x70F"
+   },
+   {
+    "index": 2,
+    "palette": 0,
+    "colour": 2,
+    "rgb": [
+     255,
+     136,
+     204
+    ],
+    "rgb444": "0xC8F"
+   },
+   {
+    "index": 3,
+    "palette": 0,
+    "colour": 3,
+    "rgb": [
+     255,
+     221,
+     238
+    ],
+    "rgb444": "0xEDF"
+   },
+   {
+    "index": 4,
+    "palette": 5,
+    "colour": 1,
+    "rgb": [
+     0,
+     0,
+     0
+    ],
+    "rgb444": "0x000"
+   },
+   {
+    "index": 5,
+    "palette": 5,
+    "colour": 2,
+    "rgb": [
+     255,
+     136,
+     204
+    ],
+    "rgb444": "0xC8F"
+   },
+   {
+    "index": 6,
+    "palette": 5,
+    "colour": 3,
+    "rgb": [
+     255,
+     221,
+     238
+    ],
+    "rgb444": "0xEDF"
+   }
+  ],
+  "source": "o_cat/v4280.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   72,
+   24
+  ],
+  "note": "Stay inside the 72x24 px area. The tile block holds 81 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

@@ -1,0 +1,819 @@
+{
+ "name": "voff_labels",
+ "screen": "Minigame \"V.OFF\" title (3 labels next to the robot)",
+ "japanese": "(3 lines of mock-kanji, approx. 射わ?天 / 従雷放光 / 超微子式)",
+ "meaning": "Pseudo spec labels (parody of the Virtual On title); partly not real words — check in game",
+ "png": "voff_labels.png",
+ "preview_4x": "voff_labels_ref.png",
+ "size_px": [
+  88,
+  56
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1e5e4a",
+  "cpu": "0x3e5e4a",
+  "count": 154,
+  "bytes": 2464,
+  "end_rom": "0x1e67ea",
+  "odd_address": false,
+  "used_by_this_item": [
+   0,
+   1,
+   2,
+   13,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   88,
+   89,
+   90,
+   91,
+   92,
+   93,
+   94,
+   95,
+   96,
+   97,
+   105,
+   106,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115,
+   127,
+   128,
+   129,
+   130,
+   131,
+   132,
+   133,
+   134,
+   135,
+   136,
+   137
+  ],
+  "shared_with_rest_of_screen": [
+   13
+  ]
+ },
+ "map": {
+  "rom": "0x1ce434",
+  "cpu": "0x3ce434",
+  "format": "word",
+  "header": null,
+  "width": 20,
+  "height": 19,
+  "entry": "VRAM map entry = ROM word + 0x9C (tile base; tile index = word & 0x1FF counts from the start of the tile block)",
+  "loader": "screen table record 0x1C0454 (pointer list at 0x1C0000): +0 map ptr, +4 tile ptr, +8 w, +10 h, +12 tile count, +14 flags",
+  "record_rom": "0x1c0454"
+ },
+ "rect_in_map": {
+  "x": 9,
+  "y": 10,
+  "w": 11,
+  "h": 7
+ },
+ "cells": [
+  [
+   13,
+   0,
+   0,
+   0
+  ],
+  [
+   13,
+   0,
+   0,
+   0
+  ],
+  [
+   13,
+   0,
+   0,
+   0
+  ],
+  [
+   13,
+   9,
+   0,
+   0
+  ],
+  [
+   13,
+   9,
+   0,
+   0
+  ],
+  [
+   13,
+   9,
+   0,
+   0
+  ],
+  [
+   13,
+   9,
+   0,
+   0
+  ],
+  [
+   13,
+   9,
+   0,
+   0
+  ],
+  [
+   0,
+   10,
+   0,
+   0
+  ],
+  [
+   1,
+   10,
+   0,
+   0
+  ],
+  [
+   2,
+   10,
+   0,
+   0
+  ],
+  [
+   56,
+   12,
+   0,
+   0
+  ],
+  [
+   57,
+   12,
+   0,
+   0
+  ],
+  [
+   58,
+   12,
+   0,
+   0
+  ],
+  [
+   59,
+   12,
+   0,
+   0
+  ],
+  [
+   60,
+   12,
+   0,
+   0
+  ],
+  [
+   61,
+   12,
+   0,
+   0
+  ],
+  [
+   62,
+   12,
+   0,
+   0
+  ],
+  [
+   13,
+   1,
+   0,
+   0
+  ],
+  [
+   63,
+   12,
+   0,
+   0
+  ],
+  [
+   64,
+   12,
+   0,
+   0
+  ],
+  [
+   13,
+   1,
+   0,
+   0
+  ],
+  [
+   71,
+   12,
+   0,
+   0
+  ],
+  [
+   72,
+   12,
+   0,
+   0
+  ],
+  [
+   73,
+   12,
+   0,
+   0
+  ],
+  [
+   74,
+   12,
+   0,
+   0
+  ],
+  [
+   75,
+   12,
+   0,
+   0
+  ],
+  [
+   76,
+   12,
+   0,
+   0
+  ],
+  [
+   77,
+   12,
+   0,
+   0
+  ],
+  [
+   78,
+   12,
+   0,
+   0
+  ],
+  [
+   13,
+   12,
+   0,
+   0
+  ],
+  [
+   79,
+   12,
+   0,
+   0
+  ],
+  [
+   80,
+   12,
+   0,
+   0
+  ],
+  [
+   88,
+   11,
+   0,
+   0
+  ],
+  [
+   89,
+   11,
+   0,
+   0
+  ],
+  [
+   90,
+   11,
+   0,
+   0
+  ],
+  [
+   91,
+   11,
+   0,
+   0
+  ],
+  [
+   92,
+   11,
+   0,
+   0
+  ],
+  [
+   93,
+   11,
+   0,
+   0
+  ],
+  [
+   94,
+   11,
+   0,
+   0
+  ],
+  [
+   95,
+   11,
+   0,
+   0
+  ],
+  [
+   13,
+   11,
+   0,
+   0
+  ],
+  [
+   96,
+   12,
+   0,
+   0
+  ],
+  [
+   97,
+   12,
+   0,
+   0
+  ],
+  [
+   105,
+   5,
+   0,
+   0
+  ],
+  [
+   106,
+   5,
+   0,
+   0
+  ],
+  [
+   107,
+   5,
+   0,
+   0
+  ],
+  [
+   108,
+   5,
+   0,
+   0
+  ],
+  [
+   109,
+   5,
+   0,
+   0
+  ],
+  [
+   110,
+   5,
+   0,
+   0
+  ],
+  [
+   111,
+   5,
+   0,
+   0
+  ],
+  [
+   112,
+   5,
+   0,
+   0
+  ],
+  [
+   113,
+   5,
+   0,
+   0
+  ],
+  [
+   114,
+   12,
+   0,
+   0
+  ],
+  [
+   115,
+   12,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   5,
+   0,
+   0
+  ],
+  [
+   13,
+   12,
+   0,
+   0
+  ],
+  [
+   13,
+   12,
+   0,
+   0
+  ],
+  [
+   127,
+   11,
+   0,
+   0
+  ],
+  [
+   128,
+   11,
+   0,
+   0
+  ],
+  [
+   129,
+   11,
+   0,
+   0
+  ],
+  [
+   130,
+   11,
+   0,
+   0
+  ],
+  [
+   131,
+   11,
+   0,
+   0
+  ],
+  [
+   132,
+   11,
+   0,
+   0
+  ],
+  [
+   133,
+   11,
+   0,
+   0
+  ],
+  [
+   134,
+   11,
+   0,
+   0
+  ],
+  [
+   135,
+   11,
+   0,
+   0
+  ],
+  [
+   136,
+   12,
+   0,
+   0
+  ],
+  [
+   137,
+   12,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p1",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     34,
+     17,
+     0
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 0,
+    "colour": 1,
+    "rgb": [
+     0,
+     0,
+     0
+    ],
+    "rgb444": "0x000"
+   },
+   {
+    "index": 2,
+    "palette": 0,
+    "colour": 2,
+    "rgb": [
+     0,
+     0,
+     0
+    ],
+    "rgb444": "0x000"
+   },
+   {
+    "index": 3,
+    "palette": 0,
+    "colour": 3,
+    "rgb": [
+     0,
+     0,
+     0
+    ],
+    "rgb444": "0x000"
+   },
+   {
+    "index": 4,
+    "palette": 1,
+    "colour": 1,
+    "rgb": [
+     17,
+     51,
+     51
+    ],
+    "rgb444": "0x331"
+   },
+   {
+    "index": 5,
+    "palette": 1,
+    "colour": 2,
+    "rgb": [
+     153,
+     68,
+     204
+    ],
+    "rgb444": "0xC49"
+   },
+   {
+    "index": 6,
+    "palette": 1,
+    "colour": 3,
+    "rgb": [
+     85,
+     51,
+     136
+    ],
+    "rgb444": "0x835"
+   },
+   {
+    "index": 7,
+    "palette": 5,
+    "colour": 1,
+    "rgb": [
+     255,
+     0,
+     0
+    ],
+    "rgb444": "0x00F"
+   },
+   {
+    "index": 8,
+    "palette": 5,
+    "colour": 2,
+    "rgb": [
+     68,
+     153,
+     153
+    ],
+    "rgb444": "0x994"
+   },
+   {
+    "index": 9,
+    "palette": 5,
+    "colour": 3,
+    "rgb": [
+     136,
+     187,
+     187
+    ],
+    "rgb444": "0xBB8"
+   },
+   {
+    "index": 10,
+    "palette": 9,
+    "colour": 1,
+    "rgb": [
+     204,
+     68,
+     0
+    ],
+    "rgb444": "0x04C"
+   },
+   {
+    "index": 11,
+    "palette": 9,
+    "colour": 2,
+    "rgb": [
+     255,
+     119,
+     0
+    ],
+    "rgb444": "0x07F"
+   },
+   {
+    "index": 12,
+    "palette": 9,
+    "colour": 3,
+    "rgb": [
+     255,
+     187,
+     0
+    ],
+    "rgb444": "0x0BF"
+   },
+   {
+    "index": 13,
+    "palette": 10,
+    "colour": 1,
+    "rgb": [
+     255,
+     51,
+     0
+    ],
+    "rgb444": "0x03F"
+   },
+   {
+    "index": 14,
+    "palette": 10,
+    "colour": 2,
+    "rgb": [
+     102,
+     255,
+     34
+    ],
+    "rgb444": "0x2F6"
+   },
+   {
+    "index": 15,
+    "palette": 10,
+    "colour": 3,
+    "rgb": [
+     51,
+     51,
+     204
+    ],
+    "rgb444": "0xC33"
+   },
+   {
+    "index": 16,
+    "palette": 11,
+    "colour": 1,
+    "rgb": [
+     34,
+     119,
+     119
+    ],
+    "rgb444": "0x772"
+   },
+   {
+    "index": 17,
+    "palette": 11,
+    "colour": 2,
+    "rgb": [
+     68,
+     153,
+     153
+    ],
+    "rgb444": "0x994"
+   },
+   {
+    "index": 18,
+    "palette": 11,
+    "colour": 3,
+    "rgb": [
+     136,
+     187,
+     187
+    ],
+    "rgb444": "0xBB8"
+   },
+   {
+    "index": 19,
+    "palette": 12,
+    "colour": 1,
+    "rgb": [
+     68,
+     17,
+     85
+    ],
+    "rgb444": "0x514"
+   },
+   {
+    "index": 20,
+    "palette": 12,
+    "colour": 2,
+    "rgb": [
+     68,
+     17,
+     119
+    ],
+    "rgb444": "0x714"
+   },
+   {
+    "index": 21,
+    "palette": 12,
+    "colour": 3,
+    "rgb": [
+     85,
+     34,
+     153
+    ],
+    "rgb444": "0x925"
+   }
+  ],
+  "source": "o_g27/v4490.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   88,
+   56
+  ],
+  "note": "Stay inside the 88x56 px area. The tile block holds 154 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

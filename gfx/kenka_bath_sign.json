@@ -1,0 +1,213 @@
+{
+ "name": "kenka_bath_sign",
+ "screen": "Minigame \"Kenka Yamete\" (bath-house stage, sign; a 2nd copy at rows 18-19)",
+ "japanese": "強力ボッキ湯 (reading uncertain)",
+ "meaning": "\"Super-strength erection bath\" (crude joke name of the bath house); check the reading",
+ "png": "kenka_bath_sign.png",
+ "preview_4x": "kenka_bath_sign_ref.png",
+ "size_px": [
+  56,
+  16
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1d92d8",
+  "cpu": "0x3d92d8",
+  "count": 206,
+  "bytes": 3296,
+  "end_rom": "0x1d9fb8",
+  "odd_address": false,
+  "used_by_this_item": [
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87
+  ],
+  "shared_with_rest_of_screen": [
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87
+  ]
+ },
+ "map": {
+  "rom": "0x1cad5c",
+  "cpu": "0x3cad5c",
+  "format": "word",
+  "header": null,
+  "width": 32,
+  "height": 32,
+  "entry": "VRAM map entry = ROM word + 0x100 (tile base; tile index = word & 0x1FF counts from the start of the tile block)",
+  "loader": "screen table record 0x1C0394 (pointer list at 0x1C0000): +0 map ptr, +4 tile ptr, +8 w, +10 h, +12 tile count, +14 flags",
+  "record_rom": "0x1c0394"
+ },
+ "rect_in_map": {
+  "x": 7,
+  "y": 2,
+  "w": 7,
+  "h": 2
+ },
+ "cells": [
+  [
+   58,
+   0,
+   0,
+   0
+  ],
+  [
+   59,
+   0,
+   0,
+   0
+  ],
+  [
+   60,
+   0,
+   0,
+   0
+  ],
+  [
+   61,
+   0,
+   0,
+   0
+  ],
+  [
+   62,
+   0,
+   0,
+   0
+  ],
+  [
+   63,
+   0,
+   0,
+   0
+  ],
+  [
+   64,
+   0,
+   0,
+   0
+  ],
+  [
+   81,
+   0,
+   0,
+   0
+  ],
+  [
+   82,
+   0,
+   0,
+   0
+  ],
+  [
+   83,
+   0,
+   0,
+   0
+  ],
+  [
+   84,
+   0,
+   0,
+   0
+  ],
+  [
+   85,
+   0,
+   0,
+   0
+  ],
+  [
+   86,
+   0,
+   0,
+   0
+  ],
+  [
+   87,
+   0,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p2",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     85,
+     68,
+     34
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 0,
+    "colour": 1,
+    "rgb": [
+     102,
+     136,
+     136
+    ],
+    "rgb444": "0x886"
+   },
+   {
+    "index": 2,
+    "palette": 0,
+    "colour": 2,
+    "rgb": [
+     238,
+     119,
+     34
+    ],
+    "rgb444": "0x27E"
+   },
+   {
+    "index": 3,
+    "palette": 0,
+    "colour": 3,
+    "rgb": [
+     238,
+     238,
+     187
+    ],
+    "rgb444": "0xBEE"
+   }
+  ],
+  "source": "o_g21/v4490.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   56,
+   16
+  ],
+  "note": "Stay inside the 56x16 px area. The tile block holds 206 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

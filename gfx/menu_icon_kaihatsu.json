@@ -1,0 +1,217 @@
+{
+ "name": "menu_icon_kaihatsu",
+ "screen": "Minigame menu icon \"under construction\" (traffic cone; not seen on any menu page)",
+ "japanese": "開発中",
+ "meaning": "Under development",
+ "png": "menu_icon_kaihatsu.png",
+ "preview_4x": "menu_icon_kaihatsu_ref.png",
+ "size_px": [
+  32,
+  32
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0xf9d80",
+  "cpu": "0x2f9d80",
+  "count": 13,
+  "bytes": 208,
+  "end_rom": "0xf9e50",
+  "odd_address": false,
+  "used_by_this_item": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "shared_with_rest_of_screen": []
+ },
+ "map": {
+  "rom": "0xde4c4",
+  "cpu": "0x2de4c4",
+  "format": "word",
+  "header": [
+   0,
+   0,
+   4,
+   4
+  ],
+  "width": 4,
+  "height": 4,
+  "entry": "ROM word = tile index | palette<<9 | Vflip<<14 | Hflip<<15 (tile index counts from the start of the tile block)",
+  "loader": "object command at 0xD2FC8: [op16][map16][01 00][tile ptr 24][00][count16]; the tile block of command k uses the map field of command k+1 (map = 0xD0000 + map16)",
+  "command_rom": "0xd2fc8",
+  "vram_first_tile_in_dump": null
+ },
+ "rect_in_map": {
+  "x": 0,
+  "y": 0,
+  "w": 4,
+  "h": 4
+ },
+ "cells": [
+  [
+   0,
+   13,
+   0,
+   0
+  ],
+  [
+   1,
+   13,
+   0,
+   0
+  ],
+  [
+   2,
+   13,
+   0,
+   0
+  ],
+  [
+   0,
+   13,
+   0,
+   0
+  ],
+  [
+   0,
+   13,
+   0,
+   0
+  ],
+  [
+   3,
+   13,
+   0,
+   0
+  ],
+  [
+   4,
+   13,
+   0,
+   0
+  ],
+  [
+   0,
+   13,
+   0,
+   0
+  ],
+  [
+   5,
+   13,
+   0,
+   0
+  ],
+  [
+   6,
+   13,
+   0,
+   0
+  ],
+  [
+   7,
+   13,
+   0,
+   0
+  ],
+  [
+   8,
+   13,
+   0,
+   0
+  ],
+  [
+   9,
+   13,
+   0,
+   0
+  ],
+  [
+   10,
+   13,
+   0,
+   0
+  ],
+  [
+   11,
+   13,
+   0,
+   0
+  ],
+  [
+   12,
+   13,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p2",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     255,
+     187,
+     51
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 13,
+    "colour": 1,
+    "rgb": [
+     255,
+     255,
+     187
+    ],
+    "rgb444": "0xBFF"
+   },
+   {
+    "index": 2,
+    "palette": 13,
+    "colour": 2,
+    "rgb": [
+     255,
+     34,
+     34
+    ],
+    "rgb444": "0x22F"
+   },
+   {
+    "index": 3,
+    "palette": 13,
+    "colour": 3,
+    "rgb": [
+     102,
+     0,
+     68
+    ],
+    "rgb444": "0x406"
+   }
+  ],
+  "source": "o_unl_0x4500_0x4557/v2900.bin (MAME VRAM dump)",
+  "assumed": "never shown in MAME; palette = the map's palette number, colours from the unlocked menu screen"
+ },
+ "max_size": {
+  "px": [
+   32,
+   32
+  ],
+  "note": "Stay inside the 32x32 px area. The tile block holds 13 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

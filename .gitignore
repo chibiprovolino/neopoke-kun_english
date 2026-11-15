@@ -1,0 +1,26 @@
+# Game data: never commit. Everything below is generated from your own ROM.
+rom/
+*.ngc
+*.ngp
+*.ips
+build/
+gfx/*.png
+script/strings.json
+script/export.json
+script/voff_script.md
+review/lines.json
+review/font.json
+work/dis/code.asm
+work/dis/*.bin
+work/**/out/
+work/**/*.png
+work/**/*.bin
+work/trace/catalogue.html
+
+# MAME state
+cfg/
+nvram/
+snap/
+
+__pycache__/
+*.pyc

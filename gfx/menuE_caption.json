@@ -1,0 +1,143 @@
+{
+ "name": "menuE_caption",
+ "screen": "Minigame menu, page E (picture caption)",
+ "japanese": "みんなみてね!",
+ "meaning": "Everyone, take a look!",
+ "png": "menuE_caption.png",
+ "preview_4x": "menuE_caption_ref.png",
+ "size_px": [
+  48,
+  8
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1e0a40",
+  "cpu": "0x3e0a40",
+  "count": 38,
+  "bytes": 608,
+  "end_rom": "0x1e0ca0",
+  "odd_address": false,
+  "used_by_this_item": [
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "shared_with_rest_of_screen": []
+ },
+ "map": {
+  "rom": "0x1cd854",
+  "cpu": "0x3cd854",
+  "format": "word",
+  "header": null,
+  "width": 20,
+  "height": 19,
+  "entry": "VRAM map entry = ROM word + 0x1 (tile base; tile index = word & 0x1FF counts from the start of the tile block)",
+  "loader": "screen table record 0x1C0414 (pointer list at 0x1C0000): +0 map ptr, +4 tile ptr, +8 w, +10 h, +12 tile count, +14 flags",
+  "record_rom": "0x1c0414"
+ },
+ "rect_in_map": {
+  "x": 7,
+  "y": 12,
+  "w": 6,
+  "h": 1
+ },
+ "cells": [
+  [
+   8,
+   15,
+   0,
+   0
+  ],
+  [
+   9,
+   15,
+   0,
+   0
+  ],
+  [
+   10,
+   15,
+   0,
+   0
+  ],
+  [
+   8,
+   15,
+   0,
+   0
+  ],
+  [
+   11,
+   15,
+   0,
+   0
+  ],
+  [
+   12,
+   15,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p2",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     255,
+     187,
+     51
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 15,
+    "colour": 1,
+    "rgb": [
+     170,
+     51,
+     153
+    ],
+    "rgb444": "0x93A"
+   },
+   {
+    "index": 2,
+    "palette": 15,
+    "colour": 2,
+    "rgb": [
+     238,
+     136,
+     238
+    ],
+    "rgb444": "0xE8E"
+   },
+   {
+    "index": 3,
+    "palette": 15,
+    "colour": 3,
+    "rgb": [
+     255,
+     255,
+     255
+    ],
+    "rgb444": "0xFFF"
+   }
+  ],
+  "source": "o_cat/v3420.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   48,
+   8
+  ],
+  "note": "Stay inside the 48x8 px area. The tile block holds 38 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}

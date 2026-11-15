@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile Icon Editor</title>
+<style>
+:root{--bg:#f6f3e8;--panel:#fffdf4;--ink:#222;--muted:#777;--line:#d8d2bd;--grid:#e6e0cc;--gap:#e8e8ff;--accent:#c0392b;--cream:#ffffcc;--dark:#333}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1d1c19;--panel:#272622;--ink:#eee;--muted:#999;--line:#444;--grid:#3a3934;--gap:#33334a;--accent:#ff7b6b}}
+:root[data-theme="dark"]{--bg:#1d1c19;--panel:#272622;--ink:#eee;--muted:#999;--line:#444;--grid:#3a3934;--gap:#33334a;--accent:#ff7b6b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,sans-serif;padding:16px}
+h1{font-size:18px;margin:0 0 4px}
+p.hint{color:var(--muted);margin:0 0 16px;max-width:760px}
+.cells{display:flex;flex-wrap:wrap;gap:16px}
+.cell{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}
+.cell h2{font-size:13px;margin:0 0 6px;display:flex;justify-content:space-between;gap:8px}
+.cell h2 span{color:var(--muted);font-weight:normal}
+.grid{display:grid;grid-template-columns:repeat(8,26px);grid-template-rows:repeat(8,26px);gap:1px;background:var(--grid);border:1px solid var(--grid);user-select:none;touch-action:none;cursor:crosshair}
+.px{background:#fff}
+.px.gapcol{background:var(--gap)}
+.px.on{background:#000}
+.tools{margin-top:6px;display:flex;gap:4px;flex-wrap:wrap}
+button,label.btn{font:inherit;font-size:12px;padding:4px 8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:5px;cursor:pointer}
+button:hover,label.btn:hover{border-color:var(--accent)}
+.bar{margin:18px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.bar .primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.preview{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px;display:inline-block}
+.preview h2{font-size:13px;margin:0 0 6px}
+canvas{image-rendering:pixelated;display:block}
+textarea{width:100%;max-width:760px;height:120px;font:12px ui-monospace,monospace;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px}
+#msg{color:var(--accent);font-size:12px}
+</style>
+</head>
+<body>
+<h1>Profile icon editor</h1>
+<p class="hint">Click or drag to draw; drag starting on a black pixel to erase. The 8th column (blue) should stay empty so a 1 px gap remains before the value.
+Width = rightmost ink column + 2. "Download icons.png" saves the 40×8 file; put it at <code>font/icons.png</code> and rebuild (or tell Claude).</p>
+
+<div class="cells" id="cells"></div>
+
+<div class="bar">
+  <button class="primary" id="dl">Download icons.png</button>
+  <label class="btn">Load icons.png… <input type="file" id="load" accept="image/png" hidden></label>
+  <button id="copy">Copy as text</button>
+  <button id="reset">Reset to current set</button>
+  <span id="msg"></span>
+</div>
+
+<div class="preview">
+  <h2>Preview on the profile field (3×, game colours)</h2>
+  <canvas id="pv"></canvas>
+</div>
+
+<p class="hint" style="margin-top:14px">Text form (the same as <code>DEFAULT</code> in tools/icons.py):</p>
+<textarea id="txt" readonly></textarea>
+
+<script>
+const LABELS=["Age","Job","Income","Hobby","Appeal"], CODES=[0x11,0x12,0x13,0x14,0x15];
+const CURRENT={
+ Age:["...#....","..#.#...","...#....",".#####..","#.#.#.#.","#######.","#.....#.","#######."],
+ Job:["..###...",".#...#..","#######.","#..#..#.","###.###.","#.....#.","#######.","........"],
+ Income:["#.....#.",".#...#..","..#.#...",".#####..","...#....",".#####..","...#....","...#...."],
+ Hobby:["........",".##.##..","#..#..#.","#.....#.","#.....#.",".#...#..","..#.#...","...#...."],
+ Appeal:["...#....","..#.#...","###.###.","#.....#.",".#...#..",".#.#.#..","#.#.#.#.","##...##."]};
+const SAMPLE={Age:"33",Job:"Housewife",Income:"300",Hobby:"Pachinko",Appeal:"Married"};
+let icons={}; const STORE="neopoke-icon-editor";
+function fromRows(o){const r={};for(const l of LABELS)r[l]=o[l].map(s=>[...s.padEnd(8,".")].slice(0,8).map(c=>c==="#"));return r}
+function load0(){try{const s=localStorage.getItem(STORE);if(s){icons=JSON.parse(s);return}}catch(e){}icons=fromRows(CURRENT)}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(icons))}catch(e){}}
+function width(px){let m=-1;px.forEach(r=>r.forEach((v,x)=>{if(v&&x>m)m=x}));return m<0?3:Math.min(8,m+2)}
+const cellsEl=document.getElementById("cells"); let painting=null;
+function build(){
+  cellsEl.innerHTML="";
+  LABELS.forEach((lab,i)=>{
+    const c=document.createElement("div");c.className="cell";
+    c.innerHTML=`<h2>${lab} <span>[${CODES[i].toString(16).toUpperCase()}] · w<b id="w${i}"></b></span></h2>`;
+    const g=document.createElement("div");g.className="grid";
+    for(let y=0;y<8;y++)for(let x=0;x<8;x++){
+      const p=document.createElement("div");p.className="px"+(x===7?" gapcol":"");p.dataset.x=x;p.dataset.y=y;g.appendChild(p)}
+    const set=(e)=>{const t=document.elementFromPoint(e.clientX,e.clientY);if(!t||!t.dataset||t.parentNode!==g)return;
+      const x=+t.dataset.x,y=+t.dataset.y; if(painting===null)painting=!icons[lab][y][x]; icons[lab][y][x]=painting; refresh()};
+    g.addEventListener("pointerdown",e=>{painting=null;g.setPointerCapture(e.pointerId);set(e)});
+    g.addEventListener("pointermove",e=>{if(e.buttons)set(e)});
+    g.addEventListener("pointerup",()=>{painting=null;save()});
+    const t=document.createElement("div");t.className="tools";
+    const mk=(n,f)=>{const b=document.createElement("button");b.textContent=n;b.onclick=()=>{f();refresh();save()};t.appendChild(b)};
+    const P=()=>icons[lab];
+    mk("←",()=>{icons[lab]=P().map(r=>[...r.slice(1),false])});
+    mk("→",()=>{icons[lab]=P().map(r=>[false,...r.slice(0,7)])});
+    mk("↑",()=>{icons[lab]=[...P().slice(1),Array(8).fill(false)]});
+    mk("↓",()=>{icons[lab]=[Array(8).fill(false),...P().slice(0,7)]});
+    mk("Flip",()=>{icons[lab]=P().map(r=>[...r.slice(0,7)].reverse().concat([r[7]]))});
+    mk("Clear",()=>{icons[lab]=P().map(r=>r.map(()=>false))});
+    mk("Undo edits",()=>{icons[lab]=fromRows(CURRENT)[lab]});
+    c.appendChild(g);c.appendChild(t);cellsEl.appendChild(c)});
+  refresh();
+}
+function refresh(){
+  LABELS.forEach((lab,i)=>{
+    const g=cellsEl.children[i].querySelector(".grid");
+    [...g.children].forEach(p=>p.classList.toggle("on",icons[lab][+p.dataset.y][+p.dataset.x]));
+    document.getElementById("w"+i).textContent=width(icons[lab])});
+  document.getElementById("txt").value=LABELS.map(l=>`    "${l}":${" ".repeat(7-l.length)}[${icons[l].map(r=>'"'+r.map(v=>v?"#":".").join("")+'"').join(", ")}],`).join("\n");
+  preview();
+}
+function preview(){
+  const S=3,W=72,H=5*16,cv=document.getElementById("pv");cv.width=W*S;cv.height=H*S;
+  const c=cv.getContext("2d");c.imageSmoothingEnabled=false;
+  c.fillStyle="#ffffcc";c.fillRect(0,0,cv.width,cv.height);
+  LABELS.forEach((lab,i)=>{
+    const y0=i*16;c.fillStyle="#ccbb99";c.fillRect(0,(y0+15)*S,W*S,S);
+    c.fillStyle="#333";
+    icons[lab].forEach((r,y)=>r.forEach((v,x)=>{if(v)c.fillRect((2+x)*S,(y0+4+y)*S,S,S)}));
+    c.font=`${7*S}px monospace`;c.textBaseline="top";
+    c.fillText(SAMPLE[lab],(2+width(icons[lab]))*S,(y0+4)*S-S);
+  });
+}
+function toPNG(){
+  const cv=document.createElement("canvas");cv.width=40;cv.height=8;const c=cv.getContext("2d");
+  c.fillStyle="#fff";c.fillRect(0,0,40,8);c.fillStyle="#000";
+  LABELS.forEach((l,i)=>icons[l].forEach((r,y)=>r.forEach((v,x)=>{if(v)c.fillRect(i*8+x,y,1,1)})));
+  return cv;
+}
+const msg=t=>{document.getElementById("msg").textContent=t;setTimeout(()=>document.getElementById("msg").textContent="",3000)};
+document.getElementById("dl").onclick=()=>{toPNG().toBlob(b=>{const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="icons.png";a.click();msg("Saved icons.png — move it to font/icons.png")})};
+document.getElementById("copy").onclick=async()=>{try{await navigator.clipboard.writeText(document.getElementById("txt").value);msg("Copied")}catch(e){document.getElementById("txt").select();msg("Select-all done; press Ctrl+C")}};
+document.getElementById("reset").onclick=()=>{icons=fromRows(CURRENT);save();refresh()};
+document.getElementById("load").onchange=e=>{const f=e.target.files[0];if(!f)return;const img=new Image();img.onload=()=>{
+  const s=Math.round(img.width/40);if(img.width!==40*s||img.height!==8*s){msg("Must be 40×8 or a whole upscale");return}
+  const cv=document.createElement("canvas");cv.width=img.width;cv.height=img.height;const c=cv.getContext("2d");c.drawImage(img,0,0);
+  const d=c.getImageData(0,0,img.width,img.height).data;
+  LABELS.forEach((l,i)=>{icons[l]=[...Array(8)].map((_,y)=>[...Array(8)].map((_,x)=>{const X=(i*8+x)*s+(s>>1),Y=y*s+(s>>1),k=(Y*img.width+X)*4;
+    return (d[k]*.3+d[k+1]*.59+d[k+2]*.11)<128&&d[k+3]>127}))});save();refresh();msg("Loaded")};img.src=URL.createObjectURL(f)};
+load0();build();
+</script>
+</body>
+</html>

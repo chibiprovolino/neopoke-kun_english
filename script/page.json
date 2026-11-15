@@ -1,0 +1,5882 @@
+{
+ "format": "neopoke-script/1",
+ "rules": [
+  "Edit only 'en' (and 'note' if you want to leave a remark). Keep 'key' unchanged.",
+  "\n is a line break. Codes like [1C] are screen positions: keep them where they are.",
+  "Use plain ASCII and the heart ♥ only.",
+  "Each line of 'en' should be at most 'maxw' characters (40 if half-width font is on), and at most 'lines' lines.",
+  "'status': leave as is, or set to 'approved' / 'flagged' / 'edited'."
+ ],
+ "lines": [
+  {
+   "key": "s000",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": " [19]Shot ",
+   "en": " [19]Shot ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s001",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1D]Escape ",
+   "en": "[1D]Escape ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s002",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "Crossing ",
+   "en": "Crossing ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s003",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1A]B.Escape ",
+   "en": "[1A]B.Escape ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s004",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[19]A.Rescue ",
+   "en": "[19]A.Rescue ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s005",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1A]Sakura P. ",
+   "en": "[1A]Sakura P. ",
+   "status": "flagged",
+   "note": "Full title Sakurajima Panic was chosen; current menu is abbreviated for width."
+  },
+  {
+   "key": "s006",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1D]Sasuke inO",
+   "en": "[1D]Sasuke inO",
+   "status": "flagged",
+   "note": "Full title Sasuke in Osaka was chosen; menu is abbreviated."
+  },
+  {
+   "key": "s007",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1A]Yusaku C. ",
+   "en": "[1A]Yusaku C. ",
+   "status": "flagged",
+   "note": "Full title Yusaku Challenge was chosen; menu is abbreviated."
+  },
+  {
+   "key": "s008",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[19] S.M.D ",
+   "en": "[19] S.M.D ",
+   "status": "flagged",
+   "note": "Space Maddist versus Muddiest was discussed, but no final explicit decision."
+  },
+  {
+   "key": "s009",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1A]Crazy F. ",
+   "en": "[1A]Crazy F. ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s010",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[19]Rocketman",
+   "en": "[19]Rocketman",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s011",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": " Mogerer  ",
+   "en": " Moguera  ",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). Use 'Moguera' as user-specified official spelling, and preserve original padding when possible. FIT CHECK: widest line 10 ASCII characters, source maxw=7; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s012",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1C]SP Hero ",
+   "en": "[1C]SP Hero ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s013",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": " [1A]S.P.D ",
+   "en": " [1A]S.P.D ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s014",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1A]Genesis C",
+   "en": "[1A]Genesis C",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s015",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1D]Danger Z ",
+   "en": "[1D]Danger Z ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s016",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[19]Barrier M",
+   "en": "[19]Barrier M",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s017",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1C]Mr.Yabou ",
+   "en": "[1C]Mr.Yabou ",
+   "status": "flagged",
+   "note": "User chose full title Mr. Ambition for minigame. Abbreviated menu label not settled; don't alter position code or fit."
+  },
+  {
+   "key": "s018",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1C]Facer  ",
+   "en": "[1C]Facer  ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s019",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": " EL Ghost ",
+   "en": " EL Ghost ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s020",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "[1C] D&DQ  ",
+   "en": "[1C] D&DQ  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s021",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1D]Apache S ",
+   "en": "[1D]Apache S ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s022",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[19]Stop Fight",
+   "en": "[19]Stop Fight",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s023",
+   "scene": "Minigame menu",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "  D&T  ",
+   "en": "  AoB  ",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User specified the EXACT abbreviation 'AoB' for the Art of Brawling menu."
+  },
+  {
+   "key": "s024",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1D]Block S ",
+   "en": "[1D]Block S ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s025",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1C]Roswell ",
+   "en": "[1C]Roswell ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s026",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1C] Garou  ",
+   "en": "[1C] Garou  ",
+   "status": "flagged",
+   "note": "User chose full title Fatal Fury. Menu abbreviation still needs a fit-safe localization decision."
+  },
+  {
+   "key": "s027",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[19] Doki St.",
+   "en": "[19] Doki St.",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s028",
+   "scene": "Minigame menu",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1E]W.Rollin ",
+   "en": "[1E]W.Rollin ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s029",
+   "scene": "Minigame menu",
+   "maxw": 8,
+   "lines": 1,
+   "draft": " [1B]V.OFF  ",
+   "en": " [1B]V.OFF  ",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s050",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＳＣＯＲＥ",
+   "en": "ＳＣＯＲＥ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s051",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＴＩＭＥ",
+   "en": "ＴＩＭＥ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s052",
+   "scene": "HUD & labels",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "ＨＩＳＣＯＲＥ",
+   "en": "ＨＩＳＣＯＲＥ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s053",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "ＤＡＮＧＥＲ",
+   "en": "ＤＡＮＧＥＲ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s054",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "ＨＵＮＧＲＹ",
+   "en": "ＨＵＮＧＲＹ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s055",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＲＥＳＴ",
+   "en": "ＲＥＳＴ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s056",
+   "scene": "HUD & labels",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "ＧＡＭＥ ＯＶＥＲ",
+   "en": "ＧＡＭＥ ＯＶＥＲ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s057",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "ＳＨＩＥＬＤ",
+   "en": "ＳＨＩＥＬＤ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s058",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＢＥＡＭ",
+   "en": "ＢＥＡＭ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s059",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＮＥＸＴ",
+   "en": "ＮＥＸＴ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s060",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＬＩＦＥ",
+   "en": "ＬＩＦＥ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s061",
+   "scene": "HUD & labels",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "ＧＡＳＰＯＷＥＲ",
+   "en": "ＧＡＳＰＯＷＥＲ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s062",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "ＤＲＡＧＯＮ",
+   "en": "ＤＲＡＧＯＮ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s063",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＴＩＧＥＲ",
+   "en": "ＴＩＧＥＲ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s064",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＣＯＯＬ",
+   "en": "ＣＯＯＬ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s065",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＦＬＯＯＲ",
+   "en": "ＦＬＯＯＲ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s066",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＴＵＲＮ",
+   "en": "ＴＵＲＮ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s067",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "ＩＴＥＭ",
+   "en": "ＩＴＥＭ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s068",
+   "scene": "HUD & labels",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "ＲＯＵＬＥＴＴＥ",
+   "en": "ＲＯＵＬＥＴＴＥ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s069",
+   "scene": "HUD & labels",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Summer 1576",
+   "en": "Summer 1576",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s070",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Home",
+   "en": "Home",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s071",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Might",
+   "en": "Might",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s072",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Defense",
+   "en": "Def",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s073",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Stability",
+   "en": "Stablty",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s074",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Grit",
+   "en": "Grit",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s075",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Hair",
+   "en": "Hair",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s076",
+   "scene": "HUD & labels",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "Dimples",
+   "en": "Dimpl",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s077",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "Calves",
+   "en": "Calves",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s078",
+   "scene": "HUD & labels",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "Loans",
+   "en": "Debt",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s079",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Purpose",
+   "en": "Prpose",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s080",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Worry",
+   "en": "Worry",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s081",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Modesty",
+   "en": "Modest",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s082",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Tantrums",
+   "en": "Petty",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s083",
+   "scene": "HUD & labels",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Wabi-sabi",
+   "en": "Class",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s084",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＳＴＡＧＥ",
+   "en": "ＳＴＡＧＥ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s085",
+   "scene": "HUD & labels",
+   "maxw": 1,
+   "lines": 1,
+   "draft": "Ｍ",
+   "en": "Ｍ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s086",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＣＬＥＡＲ",
+   "en": "ＣＬＥＡＲ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s087",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＲＥＡＤＹ",
+   "en": "ＲＥＡＤＹ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s088",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＧＯ   ",
+   "en": "ＧＯ   ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s089",
+   "scene": "HUD & labels",
+   "maxw": 1,
+   "lines": 1,
+   "draft": "Ｏ",
+   "en": "Ｏ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s090",
+   "scene": "HUD & labels",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "ＲＥＳＴ ＬＩＦＥ",
+   "en": "ＲＥＳＴ ＬＩＦＥ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s091",
+   "scene": "HUD & labels",
+   "maxw": 1,
+   "lines": 1,
+   "draft": "Ｐ",
+   "en": "Ｐ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s092",
+   "scene": "HUD & labels",
+   "maxw": 1,
+   "lines": 1,
+   "draft": "Ｅ",
+   "en": "Ｅ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s093",
+   "scene": "HUD & labels",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "ＷＩＮ",
+   "en": "ＷＩＮ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s094",
+   "scene": "HUD & labels",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "No data found.",
+   "en": "No data found.",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s095",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＳＴＡＲＴ",
+   "en": "ＳＴＡＲＴ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s096",
+   "scene": "HUD & labels",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "ＬＥＶＥＬ",
+   "en": "ＬＥＶＥＬ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s097",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 10%  ",
+   "en": "[1F] 10%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s098",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 20%  ",
+   "en": "[1F] 20%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s099",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 30%  ",
+   "en": "[1F] 30%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s100",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 40%  ",
+   "en": "[1F] 40%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s101",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 50%  ",
+   "en": "[1F] 50%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s102",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 60%  ",
+   "en": "[1F] 60%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s103",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 70%  ",
+   "en": "[1F] 70%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s104",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1E] 80%  ",
+   "en": "[1E] 80%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s105",
+   "scene": "HUD & labels",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "[1F] 90%  ",
+   "en": "[1F] 90%  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s106",
+   "scene": "Save / load",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Save the game?\nYES  NO",
+   "en": "Save game?\nYES  NO",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s107",
+   "scene": "Save / load",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Load the game?\nYES  NO",
+   "en": "Load game?\nYES  NO",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s108",
+   "scene": "Save / load",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Please try saving\nagain.",
+   "en": "Please save\nagain.",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s109",
+   "scene": "Save / load",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Please try loading\nagain.",
+   "en": "Please load\nagain.",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s110",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "1 Neopoke-kun",
+   "en": "1 Neopoke-kun",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s111",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     26",
+   "en": "Age     26",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s112",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Factory",
+   "en": "Job Factory",
+   "status": "flagged",
+   "note": "Factory worker is a better translation of 工員 than Factory; still requires user review."
+  },
+  {
+   "key": "s113",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 200",
+   "en": "Income 200",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s114",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Games",
+   "en": "Hobby Games",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s115",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Babyface",
+   "en": "Appeal Babyface",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s116",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "I'm a bit timid. Lookin'\nfor someone to lead me!",
+   "en": "I'm a bit shy. Lookin'\nfor someone to lead me!",
+   "status": "approved",
+   "note": "USER APPROVED: Shy rather than timid (dating profile)."
+  },
+  {
+   "key": "s117",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "2 Mr.Gonbuto",
+   "en": "2 Mr.Noodle",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 11 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s118",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     33",
+   "en": "Age     33",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s119",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job  Dancer",
+   "en": "Job  Dancer",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s120",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 300",
+   "en": "Income 300",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s121",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Drive",
+   "en": "Hobby Drive",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s122",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal 2nd son",
+   "en": "Appeal No duties",
+   "status": "approved",
+   "note": "User preferred 'Few responsibilities' (for second son), alternative '2nd son'. Investigate actual usable Appeal text width before replacing; keep current en until then. | OPEN ITEM: Few responsibilities vs 2nd son still pending; do not replace existing English automatically. | USER APPROVED: Few duties for ジナン / second-son implication. Prior Few responsibilities superseded. In-game fit not verified. | FIT CHECK: approximate half-width max 16, actual longest line 17; do not rewrite user-approved text without review."
+  },
+  {
+   "key": "s123",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Let's go see the city\nlights in my car.",
+   "en": "Let's go see the city\nlights in my car.",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s124",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "3 Mr.Laid-off",
+   "en": "3 Mr.Laidoff",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). The name Mr. Laidoff is a PROVISIONAL user preference; confirm later. FIT CHECK: widest line 12 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s125",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     36",
+   "en": "Age     36",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s126",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job  Jobless",
+   "en": "Job  Jobless",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s127",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income 30",
+   "en": "Income 30",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s128",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Parties",
+   "en": "Hobby Parties",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s129",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal None",
+   "en": "Appeal None",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s130",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Lookin' for someone to\nheal my broken heart.",
+   "en": "Looking for someone to\nheal my broken heart.",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s131",
+   "scene": "Dating profiles",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "4 Ms.Bunny",
+   "en": "4 Ms.Bunny",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s132",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     29",
+   "en": "Age     29",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s133",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job  Writer",
+   "en": "Job  Writer",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s135",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Peeping",
+   "en": "Hobby Voyeurism",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s136",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Cool",
+   "en": "Appeal Cool",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s137",
+   "scene": "Dating profiles",
+   "maxw": 5,
+   "lines": 1,
+   "draft": ".....",
+   "en": ".....",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s138",
+   "scene": "Dating profiles",
+   "maxw": 11,
+   "lines": 1,
+   "draft": "5 Ms.Black Bunny",
+   "en": "5 Ms.Black Bunny",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s140",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Pachi-pro",
+   "en": "Job Gambler",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). Gambler chosen rather than narrower professional pachinko player. Width pending. FIT CHECK: widest line 11 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s141",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 500",
+   "en": "Income 500",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s142",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby SM  ",
+   "en": "Hobby S/M",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 9 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s143",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Nihilist",
+   "en": "Appeal Cynical",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 14 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s145",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "6 Mr.DuCaprio",
+   "en": "6 Mr.DuCaprio",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 13 ASCII characters, source maxw=10; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s146",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     35",
+   "en": "Age     35",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s147",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Part-time",
+   "en": "Job Part-time",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s149",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Karate",
+   "en": "Hobby Karate",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s150",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Foreigner",
+   "en": "Appeal Foreigner",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s151",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "OH! GEISHA LOVE LOVE,\nNICE TO MEET YOU!",
+   "en": "OH! GEISHA SOOKEE!\nYOROWSHEEKOO NAY!",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User selected phonetic English. Japanese repeats スキ twice; user has not decided whether to repeat 'SOOKEE'. FIT CHECK: widest line 18 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s152",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "7 Ms.Childbride",
+   "en": "7 Ms.Childbride",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=9; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s153",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     ♥♥",
+   "en": "Age     ♥♥",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s154",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Housewife",
+   "en": "Job Housewife",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s155",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income ♥♥",
+   "en": "Income ♥♥",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s156",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Pachinko",
+   "en": "Hobby Pachinko",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s157",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Married",
+   "en": "Appeal Married",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s158",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Please soothe my\nburning body♥",
+   "en": "Please soothe my\nburning body♥",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s159",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "8 Ms.Catherine",
+   "en": "8 Ms.Catherine",
+   "status": "flagged",
+   "note": "Ms. Catherine name is provisional; age 3 and possible animal identity need contextual visual confirmation."
+  },
+  {
+   "key": "s160",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     3",
+   "en": "Age     3",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s161",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job   Poop",
+   "en": "Job Pooping",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 11 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s162",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income ?",
+   "en": "Income ?",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s163",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Poop",
+   "en": "Hobby Pooping",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 13 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s164",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Fair-skin",
+   "en": "Appeal Fair skin",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 16 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s165",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "Whiiine.....",
+   "en": "Awoooo....",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s166",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "9 Basic No.1",
+   "en": "9 Basic No.1",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s167",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     42",
+   "en": "Age     42",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s168",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Comedian",
+   "en": "Job Comedian",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s169",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income 10",
+   "en": "Income 10",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s170",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Baseball",
+   "en": "Hobby Baseball",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s171",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Funny",
+   "en": "Appeal Funny",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s172",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Let's build a home\nfull of laughter!",
+   "en": "Let's build a home\nfull of laughter!",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s173",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "10 Basic No.2",
+   "en": "10 Basic No.2",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s174",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     41",
+   "en": "Age     41",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s176",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income 8",
+   "en": "Income 8",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s177",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Marathon",
+   "en": "Hobby Marathon",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s179",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Don't you wanna be a\nstar's wife?",
+   "en": "Wanna marry\na star?",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s180",
+   "scene": "Dating profiles",
+   "maxw": 11,
+   "lines": 1,
+   "draft": "11 Mr.Zuratraman",
+   "en": "11 Urethraman",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). Approved Urethraman word/name; 'Mr.' prefix was not separately decided. Numbering/title formatting and fit remain to check. FIT CHECK: widest line 13 ASCII characters, source maxw=11; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s181",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age 10,000",
+   "en": "Age 10,000",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s182",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job   Hero",
+   "en": "Job   Hero",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s183",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income None",
+   "en": "Income None",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s184",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Poetry",
+   "en": "Hobby Poetry",
+   "status": "flagged",
+   "note": "詩吟 specifically means stylized Japanese poetry chanting; Poetry may be too vague. Proposed 'Poetry chanting' remains UNAPPROVED. | OPEN ITEM: Poetry chanting vs Poetry still pending."
+  },
+  {
+   "key": "s185",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Stamina",
+   "en": "Appeal Prowess",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 14 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s186",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "I do good work!",
+   "en": "I will fulfill my duty!",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User chose the full line verbatim. Do not shorten without permission; this single-line profile box almost certainly requires a layout solution. FIT CHECK: widest line 23 ASCII characters, source maxw=9; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s187",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "12 Zuratra Seven",
+   "en": "12 UrethraSeven",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). Approved one-word UrethraSeven; name-field fit pending. FIT CHECK: widest line 15 ASCII characters, source maxw=10; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s193",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Nice shot! Nice\nswing!",
+   "en": "Nice shot!\nNice in!",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s194",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "13 Mr.Max",
+   "en": "13 Mr.Max",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s195",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     48",
+   "en": "Age     48",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s196",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job    Dam",
+   "en": "Job    Dam",
+   "status": "flagged",
+   "note": "Job 'Dam' is literal but odd; user did not approve a change. Investigate character's visual joke. | OPEN ITEM: Job Dam literal but may be visual gag."
+  },
+  {
+   "key": "s197",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 100",
+   "en": "Income 100",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s198",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby String",
+   "en": "Hobby String",
+   "status": "flagged",
+   "note": "Hobby あやとり means cat's cradle. Proposed 'Cat's cradle' remains UNAPPROVED pending user choice and width. | OPEN ITEM: Cat's cradle proposed, not approved."
+  },
+  {
+   "key": "s199",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Big nose",
+   "en": "Appeal Big nose",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s200",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Seeking someone who'll\nlive with my parents.",
+   "en": "Want someone who'll\nlive with my parents.",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User confirmed retain original matter-of-fact tone, not stern 'Must'. FIT CHECK: widest line 22 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s201",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "14 Mr.Onoda",
+   "en": "14 Mr.Onoda",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 11 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s202",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Age    100",
+   "en": "Age    100",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s203",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job  Jobless",
+   "en": "Job  Jobless",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s205",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Karaoke",
+   "en": "Hobby Karaoke",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s206",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Immortal",
+   "en": "Appeal Immortal",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s207",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Any woman's fine by\nme.",
+   "en": "Any woman will do.",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 18 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s208",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "15 Mr.Omen Rider",
+   "en": "15 Mr.Omen Rider",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s209",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     21",
+   "en": "Age     21",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s210",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Handyman",
+   "en": "Job Handyman",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s212",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Reading",
+   "en": "Hobby Reading",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s213",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Handy",
+   "en": "Appeal Handy",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s214",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "I'll always be useful!",
+   "en": "You can count on me!",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 20 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s215",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "16 Mr.Fun Friend",
+   "en": "16 Mr.Playtime Pal",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User approved 'Mr Playtime Pal'; punctuation/number formatted to match data. Confirm rendering. FIT CHECK: widest line 18 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s216",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     16",
+   "en": "Age     16",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s217",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job   Slide",
+   "en": "Job Slide",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User specifically said KEEP Slide; use 'Playground Slide' ONLY if it fits. Do not silently substitute. FIT CHECK: widest line 9 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s219",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Handstand",
+   "en": "Hobby Handstand",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s220",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Big butt",
+   "en": "Appeal Big butt",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s221",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "Paooooooo.....",
+   "en": "Pah-rooooo...",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 13 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s222",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "17 Mr.Multiply",
+   "en": "17 Mr.Multiply",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 14 ASCII characters, source maxw=10; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s223",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     ?",
+   "en": "Age     ?",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 9 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s224",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job    ?",
+   "en": "Job    ?",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s226",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby ?",
+   "en": "Hobby ?",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s227",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal ?",
+   "en": "Appeal ?",
+   "status": "edited",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent)."
+  },
+  {
+   "key": "s229",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "18 Mr.Lookalike",
+   "en": "18 Mr.Lookalike",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=9; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s236",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "19 Mr.Kamekichi",
+   "en": "19 Mr.Turtholomeus",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User explicitly chose Mr Turtholomeus IF IT FITS. If it does not fit, return to user; do not auto-substitute. FIT CHECK: widest line 18 ASCII characters, source maxw=9; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s237",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     30",
+   "en": "Age     30",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s238",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Cashier",
+   "en": "Job Cashier",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s239",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 150",
+   "en": "Income 150",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s240",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Egglaying",
+   "en": "Hobby Egg-laying",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 16 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s241",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Diligent",
+   "en": "Appeal Diligent",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s242",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Divorced once. Flashy\nbut want a serious mate.",
+   "en": "Divorced. I'd like \nyou flashy but serious.",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User chose second sentence and accepted complete message with divorce reference. Verify two-line fit. FIT CHECK: widest line 36 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s243",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "20 Ms.Fujimineko",
+   "en": "20 Ms.Fuji Mineko",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 17 ASCII characters, source maxw=10; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s244",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     27",
+   "en": "Age     27",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 10 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s245",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Hostess",
+   "en": "Job Hostess",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 11 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s246",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 1800",
+   "en": "Income 1800",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 11 ASCII characters, source maxw=9; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s247",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Missiles",
+   "en": "Hobby Missiles",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 14 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s248",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Busty",
+   "en": "Appeal Busty",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 12 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s249",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "I'll make you melt\nfor me♥",
+   "en": "I'll make you fall\nfor me♥",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User approved the idiomatic wording; line break is provisional pending fit. FIT CHECK: widest line 18 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s250",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "21 Mr.Freeloader",
+   "en": "21 Mr.Useless",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 13 ASCII characters, source maxw=10; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s252",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Umbrellas",
+   "en": "Job UmbrllMaker",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). Use Umbrella Maker, the actual kasahari craft; character is angry samurai, allusion to poor ronin umbrella pasting. Verify fit. FIT CHECK: widest line 18 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s253",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income 50",
+   "en": "Income 50",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 9 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s254",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Griping",
+   "en": "Hobby Complaining",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 17 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s255",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Positive",
+   "en": "Appeal Positive",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s256",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "I know I'm like this,\nbut let's be friends 1st",
+   "en": "I may not be much,\nbut let's be friends.",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 27 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s257",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "22 Mr.Deserter",
+   "en": "22 Mr.Ninja Deserter",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User selected Mr Ninja Deserter. Verify name-field fit. FIT CHECK: widest line 20 ASCII characters, source maxw=9; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s258",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     22",
+   "en": "Age     22",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s259",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Deserter",
+   "en": "Job NinjaDserter",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 18 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s260",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income None",
+   "en": "Income None",
+   "status": "flagged",
+   "note": "Japanese source reads ネンショウ (rather than ネンシュウ) for Income; likely source typo, don't change JP."
+  },
+  {
+   "key": "s261",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Decoys",
+   "en": "Hobby Decoy Tricks",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 18 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s262",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Runaway",
+   "en": "Appeal Cowardly",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s263",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Please run away\nwith me.",
+   "en": "Please run away\nwith me.",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 15 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s264",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "23 Mr.Perv Kappa",
+   "en": "23 Mr.Perv Kappa",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User approved name Mr. Perv Kappa after review. FIT CHECK: widest line 16 ASCII characters, source maxw=10; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s265",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     25",
+   "en": "Age     25",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 10 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s266",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Civil srv",
+   "en": "Job CivlServant",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 17 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s267",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 450",
+   "en": "Income 450",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 10 ASCII characters, source maxw=9; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s268",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Snaps",
+   "en": "Hobby Photography",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 17 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s269",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Outie",
+   "en": "Appeal Outie",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 12 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s270",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "I'll provide the\ncostumes.",
+   "en": "I'll provide the\ncostumes.",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 16 ASCII characters, source maxw=12; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s271",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "24 Mr.Bigmouth",
+   "en": "24 Mr.Bigmouth",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s272",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     15",
+   "en": "Age     15",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s273",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Student",
+   "en": "Job Student",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s275",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby AV  ",
+   "en": "Hobby Adult Video",
+   "status": "flagged",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User said Adult Video, or Porn IF it doesn't fit. Keep Adult Video primary until in-game check; do not choose fallback silently. FIT CHECK: widest line 17 ASCII characters, source maxw=8; half-width font may help but must test actual field."
+  },
+  {
+   "key": "s276",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Wild",
+   "en": "Appeal Wild",
+   "status": "todo",
+   "note": ""
+  },
+  {
+   "key": "s277",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Anga, aga aga aga..\n...",
+   "en": "Anga, aga aga aga..\n...",
+   "status": "flagged",
+   "note": "Anga, aga aga aga... is crocodile-like vocalization; user has NOT yet approved final English transcription. | OPEN ITEM: Croco vocalization not explicitly approved: Anga, aga aga aga... needs decision."
+  },
+  {
+   "key": "s278",
+   "scene": "Dating profiles",
+   "maxw": 11,
+   "lines": 1,
+   "draft": "25 Ms.Takeout",
+   "en": "25 Ms. Bring-Home",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s280",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Souvenir",
+   "en": "Job Souvenir",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s281",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Income 5",
+   "en": "Income 5",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s282",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Puzzles",
+   "en": "Hobby Puzzles",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s283",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Lolicon",
+   "en": "Appeal Lolicon",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s284",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "Mee mee mee......",
+   "en": "Mee mee mee...",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s285",
+   "scene": "Dating profiles",
+   "maxw": 11,
+   "lines": 1,
+   "draft": "26 Mr.Rocketman",
+   "en": "26 Mr. Rocketman",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s287",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Stuntman",
+   "en": "Job Stuntman",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s289",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Challenges",
+   "en": "Hobby Challenges",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s290",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Healthy",
+   "en": "Appeal Healthy",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s291",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Let's live thrilling\ndays together!",
+   "en": "Let's have exciting\ndays together!",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s292",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "27 Mr.Knightrider",
+   "en": "27 Mr. Knight Rider",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s293",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     23",
+   "en": "Age     23",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s296",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Metal",
+   "en": "Hobby Heavy Metal",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 17, estimated half-width capacity 16. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s297",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Heir",
+   "en": "Appeal Heir",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s298",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Come back home to\nGunma with me!",
+   "en": "Please come back\nto Gunma with me.",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s299",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "28 Mr.G-Man",
+   "en": "28 Mr. G-Man",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s301",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job  G-Man",
+   "en": "Job G-Man",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s302",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 700",
+   "en": "Income 700",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s303",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Work",
+   "en": "Hobby Work",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s304",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Half",
+   "en": "Appeal Mixed blood",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 21, estimated half-width capacity 16. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s305",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "I'll show you my\nbig magnum.",
+   "en": "Behold my mighty\nMagnum!",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s306",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "29 Mr.Culture Ctr",
+   "en": "29 Mr. As Seen On TV",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s308",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Mailorder",
+   "en": "Job Mail Order",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s309",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 600",
+   "en": "Income 600",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s310",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Pruning",
+   "en": "Hobby Pruning",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s311",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Cheap",
+   "en": "Appeal Cheap",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s312",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Snip snip, snip snip,\nsnippity-snip (dead joke)",
+   "en": "Snip snip, snip snip,\nsnippity-snip (old joke)",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | FIT CHECK: 2 lines (limit 2); longest ASCII-width line 25, estimated half-width capacity 24. Preserve user-selected wording until tested. | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s313",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "30 Mr.Swiss",
+   "en": "30 Mr. Swiss",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s314",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age    300",
+   "en": "Age    300",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s315",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Echo",
+   "en": "Job Echo",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s317",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Skiing",
+   "en": "Hobby Skiing",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s318",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Landowner",
+   "en": "Appeal Wealthy",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s319",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "Paaa papa paaaaaaa",
+   "en": "Paaa, pa-paaaaaaa!",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s320",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "31 Mr.Elegance",
+   "en": "31 Mr. Elegance",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s321",
+   "scene": "Dating profiles",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "Age     50",
+   "en": "Age     50",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s322",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Busker",
+   "en": "Job Water Spout",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s324",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Haiku",
+   "en": "Hobby Haiku",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s325",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Fresh",
+   "en": "Appeal Refreshing",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 17, estimated half-width capacity 16. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s326",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "Trickle trickle...",
+   "en": "Trickle, trickle...",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s327",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "32 Mr.Tuna",
+   "en": "32 Mr. Tuna",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s328",
+   "scene": "Dating profiles",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "Age     10",
+   "en": "Age     10",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s329",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Frozen",
+   "en": "Job Frozen",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s331",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Gaping",
+   "en": "Hobby Gaping",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s332",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Fresh",
+   "en": "Appeal Fresh",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s333",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "Gape gape gape gape...",
+   "en": "Gape, gape, gape, gape...",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 25, estimated half-width capacity 24. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s334",
+   "scene": "Dating profiles",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "33 Mr.Snakeworks",
+   "en": "33 Mr. Black Snake",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s336",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Fake snake",
+   "en": "Job Fake Snake",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s338",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Boogers",
+   "en": "Hobby Boogers",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s339",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Mystery",
+   "en": "Appeal Mystery",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s340",
+   "scene": "Dating profiles",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "Slither slither...",
+   "en": "Slither, slither...",
+   "status": "approved",
+   "note": "USER APPROVED: Profile reviewed and accepted, including unchanged draft fields | USER APPROVED: Exact selection from review"
+  },
+  {
+   "key": "s341",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "34 Ms.Jane",
+   "en": "34 Ms. Jane",
+   "status": "approved",
+   "note": "USER APPROVED: Profile 34 fully approved"
+  },
+  {
+   "key": "s342",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Age     1",
+   "en": "Age     1",
+   "status": "approved",
+   "note": "USER APPROVED: Profile 34 fully approved"
+  },
+  {
+   "key": "s343",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Job Tornado",
+   "en": "Job Tornado",
+   "status": "approved",
+   "note": "USER APPROVED: Profile 34 fully approved"
+  },
+  {
+   "key": "s344",
+   "scene": "Dating profiles",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Income 800",
+   "en": "Income 800",
+   "status": "approved",
+   "note": "USER APPROVED: Profile 34 fully approved"
+  },
+  {
+   "key": "s345",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Hobby Twist",
+   "en": "Hobby Twist",
+   "status": "approved",
+   "note": "USER APPROVED: Profile 34 fully approved"
+  },
+  {
+   "key": "s346",
+   "scene": "Dating profiles",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Appeal Shy",
+   "en": "Appeal Modest",
+   "status": "approved",
+   "note": "USER APPROVED: Profile 34 fully approved"
+  },
+  {
+   "key": "s347",
+   "scene": "Dating profiles",
+   "maxw": 11,
+   "lines": 1,
+   "draft": "Oh noooo (not really)",
+   "en": "Noooo! (Just kidding)",
+   "status": "approved",
+   "note": "USER APPROVED: Profile 34 fully approved"
+  },
+  {
+   "key": "s348",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Oh! My heart is\nsuddenly pounding♥",
+   "en": "Eek! \nMy heart's racing♥",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s349",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Rock, paper...",
+   "en": "Rock,paper,scissors...",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 24, estimated half-width capacity 16. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s350",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "Scissors!",
+   "en": "Shoot!",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s351",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 7,
+   "lines": 1,
+   "draft": "Tie... again...",
+   "en": "Tie! Again...",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s352",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "Shoot!",
+   "en": "Shoot!",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s353",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Look over...",
+   "en": "Look that way...",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s354",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "There!",
+   "en": "Go!",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s355",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 5,
+   "lines": 1,
+   "draft": "Yay!",
+   "en": "Yay!",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s356",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 7,
+   "lines": 2,
+   "draft": "Oh no!\nI lost♥",
+   "en": "Nooo!\nI lost♥",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s357",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 10,
+   "lines": 2,
+   "draft": "No fair! You went\nlate! Hmph!",
+   "en": "No fair! You threw\nlate! Hmph!",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s358",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "My heart's still racing\nNever felt like this...",
+   "en": "My heart's still racing.\nI've never felt like this...",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed | FIT CHECK: 2 lines (limit 2); longest ASCII-width line 28, estimated half-width capacity 24. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s359",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "Amazing! First time\never! Unbelievable!",
+   "en": "Wow! I've never done this\nbefore! Unbelievable!",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed | FIT CHECK: 2 lines (limit 2); longest ASCII-width line 25, estimated half-width capacity 24. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s360",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 11,
+   "lines": 2,
+   "draft": "As a reward, I'll give\nyou something precious",
+   "en": "As a reward, I'll give\nyou something precious.",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed | FIT CHECK: 2 lines (limit 2); longest ASCII-width line 23, estimated half-width capacity 22. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s361",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 12,
+   "lines": 2,
+   "draft": "But first, I should\ntell you... I'm....",
+   "en": "But first, I should\ntell you... I'm...",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s362",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 12,
+   "lines": 1,
+   "draft": "A GUYYYYYYYYYYYYYY!",
+   "en": "I'm a MAAAAAN!",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s363",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 11,
+   "lines": 2,
+   "draft": "Let's meet again!\nCan't wait♥",
+   "en": "Let's meet again!\nCan't wait♥",
+   "status": "approved",
+   "note": "USER APPROVED: Exact/accepted date-dialogue wording; text-width test may be needed"
+  },
+  {
+   "key": "s364",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "ＧＥＴ",
+   "en": "ＧＥＴ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s365",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "ＳＵＢＪＥＣＴ！ ",
+   "en": "ＳＵＢＪＥＣＴ！ ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s366",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "ＳＵＢＪＥＣＴＳ！",
+   "en": "ＳＵＢＪＥＣＴＳ！",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s367",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 17,
+   "lines": 1,
+   "draft": "[1C]    ＧＡＭＥ ＣＬＥＡＲ！  ",
+   "en": "[1C]    ＧＡＭＥ ＣＬＥＡＲ！  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s368",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 17,
+   "lines": 1,
+   "draft": "[1C]    ＹＯＵ ＡＲＥ ＴＨＥ  ",
+   "en": "[1C]    ＹＯＵ ＡＲＥ ＴＨＥ  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s369",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 21,
+   "lines": 1,
+   "draft": "ＧＲＥＡＴＥＳＴ\"ＲＯＣＫＥＴＭＡＮ\"！ ",
+   "en": "ＧＲＥＡＴＥＳＴ\"ＲＯＣＫＥＴＭＡＮ\"！ ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s370",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 21,
+   "lines": 1,
+   "draft": " ＹＯＵＲ ＣＬＥＡＲ ＴＩＭＥ ＩＳ  ",
+   "en": " ＹＯＵＲ ＣＬＥＡＲ ＴＩＭＥ ＩＳ  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s371",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "[1C]ＴＨＡＮＫ ＹＯＵ ＶＥＲＹ ＭＵＣＨ ",
+   "en": "[1C]ＴＨＡＮＫ ＹＯＵ ＶＥＲＹ ＭＵＣＨ ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s372",
+   "scene": "Rock-paper-scissors date",
+   "maxw": 18,
+   "lines": 1,
+   "draft": "    ＦＯＲ ＰＬＡＹＩＮＧ.  ",
+   "en": "    ＦＯＲ ＰＬＡＹＩＮＧ.  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s373",
+   "scene": "Mr. Yabou",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Mr.Yabou     ",
+   "en": "Mr. Ambition",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Existing user-approved mini-game title; character-name field not separately confirmed | OPEN ITEM: Name field proposal based on minigame title, not explicitly separately approved."
+  },
+  {
+   "key": "s374",
+   "scene": "Mr. Yabou",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Tokugawa Ieyasu",
+   "en": "Tokugawa",
+   "status": "approved",
+   "note": "USER APPROVED: Historical Japanese name explicitly approved"
+  },
+  {
+   "key": "s375",
+   "scene": "Mr. Yabou",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Hashiba Hideyoshi",
+   "en": "Hashiba",
+   "status": "approved",
+   "note": "USER APPROVED: Historical Japanese name explicitly approved"
+  },
+  {
+   "key": "s376",
+   "scene": "Mr. Yabou",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Takeda Shingen ",
+   "en": "Takeda",
+   "status": "approved",
+   "note": "USER APPROVED: Historical Japanese name explicitly approved"
+  },
+  {
+   "key": "s377",
+   "scene": "Mr. Yabou",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Uesugi Kenshin",
+   "en": "Uesugi Kenshin",
+   "status": "approved",
+   "note": "USER APPROVED: Historical Japanese name explicitly approved"
+  },
+  {
+   "key": "s378",
+   "scene": "Mr. Yabou",
+   "maxw": 9,
+   "lines": 1,
+   "draft": "Date Masamune  ",
+   "en": "Date",
+   "status": "approved",
+   "note": "USER APPROVED: Historical Japanese name explicitly approved"
+  },
+  {
+   "key": "s379",
+   "scene": "Mr. Yabou",
+   "maxw": 14,
+   "lines": 1,
+   "draft": "Left/Right: choose",
+   "en": "L/R: Select Character",
+   "status": "approved",
+   "note": "USER APPROVED: Explicitly chosen for NGPC directional-stick selection"
+  },
+  {
+   "key": "s380",
+   "scene": "Mr. Yabou",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "ＳＨＯＴ  ",
+   "en": "ＳＨＯＴ  ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s381",
+   "scene": "Mr. Yabou",
+   "maxw": 6,
+   "lines": 1,
+   "draft": "  ＯＫ！ ",
+   "en": "  ＯＫ！ ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s382",
+   "scene": "Mr. Yabou",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "ＦＩＮ",
+   "en": "ＦＩＮ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s383",
+   "scene": "Mr. Yabou",
+   "maxw": 2,
+   "lines": 1,
+   "draft": "ＨＰ",
+   "en": "ＨＰ",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s384",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Demon",
+   "en": "Demon",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s385",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Djinn",
+   "en": "Djinn",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s386",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Golem",
+   "en": "Golem",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s387",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Archfiend",
+   "en": "A.fiend",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 9, estimated half-width capacity 8. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s388",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Slime",
+   "en": "Slime",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s389",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Angel",
+   "en": "Angel",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s390",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Lizard",
+   "en": "Lizard",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s391",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Zombie",
+   "en": "Zombie",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s392",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "D.Knight",
+   "en": "DKngt",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s393",
+   "scene": "D&DQ",
+   "maxw": 4,
+   "lines": 1,
+   "draft": "Orc",
+   "en": "Orc",
+   "status": "approved",
+   "note": "USER APPROVED: Monster-name set explicitly approved; D.Knight identification remains an optional visual check"
+  },
+  {
+   "key": "s394",
+   "scene": "D&DQ",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "ＡＴ：",
+   "en": "ＡＴ：",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s395",
+   "scene": "D&DQ",
+   "maxw": 3,
+   "lines": 1,
+   "draft": "ＤＦ：",
+   "en": "ＤＦ：",
+   "status": "english",
+   "note": ""
+  },
+  {
+   "key": "s396",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "   For various reasons    ",
+   "en": "For some reason,",
+   "status": "approved",
+   "note": "USER APPROVED: Explicitly approved instead of For various reasons"
+  },
+  {
+   "key": "s397",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "The hero beat the archfiend.",
+   "en": "the hero defeated the Archfiend.",
+   "status": "approved",
+   "note": "USER APPROVED: Remaining RPG ending approved"
+  },
+  {
+   "key": "s398",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "  No amazing 3D CG          ",
+   "en": "With no spectacular 3D CG",
+   "status": "approved",
+   "note": "USER APPROVED: Approved RPG self-parody"
+  },
+  {
+   "key": "s399",
+   "scene": "D&DQ",
+   "maxw": 19,
+   "lines": 1,
+   "draft": " [1C]and no epic drama either  ",
+   "en": "[1C]or epic storyline,",
+   "status": "approved",
+   "note": "USER APPROVED: Keep original [1C] screen-position token"
+  },
+  {
+   "key": "s400",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "     5-3-5-4!              ",
+   "en": "4.5/10! 2/10! 1/5!",
+   "status": "approved",
+   "note": "USER APPROVED: Explicit Westernized review-score choice; do not restore 5-3-5-4"
+  },
+  {
+   "key": "s401",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "   No \"Recommended!\" either.",
+   "en": "Not even a \"Recommended!\"",
+   "status": "approved",
+   "note": "USER APPROVED: Rest of ending approved"
+  },
+  {
+   "key": "s402",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "\"What if next door's Platinum?\"",
+   "en": "\"They got Universal Acclaim?\"",
+   "status": "approved",
+   "note": "USER APPROVED: Explicit Western review terminology; intentionally not shortened, likely overflows | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 55, estimated half-width capacity 40. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s403",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "   ...is what he'll fret.  ",
+   "en": "Would anyone worry about that?",
+   "status": "approved",
+   "note": "USER APPROVED: Explicitly approved"
+  },
+  {
+   "key": "s404",
+   "scene": "D&DQ",
+   "maxw": 19,
+   "lines": 1,
+   "draft": " [1C]Since then, the hero     ",
+   "en": "[1C]No one ever saw the",
+   "status": "approved",
+   "note": "USER APPROVED: Keep original [1C] screen-position token"
+  },
+  {
+   "key": "s405",
+   "scene": "D&DQ",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "    has not been seen...    ",
+   "en": "hero again...",
+   "status": "approved",
+   "note": "USER APPROVED: Rest of ending approved"
+  },
+  {
+   "key": "s407",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "A.D. 2064...  ",
+   "en": "A.D. 2064...",
+   "status": "approved",
+   "note": "USER APPROVED: Shooter introduction approved"
+  },
+  {
+   "key": "s408",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "Unceasing    ",
+   "en": "Unceasing",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: Unceasing technological progress brought humanity great benefits."
+  },
+  {
+   "key": "s409",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "technological",
+   "en": "technological",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: Unceasing technological progress brought humanity great benefits."
+  },
+  {
+   "key": "s410",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "progress gave",
+   "en": "progress brought",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: Unceasing technological progress brought humanity great benefits."
+  },
+  {
+   "key": "s411",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "mankind great",
+   "en": "humanity great",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: Unceasing technological progress brought humanity great benefits."
+  },
+  {
+   "key": "s412",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "blessings.   ",
+   "en": "benefits.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: Unceasing technological progress brought humanity great benefits."
+  },
+  {
+   "key": "s413",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "Conflicts    ",
+   "en": "Conflicts",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: Conflicts dwindled, and everyone believed lasting peace had come."
+  },
+  {
+   "key": "s414",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "dwindled, and",
+   "en": "dwindled,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: Conflicts dwindled, and everyone believed lasting peace had come."
+  },
+  {
+   "key": "s415",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "all were sure",
+   "en": "and everyone",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: Conflicts dwindled, and everyone believed lasting peace had come."
+  },
+  {
+   "key": "s416",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "a lasting    ",
+   "en": "believed lasting",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: Conflicts dwindled, and everyone believed lasting peace had come."
+  },
+  {
+   "key": "s417",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "peace had come.",
+   "en": "peace had come.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: Conflicts dwindled, and everyone believed lasting peace had come."
+  },
+  {
+   "key": "s418",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "But the tale ",
+   "en": "But without warning,",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 1/3 of: But without warning, the curtain rose on a new era of war...; Assistant chose theatrical option after ambiguous yes; confirm this phrasing later"
+  },
+  {
+   "key": "s419",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "of war began ",
+   "en": "the curtain rose on",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 2/3 of: But without warning, the curtain rose on a new era of war...; Assistant chose theatrical option after ambiguous yes; confirm this phrasing later"
+  },
+  {
+   "key": "s420",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "anew, unannounced...",
+   "en": "a new era of war...",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 3/3 of: But without warning, the curtain rose on a new era of war...; Assistant chose theatrical option after ambiguous yes; confirm this phrasing later"
+  },
+  {
+   "key": "s421",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "From planet  ",
+   "en": "From the planet",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/4 of: From the planet Delphi came aliens wielding mobile weapons."
+  },
+  {
+   "key": "s422",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "<Delphi> came",
+   "en": "Delphi came",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/4 of: From the planet Delphi came aliens wielding mobile weapons."
+  },
+  {
+   "key": "s423",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "aliens armed ",
+   "en": "aliens wielding",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/4 of: From the planet Delphi came aliens wielding mobile weapons."
+  },
+  {
+   "key": "s424",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "with mobile weapons.",
+   "en": "mobile weapons.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/4 of: From the planet Delphi came aliens wielding mobile weapons."
+  },
+  {
+   "key": "s425",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "Those weapons",
+   "en": "Their weapons",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
+  },
+  {
+   "key": "s426",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "resembled the",
+   "en": "closely resembled the",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
+  },
+  {
+   "key": "s427",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "humanoid mecha",
+   "en": "Vantrooper, a manlike",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
+  },
+  {
+   "key": "s428",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "`Vantrooper\"",
+   "en": "combat machine once",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
+  },
+  {
+   "key": "s429",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "made by man. ",
+   "en": "developed by humanity.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
+  },
+  {
+   "key": "s430",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "The aliens   ",
+   "en": "The aliens launched",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
+  },
+  {
+   "key": "s431",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "attacked key ",
+   "en": "surprise attacks on",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
+  },
+  {
+   "key": "s432",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "military bases",
+   "en": "Earth's major military",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
+  },
+  {
+   "key": "s433",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "and demanded ",
+   "en": "bases, demanding",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
+  },
+  {
+   "key": "s434",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "total surrender.",
+   "en": "total surrender.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
+  },
+  {
+   "key": "s435",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "Were they    ",
+   "en": "But were they",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: But were they truly invaders? Or perhaps..."
+  },
+  {
+   "key": "s436",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "invaders?    ",
+   "en": "truly invaders?",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: But were they truly invaders? Or perhaps..."
+  },
+  {
+   "key": "s437",
+   "scene": "Shooter intro",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "Or perhaps...",
+   "en": "Or perhaps...",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: But were they truly invaders? Or perhaps..."
+  },
+  {
+   "key": "s438",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Aliens humans call<D.Raiders>",
+   "en": "The aliens known as D-Raiders",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/2 of: The aliens known to humanity as D-Raiders continued their guerrilla operations. | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 41, estimated half-width capacity 40. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s439",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "waged guerrilla war.",
+   "en": "continued their guerrilla.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/2 of: The aliens known to humanity as D-Raiders continued their guerrilla operations."
+  },
+  {
+   "key": "s440",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "In the name of `peace\"",
+   "en": "Under the banner of \"peace,\"",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: Under the banner of \"peace,\" most nations had long since dismantled their armed forces."
+  },
+  {
+   "key": "s441",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "most nations' armies",
+   "en": "most nations had long since",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: Under the banner of \"peace,\" most nations had long since dismantled their armed forces."
+  },
+  {
+   "key": "s442",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "had long since disbanded.",
+   "en": "dismantled their armed forces.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: Under the banner of \"peace,\" most nations had long since dismantled their armed forces."
+  },
+  {
+   "key": "s443",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Humanity had no answer",
+   "en": "Humanity struggled to",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/4 of: Humanity struggled to resist the highly mobile Vantroopers, and people lived in fear and uncertainty..."
+  },
+  {
+   "key": "s444",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "to agile `Vantroopers\",",
+   "en": "resist the highly mobile",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/4 of: Humanity struggled to resist the highly mobile Vantroopers, and people lived in fear and uncertainty..."
+  },
+  {
+   "key": "s445",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "and people lived their",
+   "en": "Vantroopers, and people lived",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/4 of: Humanity struggled to resist the highly mobile Vantroopers, and people lived in fear and uncertainty..."
+  },
+  {
+   "key": "s446",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "days in fear and dread...",
+   "en": "in fear and uncertainty...",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/4 of: Humanity struggled to resist the highly mobile Vantroopers, and people lived in fear and uncertainty..."
+  },
+  {
+   "key": "s447",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "At last <D.Raiders>",
+   "en": "Eventually, the D-Raiders'",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: Eventually, the D-Raiders' campaign of destruction reached civilian dwellings.; Civilian dwellings explicitly selected in place of residential areas"
+  },
+  {
+   "key": "s448",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "brought destruction to",
+   "en": "campaign of destruction",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: Eventually, the D-Raiders' campaign of destruction reached civilian dwellings.; Civilian dwellings explicitly selected in place of residential areas"
+  },
+  {
+   "key": "s449",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "civilian homes.",
+   "en": "reached civilian dwellings.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: Eventually, the D-Raiders' campaign of destruction reached civilian dwellings.; Civilian dwellings explicitly selected in place of residential areas"
+  },
+  {
+   "key": "s450",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "But as the flames of",
+   "en": "But just as this madness",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 1/4 of: But just as the flames of madness threatened countless lives, a lone Vantrooper descended from the distant skies: Xexelios.; User approved flames of madness phrase, but not entire sentence separately"
+  },
+  {
+   "key": "s451",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "madness threatened many",
+   "en": "threatened countless lives, a",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 2/4 of: But just as the flames of madness threatened countless lives, a lone Vantrooper descended from the distant skies: Xexelios.; User approved flames of madness phrase, but not entire sentence separately"
+  },
+  {
+   "key": "s452",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "lives, from the far sky one",
+   "en": "Vantrooper descended from",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 3/4 of: But just as the flames of madness threatened countless lives, a lone Vantrooper descended from the distant skies: Xexelios.; User approved flames of madness phrase, but not entire sentence separately"
+  },
+  {
+   "key": "s453",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "`Vantrooper\" <Xexelios>",
+   "en": "the distant skies: Xexelios.",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 4/4 of: But just as the flames of madness threatened countless lives, a lone Vantrooper descended from the distant skies: Xexelios.; User approved flames of madness phrase, but not entire sentence separately"
+  },
+  {
+   "key": "s454",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "descended to earth.",
+   "en": "With Xexelios' aid, humanity",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: With Xexelios' aid, humanity could finally strike back against the invaders!; Exact wording supplied by user"
+  },
+  {
+   "key": "s455",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "The moment humanity",
+   "en": "could finally strike back",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: With Xexelios' aid, humanity could finally strike back against the invaders!; Exact wording supplied by user"
+  },
+  {
+   "key": "s456",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "gained <Xexelios>, the war",
+   "en": "against the invaders!",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: With Xexelios' aid, humanity could finally strike back against the invaders!; Exact wording supplied by user"
+  },
+  {
+   "key": "s457",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Thanks to <Xexelios>,",
+   "en": "Thanks to Xexelios,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: Thanks to Xexelios, humanity succeeded in driving back the D-Raiders."
+  },
+  {
+   "key": "s458",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<D.Raiders> were driven",
+   "en": "humanity succeeded in",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: Thanks to Xexelios, humanity succeeded in driving back the D-Raiders."
+  },
+  {
+   "key": "s459",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "off successfully.",
+   "en": "driving back the D-Raiders.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: Thanks to Xexelios, humanity succeeded in driving back the D-Raiders."
+  },
+  {
+   "key": "s460",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Study of its COM",
+   "en": "Examining the machine's",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: Examining the machine's COM revealed that Xexelios had been brought by people from Delphi who opposed interplanetary conflict.; COM left unexpanded"
+  },
+  {
+   "key": "s461",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "revealed <Xexelios> came",
+   "en": "COM revealed that Xexelios",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: Examining the machine's COM revealed that Xexelios had been brought by people from Delphi who opposed interplanetary conflict.; COM left unexpanded"
+  },
+  {
+   "key": "s462",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "from <Delphi> people who",
+   "en": "had been brought by people",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: Examining the machine's COM revealed that Xexelios had been brought by people from Delphi who opposed interplanetary conflict.; COM left unexpanded"
+  },
+  {
+   "key": "s463",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "reject interplanetary war,",
+   "en": "from Delphi who opposed",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: Examining the machine's COM revealed that Xexelios had been brought by people from Delphi who opposed interplanetary conflict.; COM left unexpanded"
+  },
+  {
+   "key": "s464",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "or so it was concluded.",
+   "en": "interplanetary conflict.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: Examining the machine's COM revealed that Xexelios had been brought by people from Delphi who opposed interplanetary conflict.; COM left unexpanded"
+  },
+  {
+   "key": "s465",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "But records that seemed to",
+   "en": "However, the records believed to",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: However, the records believed to contain information about these people had been lost in battle.; Exact latest wording supplied by user; Japanese has damaged, but user chose lost"
+  },
+  {
+   "key": "s466",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "tell of them had been",
+   "en": "contain information about these",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: However, the records believed to contain information about these people had been lost in battle.; Exact latest wording supplied by user; Japanese has damaged, but user chose lost"
+  },
+  {
+   "key": "s467",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "damaged in battle.",
+   "en": "people had been lost in battle.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: However, the records believed to contain information about these people had been lost in battle.; Exact latest wording supplied by user; Japanese has damaged, but user chose lost"
+  },
+  {
+   "key": "s468",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "People hailed the coming",
+   "en": "People rejoiced at the",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: People rejoiced at the arrival of their savior. However, this also made the aliens deeply wary of humanity and Xexelios.; Exact wording supplied by user"
+  },
+  {
+   "key": "s469",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "of a savior. Yet in the end",
+   "en": "arrival of their savior.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: People rejoiced at the arrival of their savior. However, this also made the aliens deeply wary of humanity and Xexelios.; Exact wording supplied by user"
+  },
+  {
+   "key": "s470",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "the aliens grew wary of",
+   "en": "However, this also made",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: People rejoiced at the arrival of their savior. However, this also made the aliens deeply wary of humanity and Xexelios.; Exact wording supplied by user"
+  },
+  {
+   "key": "s471",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "humanity and <Xexelios>,",
+   "en": "the aliens deeply wary",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: People rejoiced at the arrival of their savior. However, this also made the aliens deeply wary of humanity and Xexelios.; Exact wording supplied by user"
+  },
+  {
+   "key": "s472",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "and that too was fact.",
+   "en": "of humanity and Xexelios.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: People rejoiced at the arrival of their savior. However, this also made the aliens deeply wary of humanity and Xexelios.; Exact wording supplied by user"
+  },
+  {
+   "key": "s473",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "It would summon a new",
+   "en": "It would summon a new enemy",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/2 of: This would bring forth a new adversary, one that threatened to crush humanity's hopes. | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 43, estimated half-width capacity 40. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s474",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "foe to crush man's hope.",
+   "en": "to crush humanity's hopes.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/2 of: This would bring forth a new adversary, one that threatened to crush humanity's hopes. | FIT CHECK: 1 lines (limit 1); longest ASCII-width line 42, estimated half-width capacity 40. Preserve user-selected wording until tested."
+  },
+  {
+   "key": "s475",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<D.Raiders> sent their",
+   "en": "The D-Raiders sent Marauder,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: The D-Raiders dispatched Marauder, a Vantrooper designed for the final showdown, to Earth..."
+  },
+  {
+   "key": "s476",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "decisive `Vantrooper\",",
+   "en": "a Vantrooper designed for the",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: The D-Raiders dispatched Marauder, a Vantrooper designed for the final showdown, to Earth..."
+  },
+  {
+   "key": "s477",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<Marauder>, to Earth...",
+   "en": "final showdown, to Earth...",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: The D-Raiders dispatched Marauder, a Vantrooper designed for the final showdown, to Earth..."
+  },
+  {
+   "key": "s478",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "The fight with <Marauder>",
+   "en": "The battle with Marauder was",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 1/5 of: The battle against Marauder was fierce. Humanity barely managed to defeat it, and Xexelios was so badly damaged that it could never be activated again.; Latest wording with user's explicit AND Xexelios correction; user has not explicitly approved the revised whole paragraph"
+  },
+  {
+   "key": "s479",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "was fierce. It was barely",
+   "en": "fierce. Humans barely managed",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 2/5 of: The battle against Marauder was fierce. Humanity barely managed to defeat it, and Xexelios was so badly damaged that it could never be activated again.; Latest wording with user's explicit AND Xexelios correction; user has not explicitly approved the revised whole paragraph"
+  },
+  {
+   "key": "s480",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "defeated, but <Xexelios>",
+   "en": "to defeat it, and Xexelios",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 3/5 of: The battle against Marauder was fierce. Humanity barely managed to defeat it, and Xexelios was so badly damaged that it could never be activated again.; Latest wording with user's explicit AND Xexelios correction; user has not explicitly approved the revised whole paragraph"
+  },
+  {
+   "key": "s481",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "was wrecked, never to",
+   "en": "was so badly damaged that it",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 4/5 of: The battle against Marauder was fierce. Humanity barely managed to defeat it, and Xexelios was so badly damaged that it could never be activated again.; Latest wording with user's explicit AND Xexelios correction; user has not explicitly approved the revised whole paragraph"
+  },
+  {
+   "key": "s482",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "move again.",
+   "en": "could never move again.",
+   "status": "edited",
+   "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 5/5 of: The battle against Marauder was fierce. Humanity barely managed to defeat it, and Xexelios was so badly damaged that it could never be activated again.; Latest wording with user's explicit AND Xexelios correction; user has not explicitly approved the revised whole paragraph"
+  },
+  {
+   "key": "s483",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "But now a new hope",
+   "en": "But now, a new hope emerges.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/6 of: But now, a new hope emerges. By analyzing Xexelios, humanity has acquired Delphi technology and successfully developed a new weapon: Vantrooper Langlios."
+  },
+  {
+   "key": "s484",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "appears. By analyzing",
+   "en": "By analyzing Xexelios,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/6 of: But now, a new hope emerges. By analyzing Xexelios, humanity has acquired Delphi technology and successfully developed a new weapon: Vantrooper Langlios."
+  },
+  {
+   "key": "s485",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<Xexelios>, humanity got",
+   "en": "humanity has acquired Delphi",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/6 of: But now, a new hope emerges. By analyzing Xexelios, humanity has acquired Delphi technology and successfully developed a new weapon: Vantrooper Langlios."
+  },
+  {
+   "key": "s486",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<Delphi> tech and a new",
+   "en": "technology and successfully",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/6 of: But now, a new hope emerges. By analyzing Xexelios, humanity has acquired Delphi technology and successfully developed a new weapon: Vantrooper Langlios."
+  },
+  {
+   "key": "s487",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "weapon: <Vantrooper Langlios>",
+   "en": "developed a new weapon:",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/6 of: But now, a new hope emerges. By analyzing Xexelios, humanity has acquired Delphi technology and successfully developed a new weapon: Vantrooper Langlios."
+  },
+  {
+   "key": "s488",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "was successfully built.",
+   "en": "Vantrooper Langlios.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/6 of: But now, a new hope emerges. By analyzing Xexelios, humanity has acquired Delphi technology and successfully developed a new weapon: Vantrooper Langlios."
+  },
+  {
+   "key": "s489",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "To meet <D.Raiders>,",
+   "en": "To confront the D-Raiders,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: To confront the D-Raiders, Langlios makes its debut on the open seas!"
+  },
+  {
+   "key": "s490",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "brave <Langlios> takes",
+   "en": "Langlios makes its",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: To confront the D-Raiders, Langlios makes its debut on the open seas!"
+  },
+  {
+   "key": "s491",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "the ocean as its stage!",
+   "en": "debut on the open seas!",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: To confront the D-Raiders, Langlios makes its debut on the open seas!"
+  },
+  {
+   "key": "s492",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Yet it showed the dilemma:",
+   "en": "Yet this revealed a troubling",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/6 of: Yet this revealed a troubling dilemma: humanity had only just begun its journey toward peace, but had already regained advanced military power in remarkably little time..."
+  },
+  {
+   "key": "s493",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "humanity, just set on",
+   "en": "dilemma: humanity had only",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/6 of: Yet this revealed a troubling dilemma: humanity had only just begun its journey toward peace, but had already regained advanced military power in remarkably little time..."
+  },
+  {
+   "key": "s494",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "the road to peace, needed",
+   "en": "just begun its journey toward",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/6 of: Yet this revealed a troubling dilemma: humanity had only just begun its journey toward peace, but had already regained advanced military power in remarkably little time..."
+  },
+  {
+   "key": "s495",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "very little time to",
+   "en": "peace, yet already regained",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/6 of: Yet this revealed a troubling dilemma: humanity had only just begun its journey toward peace, but had already regained advanced military power in remarkably little time..."
+  },
+  {
+   "key": "s496",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "rearm to such a level...",
+   "en": "advanced military power in",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/6 of: Yet this revealed a troubling dilemma: humanity had only just begun its journey toward peace, but had already regained advanced military power in remarkably little time..."
+  },
+  {
+   "key": "s497",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "",
+   "en": "remarkably little time...",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/6 of: Yet this revealed a troubling dilemma: humanity had only just begun its journey toward peace, but had already regained advanced military power in remarkably little time..."
+  },
+  {
+   "key": "s498",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "The aliens themselves",
+   "en": "The aliens themselves",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/2 of: The aliens themselves revealed their motive."
+  },
+  {
+   "key": "s499",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "revealed their motive.",
+   "en": "revealed their motive.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/2 of: The aliens themselves revealed their motive."
+  },
+  {
+   "key": "s500",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Long ago, when humans",
+   "en": "Long ago, in an age of endless",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/6 of: Long ago, in an age of endless conflict, one nation devised a plan to send its own people to another planet, ensuring that only a select group would prosper even after Earth's destruction."
+  },
+  {
+   "key": "s501",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "never stopped fighting...",
+   "en": "conflict, one nation devised a",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/6 of: Long ago, in an age of endless conflict, one nation devised a plan to send its own people to another planet, ensuring that only a select group would prosper even after Earth's destruction."
+  },
+  {
+   "key": "s502",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "One nation planned that,",
+   "en": "plan to send its own people to",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/6 of: Long ago, in an age of endless conflict, one nation devised a plan to send its own people to another planet, ensuring that only a select group would prosper even after Earth's destruction."
+  },
+  {
+   "key": "s503",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "should Earth fall, only",
+   "en": "another planet, ensuring that",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/6 of: Long ago, in an age of endless conflict, one nation devised a plan to send its own people to another planet, ensuring that only a select group would prosper even after Earth's destruction."
+  },
+  {
+   "key": "s504",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "its own people would",
+   "en": "only few would prosper",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/6 of: Long ago, in an age of endless conflict, one nation devised a plan to send its own people to another planet, ensuring that only a select group would prosper even after Earth's destruction."
+  },
+  {
+   "key": "s505",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "live on, sent to a far star.",
+   "en": "even after Earth's destruction.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/6 of: Long ago, in an age of endless conflict, one nation devised a plan to send its own people to another planet, ensuring that only a select group would prosper even after Earth's destruction."
+  },
+  {
+   "key": "s506",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "But when the age sought",
+   "en": "But when the world sought",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: But when the world began seeking peace, that nation put its prestige above all else. To dodge blame, it erased those who remained on the distant planet from history."
+  },
+  {
+   "key": "s507",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "peace, that nation put",
+   "en": "peace, that nation put prestige",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: But when the world began seeking peace, that nation put its prestige above all else. To dodge blame, it erased those who remained on the distant planet from history."
+  },
+  {
+   "key": "s508",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "its pride first. To dodge",
+   "en": "above all else. To dodge blame,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: But when the world began seeking peace, that nation put its prestige above all else. To dodge blame, it erased those who remained on the distant planet from history."
+  },
+  {
+   "key": "s509",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "blame, it erased those",
+   "en": "it erased those who remained on",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: But when the world began seeking peace, that nation put its prestige above all else. To dodge blame, it erased those who remained on the distant planet from history."
+  },
+  {
+   "key": "s510",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "left on that planet.",
+   "en": "the distant planet from history.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: But when the world began seeking peace, that nation put its prestige above all else. To dodge blame, it erased those who remained on the distant planet from history."
+  },
+  {
+   "key": "s511",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "They are the ones on",
+   "en": "These were the people who lived",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/2 of: These were the people who lived on the planet known as Delphi."
+  },
+  {
+   "key": "s512",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "the star called <Delphi>.",
+   "en": "on the planet known as Delphi.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/2 of: These were the people who lived on the planet known as Delphi."
+  },
+  {
+   "key": "s513",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "For revenge, <D.Raiders>",
+   "en": "Seeking revenge, the D-Raiders",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/5 of: Seeking revenge, the D-Raiders came to Earth via an orbital elevator. To destroy the enemy forces gathered there, Langlios entered a decisive battle."
+  },
+  {
+   "key": "s514",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "ride an orbital elevator",
+   "en": "came to Earth via an orbital",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/5 of: Seeking revenge, the D-Raiders came to Earth via an orbital elevator. To destroy the enemy forces gathered there, Langlios entered a decisive battle."
+  },
+  {
+   "key": "s515",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "to Earth. To smash the",
+   "en": "elevator. To destroy the enemy",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/5 of: Seeking revenge, the D-Raiders came to Earth via an orbital elevator. To destroy the enemy forces gathered there, Langlios entered a decisive battle."
+  },
+  {
+   "key": "s516",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "forces massed there,",
+   "en": "forces gathered there, Langlios",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/5 of: Seeking revenge, the D-Raiders came to Earth via an orbital elevator. To destroy the enemy forces gathered there, Langlios entered a decisive battle."
+  },
+  {
+   "key": "s517",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<Langlios> joins the fray.",
+   "en": "entered a decisive battle.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/5 of: Seeking revenge, the D-Raiders came to Earth via an orbital elevator. To destroy the enemy forces gathered there, Langlios entered a decisive battle."
+  },
+  {
+   "key": "s518",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "But even among them,",
+   "en": "Yet even among them, some",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/2 of: Yet even among them, some still long for peace."
+  },
+  {
+   "key": "s519",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "some want peace.",
+   "en": "still long for peace.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/2 of: Yet even among them, some still long for peace."
+  },
+  {
+   "key": "s520",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "One life split in two...",
+   "en": "One life split in two.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/2 of: One people, divided in two... Is there no way for them to live together?"
+  },
+  {
+   "key": "s521",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Can't they live as one?",
+   "en": "no way to live together?",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/2 of: One people, divided in two... Is there no way for them to live together?"
+  },
+  {
+   "key": "s522",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<D.Raiders> lost their",
+   "en": "The D-Raiders had lost their",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/4 of: The D-Raiders had lost their leader and most of their forces in the previous battle. Their end seemed only a matter of time."
+  },
+  {
+   "key": "s523",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "leader and most of their",
+   "en": "leader and most of their forces",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/4 of: The D-Raiders had lost their leader and most of their forces in the previous battle. Their end seemed only a matter of time."
+  },
+  {
+   "key": "s524",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "forces; their end seemed",
+   "en": "in the previous battle. Their",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/4 of: The D-Raiders had lost their leader and most of their forces in the previous battle. Their end seemed only a matter of time."
+  },
+  {
+   "key": "s525",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "only a matter of time.",
+   "en": "end was only a matter of time.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/4 of: The D-Raiders had lost their leader and most of their forces in the previous battle. Their end seemed only a matter of time."
+  },
+  {
+   "key": "s526",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "But they had an ace:",
+   "en": "But the D-Raiders had one last",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/7 of: But the D-Raiders had one last trump card: a terrifying plan to send Delphi itself crashing into Earth. To prevent this catastrophe, humanity had no choice but to destroy Orbital Plums, the orbit-altering device on Delphi."
+  },
+  {
+   "key": "s527",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "a dreadful plan to drop",
+   "en": "trump card: a terrifying plan",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/7 of: But the D-Raiders had one last trump card: a terrifying plan to send Delphi itself crashing into Earth. To prevent this catastrophe, humanity had no choice but to destroy Orbital Plums, the orbit-altering device on Delphi."
+  },
+  {
+   "key": "s528",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "the planet itself onto",
+   "en": "to send Delphi itself crashing",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/7 of: But the D-Raiders had one last trump card: a terrifying plan to send Delphi itself crashing into Earth. To prevent this catastrophe, humanity had no choice but to destroy Orbital Plums, the orbit-altering device on Delphi."
+  },
+  {
+   "key": "s529",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Earth. The only way out",
+   "en": "into Earth. To prevent this",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/7 of: But the D-Raiders had one last trump card: a terrifying plan to send Delphi itself crashing into Earth. To prevent this catastrophe, humanity had no choice but to destroy Orbital Plums, the orbit-altering device on Delphi."
+  },
+  {
+   "key": "s530",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "was to destroy <Delphi>'s",
+   "en": "was to destroy <Delphi>'s",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/7 of: But the D-Raiders had one last trump card: a terrifying plan to send Delphi itself crashing into Earth. To prevent this catastrophe, humanity had no choice but to destroy Orbital Plums, the orbit-altering device on Delphi."
+  },
+  {
+   "key": "s531",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "orbit device",
+   "en": "but to destroy Orbital Plums, the",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/7 of: But the D-Raiders had one last trump card: a terrifying plan to send Delphi itself crashing into Earth. To prevent this catastrophe, humanity had no choice but to destroy Orbital Plums, the orbit-altering device on Delphi."
+  },
+  {
+   "key": "s532",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<Orbital Plums>.",
+   "en": "orbit-altering device on Delphi.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 7/7 of: But the D-Raiders had one last trump card: a terrifying plan to send Delphi itself crashing into Earth. To prevent this catastrophe, humanity had no choice but to destroy Orbital Plums, the orbit-altering device on Delphi."
+  },
+  {
+   "key": "s533",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Man's last hope rode the",
+   "en": "Humanity's last hope took",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/3 of: Humanity's last hope took the orbital elevator into space, bound for Delphi."
+  },
+  {
+   "key": "s534",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "orbital elevator toward",
+   "en": "the orbital elevator into",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/3 of: Humanity's last hope took the orbital elevator into space, bound for Delphi."
+  },
+  {
+   "key": "s535",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<Delphi>, into space.",
+   "en": "space, bound for Delphi.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/3 of: Humanity's last hope took the orbital elevator into space, bound for Delphi."
+  },
+  {
+   "key": "s536",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "The endless dark sky...",
+   "en": "In the darkness of space...",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/6 of: The darkness of space stretched endlessly before them... Waiting there was a guardian of destruction: NP-END, a base-defense warship left behind by the D-Raiders."
+  },
+  {
+   "key": "s537",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Awaiting there was the",
+   "en": "endlessly before them...",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/6 of: The darkness of space stretched endlessly before them... Waiting there was a guardian of destruction: NP-END, a base-defense warship left behind by the D-Raiders."
+  },
+  {
+   "key": "s538",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "guardian of doom:",
+   "en": "Waiting there was a guardian",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/6 of: The darkness of space stretched endlessly before them... Waiting there was a guardian of destruction: NP-END, a base-defense warship left behind by the D-Raiders."
+  },
+  {
+   "key": "s539",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "left by <D.Raiders>,",
+   "en": "of destruction: NP-END, a",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/6 of: The darkness of space stretched endlessly before them... Waiting there was a guardian of destruction: NP-END, a base-defense warship left behind by the D-Raiders."
+  },
+  {
+   "key": "s540",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "`base defense warship\"",
+   "en": "base-defense warship left",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/6 of: The darkness of space stretched endlessly before them... Waiting there was a guardian of destruction: NP-END, a base-defense warship left behind by the D-Raiders."
+  },
+  {
+   "key": "s541",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "<NP-END>.",
+   "en": "behind by the D-Raiders.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/6 of: The darkness of space stretched endlessly before them... Waiting there was a guardian of destruction: NP-END, a base-defense warship left behind by the D-Raiders."
+  },
+  {
+   "key": "s542",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Met on a distant star:",
+   "en": "On a distant world, a",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/6 of: On a distant world, a terrifying superweapon awaits! Its overwhelming destructive power threatens humanity's very existence!! And now, the final battle begins...!"
+  },
+  {
+   "key": "s543",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "a fearsome super weapon!",
+   "en": "terrifying superweapon awaits!",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/6 of: On a distant world, a terrifying superweapon awaits! Its overwhelming destructive power threatens humanity's very existence!! And now, the final battle begins...!"
+  },
+  {
+   "key": "s544",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Crushing power bent on",
+   "en": "Its overwhelming destructive",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/6 of: On a distant world, a terrifying superweapon awaits! Its overwhelming destructive power threatens humanity's very existence!! And now, the final battle begins...!"
+  },
+  {
+   "key": "s545",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "wiping out mankind!!",
+   "en": "power threatens humanity's",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/6 of: On a distant world, a terrifying superweapon awaits! Its overwhelming destructive power threatens humanity's very existence!! And now, the final battle begins...!"
+  },
+  {
+   "key": "s546",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "Now, here,",
+   "en": "very existence!! And now,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/6 of: On a distant world, a terrifying superweapon awaits! Its overwhelming destructive power threatens humanity's very existence!! And now, the final battle begins...!"
+  },
+  {
+   "key": "s547",
+   "scene": "Shooter story",
+   "maxw": 20,
+   "lines": 1,
+   "draft": "the final battle begins!",
+   "en": "the final battle begins...!",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/6 of: On a distant world, a terrifying superweapon awaits! Its overwhelming destructive power threatens humanity's very existence!! And now, the final battle begins...!"
+  },
+  {
+   "key": "s548",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "Destroying  ",
+   "en": "After destroying",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/7 of: After destroying the device, Langlios confirmed that Delphi's orbit had been corrected; Earth was safe."
+  },
+  {
+   "key": "s549",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "the device,  ",
+   "en": "the device,",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/7 of: After destroying the device, Langlios confirmed that Delphi's orbit had been corrected; Earth was safe."
+  },
+  {
+   "key": "s550",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "<Langlios>   ",
+   "en": "Langlios confirmed",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/7 of: After destroying the device, Langlios confirmed that Delphi's orbit had been corrected; Earth was safe."
+  },
+  {
+   "key": "s551",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "confirmed    ",
+   "en": "that Delphi's",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/7 of: After destroying the device, Langlios confirmed that Delphi's orbit had been corrected; Earth was safe."
+  },
+  {
+   "key": "s552",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "<Delphi>'s   ",
+   "en": "orbit had been",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/7 of: After destroying the device, Langlios confirmed that Delphi's orbit had been corrected; Earth was safe."
+  },
+  {
+   "key": "s553",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "orbit shift; ",
+   "en": "corrected;",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/7 of: After destroying the device, Langlios confirmed that Delphi's orbit had been corrected; Earth was safe."
+  },
+  {
+   "key": "s554",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "Earth was safe.",
+   "en": "Earth was safe.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 7/7 of: After destroying the device, Langlios confirmed that Delphi's orbit had been corrected; Earth was safe."
+  },
+  {
+   "key": "s555",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "But this was ",
+   "en": "But this was",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/2 of: But this was not the end."
+  },
+  {
+   "key": "s556",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "not the end. ",
+   "en": "not the end.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/2 of: But this was not the end."
+  },
+  {
+   "key": "s557",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "With those   ",
+   "en": "Perhaps the true",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
+  },
+  {
+   "key": "s558",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "living on    ",
+   "en": "struggle was only",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
+  },
+  {
+   "key": "s559",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "<Delphi>, as ",
+   "en": "beginning: the fight to",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
+  },
+  {
+   "key": "s560",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "fellow humans",
+   "en": "build peace together",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
+  },
+  {
+   "key": "s561",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "the true war ",
+   "en": "with the people of",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
+  },
+  {
+   "key": "s562",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "for peace now",
+   "en": "Delphi, as fellow",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
+  },
+  {
+   "key": "s563",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "begins...    ",
+   "en": "human beings...",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 7/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
+  },
+  {
+   "key": "s564",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "The pilot of ",
+   "en": "The pilot",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/4 of: The pilot of Langlios gazed toward home."
+  },
+  {
+   "key": "s565",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "<Langlios>   ",
+   "en": "of Langlios",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/4 of: The pilot of Langlios gazed toward home."
+  },
+  {
+   "key": "s566",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "gazed upon   ",
+   "en": "gazed",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/4 of: The pilot of Langlios gazed toward home."
+  },
+  {
+   "key": "s567",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "the vast home.",
+   "en": "toward home.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/4 of: The pilot of Langlios gazed toward home."
+  },
+  {
+   "key": "s568",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "That Earthling",
+   "en": "Despite mixed",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 1/7 of: Despite mixed feelings, this Earthling could not help wishing for the happiness of everyone living in the universe."
+  },
+  {
+   "key": "s569",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "with mixed   ",
+   "en": "feelings, this",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 2/7 of: Despite mixed feelings, this Earthling could not help wishing for the happiness of everyone living in the universe."
+  },
+  {
+   "key": "s570",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "feelings, still",
+   "en": "Earthling could",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 3/7 of: Despite mixed feelings, this Earthling could not help wishing for the happiness of everyone living in the universe."
+  },
+  {
+   "key": "s571",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "could not help",
+   "en": "not help wishing",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 4/7 of: Despite mixed feelings, this Earthling could not help wishing for the happiness of everyone living in the universe."
+  },
+  {
+   "key": "s572",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "but wish for ",
+   "en": "for the happiness",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 5/7 of: Despite mixed feelings, this Earthling could not help wishing for the happiness of everyone living in the universe."
+  },
+  {
+   "key": "s573",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "the happiness",
+   "en": "of everyone living",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 6/7 of: Despite mixed feelings, this Earthling could not help wishing for the happiness of everyone living in the universe."
+  },
+  {
+   "key": "s574",
+   "scene": "Shooter ending",
+   "maxw": 13,
+   "lines": 1,
+   "draft": "of all in space.",
+   "en": "in the universe.",
+   "status": "approved",
+   "note": "USER APPROVED: Segment 7/7 of: Despite mixed feelings, this Earthling could not help wishing for the happiness of everyone living in the universe."
+  },
+  {
+   "key": "s575",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "Planner     ",
+   "en": "Planners",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s576",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Yariyama    \n    Takahisa",
+   "en": "Yariyama    \n    Takahisa",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s578",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Tsujimura   \n    Ai  ",
+   "en": "Tsujimura   \n    Ai  ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s579",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "Object Design",
+   "en": "Object Designers",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s580",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Pinky    ",
+   "en": "Pinky    ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s582",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "G.ISHIDA\n     MAN",
+   "en": "G・ISHIDA\n     MAN",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s583",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "Minigame Design",
+   "en": "Minigame Designers",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s584",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "IRUKAsan",
+   "en": "IRUKAsan",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s586",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "SUMICHO ",
+   "en": "SUMICHO ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s588",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Horipu    ",
+   "en": "Horipu    ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s589",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "BG Design  ",
+   "en": "BG Design  ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s590",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "SAHORI  ",
+   "en": "SAHORI  ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s592",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "SAQRA-E ",
+   "en": "SAQRA-E ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s593",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "Programmer    ",
+   "en": "Programmers",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s594",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "   MIC  \n        ",
+   "en": "   MIC  \n        ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s596",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "  Dodokun  \n        ",
+   "en": "  Dodokun  \n        ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s598",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": " Wire       \n  Craftsman ",
+   "en": " Wire       \n  Craftsman ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s600",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": " Whereabouts\n   Unknown ",
+   "en": " Whereabouts\n   Unknown ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s602",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "  Gin    \n        ",
+   "en": "  Gin    \n        ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s604",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": " Yoshinori  \n        ",
+   "en": " Yoshinori  \n        ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s606",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Gohou     \n   Manabu  ",
+   "en": "Gohou     \n   Manabu  ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s608",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": " tshige \n        ",
+   "en": " tshige \n        ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s609",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "Sound      ",
+   "en": "Sound      ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s610",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Yassun  ",
+   "en": "Yassun  ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s612",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "ASSHY   ",
+   "en": "ASSHY   ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s614",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Mitsuwo    ",
+   "en": "Mitsuwo    ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s616",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Deko      ",
+   "en": "Deko      ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s618",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Kitapy  ",
+   "en": "Kitapy  ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s620",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Retired   \n    Isaji ",
+   "en": "Retired   \n    Isaji ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s621",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "Debugger     ",
+   "en": "Debuggers",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s622",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Pu-Pu-Pu    \nPro Wres News",
+   "en": "Pu-Pu-Pu    \nPro Wres News",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s624",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Teacher's Beard\nMook Tadao-maru",
+   "en": "Teacher's Beard\nMukku Tadao-maru",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s626",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Happou's son\n     Honey",
+   "en": "Happou's Son\n     Honey",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s628",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Bestest pals \n Barbatrick",
+   "en": "Bestest Pals\n Barbatrick",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s630",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 2,
+   "draft": "Farewell VaOdam\nTetsuya Knockoff",
+   "en": "Farewell Va*dam\nTetsuya Knockoff",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group. | USER APPROVED: Final staff spelling/heading from this review. Retain original line breaks where relevant; width not verified in game."
+  },
+  {
+   "key": "s631",
+   "scene": "Staff credits",
+   "maxw": 10,
+   "lines": 1,
+   "draft": "Support      ",
+   "en": "Support      ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s632",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "TONY OKI",
+   "en": "TONY OKI",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s634",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "TSUKA   ",
+   "en": "TSUKA   ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s636",
+   "scene": "Staff credits",
+   "maxw": 8,
+   "lines": 1,
+   "draft": "Wadamo-    ",
+   "en": "Wadamo-    ",
+   "status": "approved",
+   "note": "USER APPROVED: Staff credit or name retained, except explicit corrections in this group."
+  },
+  {
+   "key": "s637",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "    Shot\nKeep bouncing\nthe ball back!\nIt keeps getting\nfaster and faster!\n(<- -> : Move  )",
+   "en": "    Shot\nKeep bouncing\nthe ball back!\nIt keeps getting\nfaster and faster!\n(<- -> : Move  )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s638",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "    Escape\nDodge the balls\nno matter what!\nThey slowly get\nfaster and faster!\n(Lever: Move    )",
+   "en": "    Escape\nDodge the balls\nno matter what!\nThey get faster \n  and faster!\n(Lever: Move   )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s639",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "   Crossing\nDodge obstacles and\nreach the top!\n(<- -> : Move  )\n(A: Launch     )\n(Up/Dn: Speed  )",
+   "en": "   Crossing\nDodge obstacles and\nreach the top!\n(<- -> : Move  )\n(A: Launch     )\n(Up/Dn: Speed  )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s640",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Block Escape\nBounce the ball and\nknock blocks down!\nDodge the falling\nblocks quickly!\n(Lever: Move    )",
+   "en": "  Block Escape\nBounce the ball and\nknock blocks down!\nDodge the falling\nblocks quickly!\n(Lever: Move    )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s641",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Astro Rescue\nDodge meteors, save\nships and UFOs, and\nmake it to the\ngoal!\n(Lever: Move    )",
+   "en": "  Astro Rescue\nDodge meteors, save\nships and UFOs, and\nmake it to the\ngoal!\n(Lever: Move    )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s642",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": " Sakurajima Panic\nThe year is 1914...\nVolcanic rocks are\ncoming! Dodge them!\nKagoshima is furious!\n(<- -> : Move  )",
+   "en": " Sakurajima Panic\nThe year is 1914...\nVolcanic bombs are\ncoming! Dodge them!\nKagoshima folks are mad!\n(<- -> : Move)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s643",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "Sasuke in OSAKA\nScatter the grunt\nninjas and defeat\nthe Golden Ninja!\n(A: Shoot, sire )\n(B: Jump, sire  )",
+   "en": "Sasuke in OSAKA\nTake out the grunts and\ndefeat their boss,\nthe Golden Ninja!\n(A: Shoot)\n(B: Jump)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s644",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": " Yusaku Challenge\nDodge cars and beat\nfoes! At the end,\nboss Yusaku awaits!\n(A: Manly Attack)\n(B: Manly Jump  )",
+   "en": " Yusaku Challenge\nDodge cars and defeat\nyour enemies! Yusaku\nawaits as the final boss!\n(A: Manly Attack)\n(B: Manly Jump)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified. | FIT CHECK: approximate half-width max 24, actual longest line 25; do not rewrite user-approved text without review."
+  },
+  {
+   "key": "s645",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": " Space Muddiest\nYou're a civilian\nwith nothing to do\nwith the war. All\nyou can do is run...\n(<- -> : Run away)",
+   "en": " Space Muddiest\nYou're a civilian\nwith nothing to do\nwith the war. All\nyou can do is run...\n(<- -> : Run away)",
+   "status": "approved",
+   "note": "User proposed Space Maddist; not confirmed. Keep original for now. | USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s646",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Crazy Fall\nSkydiving!\nPress A near the\ngoal!\n(<- -> : Move  )\n(Up/Dn: Speed  )\n(A: Parachute  )",
+   "en": "  Crazy Fall\nSkydiving! Press A\nnear the goal!\n(<- -> : Move)\n(Up/Dn: Speed)\n(A: Parachute)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s647",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Rocketman SOS\nDon't hit the walls!\nDodge obstacles!\nEscape the cave!\n(<- -> : Move  )\n(Hold A: Jet    )",
+   "en": "  Rocketman SOS\nDon't hit the walls!\nDodge obstacles!\nEscape the cave!\n(<- -> : Move  )\n(Hold A: Jet    )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s648",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "    Mogerer\nUse radar to dodge\nbombs and grab gems!\nEven Mystery-A-n\nwould be amazed!\n(A: Radar toggle)",
+   "en": "    Moguera\nUse radar to dodge\nbombs and grab gems!\nEven Myster*ans\nwould be amazed!\n(A: Radar toggle)",
+   "status": "approved",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User approved Moguera and Myster*ans spellings, where * deliberately obscures the movie name. FIT CHECK: widest line 20 ASCII characters, source maxw=12; half-width font may help but must test actual field. | USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s649",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Space Hero\nAliens attack! Let's\ngo genocide!\nDon't let even one\nget away!\n(A: Beeeeam!!   )",
+   "en": "  Space Hero\nAliens are attacking!\nLet's commit genocide!\nKill them all!\n(Lever: Move)\n(A: Beeeeam!!)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s650",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": " Space Destroyer\nShoot the meteors!\nHead for the goal!\n(<- -> : Move  )\n(A: Beam/Jump   )\n(B: Boost/Jump  )",
+   "en": " Space Destroyer\nShoot the meteors!\nHead for the goal!\n(<- -> : Move)\n(A: Beam/Jump)\n(B: Boost/Jump)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s651",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": " Genesis Crisis\nDodge the bullets\nand feed apples to\nNeopoke-kun!\n(Lever: Move    )\n(A: Apple Shoot )",
+   "en": " Genesis Crisis\nDodge the bullets\nand feed apples to\nNeopoke-kun!\n(Lever: Move    )\n(A: Apple Shoot )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s652",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "   Dangerous Z\nScatter the foes and\ntake down the\n\"Rocky\"-style boss!\n(<- -> : Turn   )\n(A: \"HWAACHA!\"  )",
+   "en": "   Dangerous Z\nYou must defeat\nthe enemies to\nstand a chance!\n(<- -> : Turn   )\n(A: \"HWAACHA!\"  )",
+   "status": "approved",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). User-approved culture-substitute Shen Long hoax instructions. Check in-game layout, and keep two control lines unchanged. FIT CHECK: widest line 17 ASCII characters, source maxw=12; half-width font may help but must test actual field. | USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s653",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "   Barrier Man\nShield the good\ncitizens from evil\nbombers with your\nown body!\n(Lever: Move    )",
+   "en": "   Barrier Man\nUse your own body to\nshield innocent civilians\nfrom terrorist\nbombings!\n(Lever: Move)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified. | FIT CHECK: approximate half-width max 24, actual longest line 25; do not rewrite user-approved text without review."
+  },
+  {
+   "key": "s654",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "    Mr.Yabou\nKnock enemy generals\nout of the camp!\nPick angle & power\nwith left/right,\nthen A to decide!",
+   "en": "    Mr. Ambition\nKnock enemy generals\nout of the camp!\nPick angle & power\nwith left/right,\nthen A to decide!",
+   "status": "approved",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). FIT CHECK: widest line 20 ASCII characters, source maxw=12; half-width font may help but must test actual field. | USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s655",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "    Facer\nReach the goal to\nclear! Collect faces\nas shown below for\na bonus! Bonus!!\n(Lever: Move    )",
+   "en": "    Facer\nReach the goal!\nCollect faces for\na bonus!\nBonus? BONUS!!\n(Lever: Move)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s656",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Endless Ghost\nGhosts keep coming!\nTake 'em all down!\n(<- -> : Move  )\n(A: Shoot!     )\n(B: Jump!      )",
+   "en": "  Endless Ghost\nGhosts keep coming!\nTake 'em all down!\n(<- -> : Move)\n(A: Shoot!)\n(B: Jump!)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s657",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "    D&DQ\nDefeat the NP Arch-\nfiend in the dungeon\nShield: damage -1\nSword: dice +1\n(A: Stop dice   )",
+   "en": "    D&DQ\nDefeat the NP Arch-\nfiend in the dungeon\nShield: damage -1\nSword: dice +1\n(A: Stop dice   )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s658",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Apache Stadium\nTraining time!\nDodge the balls and\nsurvive your seniors'\nhazing, yo!\n(<- -> : Dodge  )",
+   "en": "  Apache Stadium\nTime for training!\nKeep dodging the balls\nand endure your\nseniors' hazing!\n(<- -> : Dodge)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s659",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Stop Fighting!\nWith no care for\nothers, they brawl\nagain today! Stop it\n(Lever: Move    )\n(A: Mediate    )",
+   "en": "  Stop Fighting!\nThose guys are fighting\nagain, causing trouble\nfor everyone! Make them stop!\n(Lever: Move)\n(A: Mediate)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified. | FIT CHECK: approximate half-width max 24, actual longest line 29; do not rewrite user-approved text without review."
+  },
+  {
+   "key": "s660",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Dragon & Tiger\nWhen the foe jumps,\npress A to jump-\nattack too! Then\nmash A like crazy!\nDadadadadadadada!!",
+   "en": "  Art of Brawling\nWhen the foe jumps,\npress A to jump-\nattack too! Then\nmash A like crazy!\nDadadadadadadada!!",
+   "status": "approved",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). Full title chosen: Art of Brawling. Check header fit. FIT CHECK: widest line 19 ASCII characters, source maxw=12; half-width font may help but must test actual field. | USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified. | FIT CHECK: approximate half-width max 24, actual longest line 26; do not rewrite user-approved text without review."
+  },
+  {
+   "key": "s661",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Block Shot\nShoot blocks! Same\ncolors chain up!\n(Lever: Move    )\n(A: Shot       )\n(B: Drop blocks )",
+   "en": "  Block Shot\nShoot blocks!\nColors chain up!\n(Lever: Move   )\n(A: Shot       )\n(B: Drop blocks)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified. | FIT CHECK: approximate half-width max 24, actual longest line 40; do not rewrite user-approved text without review."
+  },
+  {
+   "key": "s662",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "    Roswell\nCAPTURE <TERRY> AND\n<NAKORURU> FOR OUR\nEXPERIMENTS!\n(<- -> : MOVE   )\n(HOLD A: BEAM   )",
+   "en": "    Roswell\nCAPTURE <TERRY>\n<NAKORURU> FOR\nEXPERIMENTS!\n(<- -> : MOVE   )\n(HOLD A: BEAM   )",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s663",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Garou Legend\nKO the enemy! Fire\nspecial moves with\njust one button!\n(A: Special move)\n(B: Iron guard  )",
+   "en": "  Fatal Fury\nKO the enemy! Fire\nspecial moves with\njust one button!\n(A: Special move)\n(B: Iron guard  )",
+   "status": "approved",
+   "note": "User-reviewed wording (explicitly selected/accepted in conversation; not automatically approved by agent). Full title chosen: Fatal Fury. Check header fit. FIT CHECK: widest line 18 ASCII characters, source maxw=12; half-width font may help but must test actual field. | USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s664",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Doki Doki Street\nTry hard, but in the\nend it's all kinda\nlike \"luck,\" right?\n(Lever: RPS and\n  Look-over-there!)",
+   "en": "  Doki Doki Street\nNo matter how hard you\ntry, it all comes down\nto luck, doesn't it?\n(Lever: RPS and\n  Look-over-there!)",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s665",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": " Rollin' Rolling!\nWhen \"BEAT\" flashes,\nthe lever...\n Grind!\n    Grind!\n       Grind!",
+   "en": " Rollin' Rolling!\nWhen \"BEAT\" flashes,\ngrab the stick and...\nSPIN!\nSPIN!\nSPIN!",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  },
+  {
+   "key": "s666",
+   "scene": "Minigame instructions",
+   "maxw": 12,
+   "lines": 6,
+   "draft": "  Virtual Off\nWhen the target\nlocks on, press A!\nMash for the saber!\nDodge enemy missiles\nwith the lever!",
+   "en": "  Virtual Off\nWhen the target\nlocks on, press A!\nMash for the saber!\nDodge enemy missiles\nwith the lever!",
+   "status": "approved",
+   "note": "USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
+  }
+ ]
+}

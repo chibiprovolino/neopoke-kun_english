@@ -1,0 +1,505 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neo Poke-kun Script Desk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Sans+JP:wght@400;600&family=VT323&display=swap">
+<style>
+/* Layout: left rail = line index grouped by scene; right = workbench with JP source, editable English, and a 160 px handheld-screen preview */
+:root{
+  --bg:#eef0ea; --panel:#fbfcf8; --ink:#1f2420; --muted:#66705f; --line:#d3d8cc;
+  --accent:#2f6f5e; --accent-ink:#ffffff; --lcd:#c9d3a4; --lcd-ink:#28331c;
+  --ok:#2e7d4f; --warn:#b5651d; --bad:#b3261e;
+  --f-ui:"IBM Plex Sans",system-ui,sans-serif; --f-jp:"IBM Plex Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-lcd:"VT323",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#151915; --panel:#1d221d; --ink:#e3e8dc; --muted:#98a38f; --line:#323a31;
+  --accent:#6fbfa6; --accent-ink:#0f1a15; --lcd:#3a4528; --lcd-ink:#dfeab8;
+  --ok:#6cc68f; --warn:#e3a35c; --bad:#f08a80; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151915; --panel:#1d221d; --ink:#e3e8dc; --muted:#98a38f; --line:#323a31;
+  --accent:#6fbfa6; --accent-ink:#0f1a15; --lcd:#3a4528; --lcd-ink:#dfeab8;
+  --ok:#6cc68f; --warn:#e3a35c; --bad:#f08a80; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:15px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px;box-sizing:border-box}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline;justify-content:space-between;margin-bottom:12px}
+h1{font-size:20px;margin:0;text-wrap:balance}
+.prog{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;flex-wrap:wrap}
+.bar{width:180px;max-width:40vw;height:8px;background:var(--line);border-radius:4px;overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+body{display:flex;flex-direction:column;margin:0}
+.app{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:16px;flex:1;min-height:0}
+@media (max-width:760px){body{display:block}.app{grid-template-columns:1fr;height:auto}.rail{max-height:40vh}}
+.rail{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:auto;min-width:0}
+.filters{position:sticky;top:0;z-index:1;background:var(--panel);padding:10px;border-bottom:1px solid var(--line);display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:inherit;font-size:12px;padding:4px 8px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.filters button.widef{border-color:var(--bad);color:var(--bad)}
+.filters button.widef[aria-pressed="true"]{background:var(--bad);color:#fff}
+.cat{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 12px 4px}
+.item{display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;padding:6px 12px;cursor:pointer;font-family:var(--f-jp);font-size:13px;border-left:3px solid transparent}
+.item span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wb{font-family:var(--f-ui);font-size:10px;font-weight:600;color:var(--bad);border:1px solid currentColor;border-radius:3px;padding:0 3px;font-style:normal}
+.wb.done{color:var(--muted)}
+.item:hover{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.item.cur{border-left-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--line);display:inline-block}
+.dot.approved{background:var(--ok)} .dot.flagged{background:var(--warn)} .dot.edited{background:var(--accent)}
+.bench{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;overflow:auto;min-width:0;display:flex;flex-direction:column;gap:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.meta b{color:var(--ink);font-weight:600}
+.lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.jp{font-family:var(--f-jp);font-size:18px;line-height:1.6;white-space:pre-wrap;margin:0}
+.draft{font-size:14px;color:var(--muted);white-space:pre-wrap;margin:0;font-family:ui-monospace,monospace}
+.widebox{border:1px solid var(--bad);border-left-width:4px;border-radius:6px;padding:10px 12px;font-size:14px;line-height:1.45}
+.widebox b{color:var(--bad)}
+.widebox.done{border-color:var(--line);color:var(--muted)}
+.widebox.done b{color:var(--muted)}
+textarea{width:100%;box-sizing:border-box;min-height:110px;font:16px/1.5 ui-monospace,Menlo,Consolas,monospace;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);resize:vertical}
+textarea:focus,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cols{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+@media (max-width:1000px){.cols{grid-template-columns:1fr}}
+.lcd{background:var(--lcd);color:var(--lcd-ink);font-family:var(--f-lcd);font-size:22px;line-height:1;padding:10px 12px;border-radius:6px;overflow-x:auto}
+.ruler{font-family:var(--f-lcd);font-size:14px;opacity:.6}
+/* pixel counter: one row per text line */
+.px{display:grid;grid-template-columns:auto auto 1fr;gap:4px 10px;font-size:13px;font-variant-numeric:tabular-nums;margin-top:8px;align-items:center}
+.px .n{color:var(--muted)}
+.px .meter{height:6px;border-radius:3px;background:var(--line);position:relative;min-width:80px;overflow:hidden}
+.px .meter i{position:absolute;left:0;top:0;bottom:0;background:var(--ok)}
+.px .ok{color:var(--ok)} .px .tight{color:var(--warn)} .px .over{color:var(--bad);font-weight:600}
+.px .meter.tight i{background:var(--warn)} .px .meter.over i{background:var(--bad)}
+.warns{font-size:13px;color:var(--bad);min-height:1em}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.actions button{font:inherit;font-size:14px;padding:8px 14px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.actions .primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.note{flex:1 1 200px;min-width:0;font:inherit;font-size:14px;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.status{font-size:12px;color:var(--muted)}
+kbd{font-size:11px;border:1px solid var(--line);border-radius:3px;padding:0 4px}
+.empty{color:var(--muted)}
+/* V.OFF script view: every shooter line in reading order, editable in place */
+.vo h2{font-size:15px;margin:18px 0 6px}
+.vo h2:first-child{margin-top:0}
+.vo .sent{font-size:13px;color:var(--muted);margin:14px 0 4px;font-style:italic}
+.vrow{display:grid;grid-template-columns:3.2em minmax(0,1fr) minmax(0,1.3fr) 8.5em;gap:4px 10px;align-items:center;padding:3px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.vrow .id{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;cursor:pointer;text-decoration:underline dotted}
+.vrow .vj{font-family:var(--f-jp);font-size:14px;white-space:pre;overflow:hidden;text-overflow:ellipsis}
+.vrow input{font:14px ui-monospace,Menlo,Consolas,monospace;padding:4px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);min-width:0;width:100%;box-sizing:border-box}
+.vrow input.dirty{border-color:var(--accent)}
+.vrow .vp{font-size:12px;font-variant-numeric:tabular-nums;text-align:right}
+.tools{display:flex;gap:6px;flex-wrap:wrap}
+.tools button,dialog button{font:inherit;font-size:13px;padding:5px 12px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:6px;cursor:pointer}
+.tools button:hover,dialog button:hover{border-color:var(--accent)}
+dialog .primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:20px 22px;max-width:min(640px,calc(100vw - 32px));box-sizing:border-box}
+dialog::backdrop{background:rgb(0 0 0 / .45)}
+dialog h2{font-size:17px;margin:0 0 10px}
+dialog h3{font-size:14px;margin:16px 0 4px}
+dialog p,dialog li{font-size:14px;line-height:1.5;margin:4px 0}
+dialog ul{padding-left:20px;margin:4px 0}
+dialog code{font-size:12.5px;background:var(--bg);padding:1px 4px;border-radius:3px}
+dialog .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin-top:16px}
+dialog table{border-collapse:collapse;font-size:14px;margin:6px 0;font-variant-numeric:tabular-nums}
+dialog td{padding:2px 14px 2px 0}
+dialog td+td{text-align:right}
+dialog .msg{font-size:13px;color:var(--muted);min-height:1.3em}
+#helpdlg{max-height:calc(100vh - 48px);overflow:auto}
+.vrow .vp.ok{color:var(--ok)} .vrow .vp.tight{color:var(--warn)} .vrow .vp.over{color:var(--bad);font-weight:600}
+@media (max-width:900px){.vrow{grid-template-columns:3.2em minmax(0,1fr) 7em}.vrow .vj{grid-column:2/4}}
+</style>
+
+<header>
+  <h1>Neo Poke-kun Script Desk</h1>
+  <div class="prog"><span id="progtxt">Loading lines…</span><div class="bar" id="bar"></div><span id="savestate" class="status"></span></div>
+  <div class="tools">
+    <button id="exp" title="Download every saved line as a JSON file">Export database</button>
+    <button id="impb" title="Load a file made with Export database">Import…</button><input type="file" id="imp" accept=".json,application/json" hidden>
+    <button id="helpb">Help</button>
+  </div>
+</header>
+<div class="app">
+  <nav class="rail" id="rail" aria-label="Script lines">
+    <div class="filters" id="filters"></div>
+    <div id="list"><p class="empty" style="padding:12px">Loading the script…</p></div>
+  </nav>
+  <main class="bench" id="bench"><p class="empty">Pick a line on the left to start reviewing.</p></main>
+</div>
+
+<dialog id="expdlg" aria-labelledby="exph">
+  <h2 id="exph">Export database</h2>
+  <p>Every line saved on this page, with its text, status and note, plus the "Too wide" flags.</p>
+  <table id="expsum"></table>
+  <p>Put it into the build with <code>python tools/merge_page.py &lt;file&gt;</code>, or load it in another browser with Import.</p>
+  <p class="msg" id="expmsg"></p>
+  <div class="row"><button id="expcopy">Copy JSON</button><button id="expdl" class="primary">Download</button><button id="expclose">Close</button></div>
+</dialog>
+
+<dialog id="impdlg" aria-labelledby="imph">
+  <h2 id="imph">Import</h2>
+  <table id="impsum"></table>
+  <p>Lines in the file replace the same lines here. Lines that are not in the file are kept.</p>
+  <p class="msg" id="impmsg"></p>
+  <div class="row"><button id="impcancel">Cancel</button><button id="impgo" class="primary">Import</button></div>
+</dialog>
+
+<dialog id="helpdlg" aria-labelledby="helph">
+  <h2 id="helph">How the Script Desk works</h2>
+  <p>One entry per unique line of the game's script. The left list groups them by scene; the filters at the top show what is left to do.</p>
+  <h3>Editing</h3>
+  <ul>
+    <li>Type in <b>Your English</b>. The preview draws it in the font the game will use, and the counter shows the pixels left against that line's real width limit.</li>
+    <li>Codes like <code>[1C]</code> position the text: keep them. A new line in the box is a line break in the game.</li>
+    <li><b>Approve</b> (<kbd>Ctrl</kbd>+<kbd>Enter</kbd>) marks the line done and moves on. <b>Flag for later</b> keeps it in the Flagged list; the note box is for remarks. <kbd>Alt</kbd>+<kbd>&darr;</kbd>/<kbd>&uarr;</kbd> move without saving a status.</li>
+    <li><b>V.OFF script</b> lists the shooter's story in reading order, editable in place.</li>
+    <li><b>Too wide</b> lists lines the build measured as wider than their window (written by <code>tools/wide_flags.py</code>).</li>
+  </ul>
+  <h3>Saving</h3>
+  <ul id="helpsave"></ul>
+  <h3>Export and Import</h3>
+  <ul>
+    <li><b>Export database</b> downloads (or copies) a JSON file with every saved line and flag. Keep it as a backup, move your work to another browser, or put it into the build.</li>
+    <li><b>Import</b> loads such a file. Lines in the file replace the same lines here; the others are kept.</li>
+  </ul>
+  <h3>Into the build</h3>
+  <ul>
+    <li><code>python tools/merge_page.py script_desk_YYYY-MM-DD.json</code> writes the saved lines into <code>script/page.json</code>.</li>
+    <li><code>python tools/build.py</code> builds the ROM. <code>python tools/check_fit.py build/tr_page.json build/fit.txt</code> lists lines still too wide.</li>
+    <li><code>python tools/page_lines.py script/page.json review/lines.json</code> refreshes the English this page shows for lines it never saved.</li>
+  </ul>
+  <p>More in <code>docs/script-desk.md</code>.</p>
+  <div class="row"><button id="helpclose" class="primary">Close</button></div>
+</dialog>
+
+<script>
+const ST={lines:[],rev:{},wide:{},cur:0,filter:"todo",db:null,wideSeen:false,
+  dirty:{},timers:{},inflight:{}};   // dirty[key] = {text,note} typed but not yet saved
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const visible=s=>s.replace(/\[[0-9A-F]{2}\]/g,"");
+const stateOf=l=>{const r=ST.rev[l.key];return r?r.status:(l.english_already?"english":"todo")};
+// The English the build uses: the page's save, else the reviewed script (l.en), else Claude's first draft.
+const textOf=l=>ST.dirty[l.key]?.text ?? ST.rev[l.key]?.text ?? l.en ?? l.draft;
+const noteOf=l=>ST.dirty[l.key]?.note ?? ST.rev[l.key]?.note ?? "";
+// "Too wide" is kept apart from the review status: a line can be approved and still too wide.
+const wideOf=l=>ST.wide[l.key]||null;
+const reworded=l=>{const w=wideOf(l),r=ST.rev[l.key];return !!(w&&r&&r.updatedAt&&r.updatedAt>w.at)};
+const isVoff=l=>!!l.part;
+
+/* ---------- measuring ---------- */
+const FONTS={f8:"game 8x8 font",big:"big dialog font",cfc2:"CFC2 font, stat value only",r8:"game 8x8 renderer"};
+// r8 = the game's own renderer (Yabou screen, monster names, V.OFF windows). The build turns inner spaces into 4 px blanks
+// (squeezed to 3 px when that makes a line fit) and keeps leading spaces at 8 px.
+function measure(l,row){
+  const fk=l.font||"f8",F=ST.font&&ST.font[fk==="r8"?"f8":fk];
+  let v=visible(row);
+  if(fk==="cfc2") v=v.replace(/^(Age|Job|Income|Hobby|Appeal)\s*/,"");
+  const w=c=>(F&&F[c])?F[c][0]:8;
+  if(fk!=="r8"){let x=0;for(const c of v)x+=w(c);return {px:x,tight:null}}
+  v=v.replace(/ +$/,"");const lead=v.length-v.replace(/^ +/,"").length;let x=lead*8,ns=0;
+  for(const c of v.slice(lead)){if(c===" ")ns++;x+=c===" "?4:w(c)}
+  return {px:x,tight:x-ns,lead};
+}
+function budgetOf(l){return l.budget||l.maxw*8}
+function verdict(l,m){const b=budgetOf(l);
+  if(m.px<=b) return {cls:"ok",txt:`${b-m.px} px left`};
+  if(m.tight!=null&&m.tight<=b) return {cls:"tight",txt:`fits with 3 px spaces`};
+  return {cls:"over",txt:`${m.px-b} px over`};
+}
+
+/* ---------- rail ---------- */
+function render(){
+  const L=ST.lines, n=L.length;
+  const cnt={approved:0,flagged:0,edited:0,todo:0,english:0};let nw=0,nwOpen=0;
+  L.forEach(l=>{cnt[stateOf(l)]++;if(wideOf(l)){nw++;if(!reworded(l))nwOpen++}});
+  $("#progtxt").textContent=`${cnt.approved} approved · ${cnt.flagged} flagged · ${cnt.todo+cnt.edited} to review · ${nwOpen} too wide · ${n} lines`;
+  $("#bar").innerHTML=`<i style="width:${cnt.approved/n*100}%;background:var(--ok)"></i><i style="width:${cnt.flagged/n*100}%;background:var(--warn)"></i>`;
+  const F=[["wide",`Too wide (${nwOpen}${nw>nwOpen?` + ${nw-nwOpen} reworded`:""})`],["voff","V.OFF script"],["todo","To review"],["flagged","Flagged"],["approved","Approved"],["english","Already English"],["all","All"]];
+  $("#filters").innerHTML=F.map(([k,t])=>`<button data-f="${k}" class="${k==="wide"?"widef":""}" aria-pressed="${ST.filter===k}">${t}</button>`).join("");
+  let h="",last="";
+  L.forEach((l,i)=>{
+    const s=stateOf(l),w=wideOf(l);
+    const show=ST.filter==="all"||(ST.filter==="wide"?!!w:ST.filter==="voff"?isVoff(l):(ST.filter===s||(ST.filter==="todo"&&s==="edited")));
+    if(!show && i!==ST.cur) return;
+    if(l.cat!==last){h+=`<div class="cat">${l.cat}</div>`;last=l.cat}
+    const badge=w?`<em class="wb ${reworded(l)?"done":""}" title="${reworded(l)?"Reworded, waiting for Claude to re-measure":"Too wide"}">${reworded(l)?"re-check":"wide"}</em>`:"<em></em>";
+    h+=`<div class="item ${i===ST.cur?"cur":""}" data-i="${i}"><i class="dot ${s}"></i><span>${esc(visible(l.jp).replace(/\n/g," / "))}</span>${badge}</div>`;
+  });
+  $("#list").innerHTML=h||`<p class="empty" style="padding:12px">Nothing here yet.</p>`;
+  if(ST.filter==="voff") voffView(); else bench();
+}
+
+/* ---------- single-line bench ---------- */
+function lcd(l,text){
+  const fk=l.font||"f8",F=ST.font&&ST.font[fk==="r8"?"f8":fk],H=fk==="big"?16:8,LH=H+2;
+  let rows=text.split("\n");const S=2,budget=budgetOf(l);
+  const cv=document.createElement("canvas");cv.width=168*S;cv.height=(rows.length*LH+4)*S;
+  const g=cv.getContext("2d");const css=getComputedStyle(document.documentElement);
+  g.fillStyle=css.getPropertyValue("--lcd");g.fillRect(0,0,cv.width,cv.height);
+  g.fillStyle="rgba(179,38,30,.18)";g.fillRect(160*S,0,8*S,cv.height);
+  if(budget<160){g.fillStyle="rgba(181,101,29,.15)";g.fillRect(budget*S,0,(160-budget)*S,cv.height)}
+  g.fillStyle=css.getPropertyValue("--lcd-ink");
+  const counts=[];
+  rows.forEach((r,ri)=>{
+    let v=visible(r);if(fk==="cfc2") v=v.replace(/^(Age|Job|Income|Hobby|Appeal)\s*/,"");
+    let x=0;const lead=fk==="r8"?v.length-v.replace(/^ +/,"").length:0;
+    [...v].forEach((c,ci)=>{const f=F&&F[c];
+      const adv=fk==="r8"&&c===" "?(ci<lead?8:4):(f?f[0]:8);
+      if(f&&c!==" "){for(let y=0;y<H;y++)for(let xx=0;xx<H;xx++)if(f[1][y*H+xx]==="#")g.fillRect((x+xx)*S,(ri*LH+2+y)*S,S,S)}
+      else if(!f){g.fillRect(x*S,(ri*LH+2)*S,7*S,H*S)}
+      x+=adv});
+    counts.push(measure(l,r));
+  });
+  setTimeout(()=>{const box=$("#lcd");if(box){box.querySelectorAll("canvas").forEach(c=>c.remove());box.appendChild(cv)}},0);
+  return counts;
+}
+function pxTable(l,counts){
+  const b=budgetOf(l);
+  return counts.map((m,i)=>{const v=verdict(l,m),pct=Math.min(100,m.px/b*100);
+    return `<span class="n">Line ${i+1}</span><span class="${v.cls}"><b>${m.px}</b> / ${b} px · ${v.txt}</span><span class="meter ${v.cls}"><i style="width:${pct}%"></i></span>`}).join("");
+}
+function limitWhy(l){
+  const fk=l.font||"f8";
+  if(fk==="r8") return l.part==="Story"?"V.OFF story window (checked in the game)":l.part?"V.OFF intro/ending window (from the Japanese)":l.ids[0]>=384?"monster name field (assumed)":"Yabou field (Japanese width)";
+  if(fk==="cfc2") return "profile stat field";
+  if(fk==="big") return "big-font window";
+  return "Japanese line width (cautious)";
+}
+function bench(){
+  const l=ST.lines[ST.cur]; if(!l) return;
+  const r=ST.rev[l.key]||{}, w=wideOf(l);
+  const wbox=w?`<div class="widebox ${reworded(l)?"done":""}"><b>${reworded(l)?"Reworded since the width check":"Too wide in the game"}:</b> ${esc(w.msg)}${reworded(l)?" — Claude will re-measure it.":""}</div>`:"";
+  const src=ST.rev[l.key]?"saved on this page":l.en!=null?"from the reviewed script":"Claude's draft";
+  $("#bench").innerHTML=`
+    <div class="meta"><span>Line <b>${ST.cur+1}</b> of ${ST.lines.length}</span><span>${l.cat}</span><span>Used at string ${l.ids.join(", ")}</span><span>Limit <b>${budgetOf(l)}px</b> (${limitWhy(l)}) · lines <b>${l.lines}</b></span></div>
+    ${wbox}
+    <div><div class="lbl">Japanese</div><pre class="jp">${esc(l.jp)}</pre></div>
+    ${l.seg?`<div><div class="lbl">Whole sentence (part ${l.seg[0]} of ${l.seg[1]})</div><p class="draft">${esc(l.seg[2])}</p></div>`:""}
+    <div><div class="lbl">Claude's first draft</div><pre class="draft">${esc(l.draft)}</pre></div>
+    <div class="cols">
+      <div><label class="lbl" for="en">Your English <span style="text-transform:none;letter-spacing:0">(${src})</span></label><textarea id="en" spellcheck="true">${esc(textOf(l))}</textarea>
+        <p class="status">Saves as you type. Codes like [1C] position the text; keep them. <kbd>Ctrl</kbd>+<kbd>Enter</kbd> approves and moves on; <kbd>Alt</kbd>+<kbd>↓</kbd>/<kbd>↑</kbd> skips.</p></div>
+      <div><div class="lbl">On screen (${FONTS[l.font||"f8"]})</div><div class="lcd" id="lcd"><div class="ruler">0 · · · 40 · · · 80 · · · 120 · · · 160px</div></div>
+        <div class="px" id="px"></div></div>
+    </div>
+    <div class="warns" id="warns"></div>
+    <div class="actions">
+      <button class="primary" id="approve">Approve</button>
+      <button id="flag">Flag for later</button>
+      <button id="reset">Reset to draft</button>
+      <input class="note" id="note" placeholder="Note for Claude (optional)" value="${esc(noteOf(l))}">
+      <span class="status" id="saved">${statusText(l)}</span>
+    </div>`;
+  const upd=()=>{const t=$("#en").value,c=lcd(l,t);$("#px").innerHTML=pxTable(l,c);
+    const warn=[];if(t.split("\n").length>l.lines) warn.push(`${t.split("\n").length} lines; the Japanese used ${l.lines}.`);
+    if(/[^\x20-\x7e\n♥]/.test(visible(t))) warn.push("Contains characters the game font lacks (use plain ASCII and ♥).");
+    $("#warns").textContent=warn.join(" ")};
+  $("#en").addEventListener("input",()=>{edit(l,{text:$("#en").value});upd()});
+  $("#note").addEventListener("input",()=>edit(l,{note:$("#note").value}));
+  upd();
+  $("#approve").onclick=()=>commit(l,"approved",true);
+  $("#flag").onclick=()=>commit(l,"flagged",true);
+  $("#reset").onclick=()=>{$("#en").value=l.draft;edit(l,{text:l.draft});upd()};
+}
+function statusText(l){
+  if(!ST.db) return "Read-only: sign in to save";
+  if(ST.dirty[l.key]) return "Unsaved changes…";
+  if(ST.inflight[l.key]) return "Saving…";
+  const r=ST.rev[l.key];return r?.status?`Saved as ${r.status}`:"Not saved yet";
+}
+
+/* ---------- saving ---------- */
+// Every keystroke marks the line dirty and saves it 700 ms later, keeping its status (a line never saved becomes "edited").
+// Unsaved text survives re-renders from other saves, switching lines flushes it, and closing the tab warns.
+function edit(l,ch){
+  ST.dirty[l.key]={text:textOf(l),note:noteOf(l),...ST.dirty[l.key],...ch};
+  setSaved(l);clearTimeout(ST.timers[l.key]);
+  ST.timers[l.key]=setTimeout(()=>flush(l.key),700);
+}
+async function flush(key,status){
+  clearTimeout(ST.timers[key]);
+  const l=ST.lines.find(x=>x.key===key);const d=ST.dirty[key];
+  if(!l||!ST.db||(!d&&!status)) return;
+  const r=ST.rev[key]||{};
+  const doc={text:d?.text??textOf(l),note:d?.note??noteOf(l),status:status||r.status||"edited",ids:l.ids,updatedAt:new Date().toISOString()};
+  ST.inflight[key]=true;delete ST.dirty[key];setSaved(l);
+  try{await ST.db.doc("rev/"+key).set(doc);ST.rev[key]=doc}
+  catch(e){if(!ST.dirty[key])ST.dirty[key]={text:doc.text,note:doc.note};$("#savestate").textContent="Couldn't save line "+l.ids[0]+": "+(e.message||e.code)}
+  finally{delete ST.inflight[key];setSaved(l)}
+}
+async function commit(l,status,next){
+  if(!ST.db) return;
+  if(ST.filter!=="voff"){ST.dirty[l.key]={text:$("#en").value,note:$("#note").value}}
+  await flush(l.key,status);
+  if(next) move(1,true); else render();
+}
+function flushAll(){Object.keys(ST.dirty).forEach(k=>flush(k))}
+function setSaved(l){
+  const n=Object.keys(ST.dirty).length+Object.keys(ST.inflight).length;
+  $("#savestate").textContent=n?`Saving ${n} line${n>1?"s":""}…`:ST.db?"All changes saved":"";
+  if(ST.filter!=="voff"&&ST.lines[ST.cur]?.key===l.key&&$("#saved")) $("#saved").textContent=statusText(l);
+  const inp=document.querySelector(`.vrow input[data-k="${l.key}"]`);if(inp) inp.classList.toggle("dirty",!!ST.dirty[l.key]);
+}
+window.addEventListener("beforeunload",e=>{if(Object.keys(ST.dirty).length){flushAll();e.preventDefault();e.returnValue=""}});
+document.addEventListener("visibilitychange",()=>{if(document.hidden) flushAll()});
+
+/* ---------- V.OFF script view ---------- */
+function voffView(){
+  const L=ST.lines.filter(isVoff);let h="",part=null,seg=null;
+  L.forEach(l=>{
+    if(l.part!==part){part=l.part;seg=null;h+=`<h2>${part} <span class="status">(${l.budget} px window)</span></h2>`}
+    if(l.seg&&(l.seg[0]===1||l.seg[2]!==seg)){seg=l.seg[2];h+=`<p class="sent">${esc(seg)}</p>`}
+    const m=measure(l,textOf(l)),v=verdict(l,m),i=ST.lines.indexOf(l);
+    h+=`<div class="vrow"><span class="id" data-open="${i}" title="Open this line on its own"><i class="dot ${stateOf(l)}"></i> ${l.ids[0]}</span>
+      <span class="vj" title="${esc(l.jp)}">${esc(l.jp.trim())}</span>
+      <input data-k="${l.key}" value="${esc(textOf(l))}" spellcheck="true" class="${ST.dirty[l.key]?"dirty":""}" aria-label="English for line ${l.ids[0]}">
+      <span class="vp ${v.cls}" data-p="${l.key}">${m.px}/${l.budget} · ${v.txt}</span></div>`;
+  });
+  $("#bench").innerHTML=`<div class="vo"><p class="status">Every V.OFF line in reading order, with the whole sentence above each group. Edits save as you type. Widths count 4 px spaces, as the build draws them. Click a number to open that line on its own.</p>${h}</div>`;
+  document.querySelectorAll(".vrow input").forEach(inp=>inp.addEventListener("input",()=>{
+    const l=ST.lines.find(x=>x.key===inp.dataset.k);edit(l,{text:inp.value});
+    const m=measure(l,inp.value),v=verdict(l,m),p=document.querySelector(`[data-p="${l.key}"]`);
+    p.className="vp "+v.cls;p.textContent=`${m.px}/${l.budget} · ${v.txt}`}));
+}
+// On a save from elsewhere, refresh rows that are not being edited, without rebuilding the view.
+function patchVoff(){
+  document.querySelectorAll(".vrow input").forEach(inp=>{
+    const l=ST.lines.find(x=>x.key===inp.dataset.k);if(ST.dirty[l.key]||document.activeElement===inp) return;
+    if(inp.value!==textOf(l)){inp.value=textOf(l);inp.dispatchEvent(new Event("input"));delete ST.dirty[l.key];clearTimeout(ST.timers[l.key])}
+  });
+}
+
+/* ---------- navigation ---------- */
+function move(d,skipDone){
+  flushAll();
+  let i=ST.cur;
+  for(let k=0;k<ST.lines.length;k++){i=(i+d+ST.lines.length)%ST.lines.length;
+    const L=ST.lines[i],s=stateOf(L);
+    if(!skipDone) break;
+    if(ST.filter==="wide"){if(wideOf(L)&&!reworded(L)) break; else continue}
+    if(s==="todo"||s==="edited"||s==="flagged"&&ST.filter==="flagged") break}
+  ST.cur=i;try{localStorage.setItem("cur",i)}catch(e){}
+  if(ST.filter==="voff") ST.filter="all";
+  render();$(".item.cur")?.scrollIntoView({block:"nearest"});$("#en")?.focus();
+}
+function select(i){flushAll();ST.cur=i;try{localStorage.setItem("cur",i)}catch(_){}
+  if(ST.filter==="voff") ST.filter=isVoff(ST.lines[i])?"all":ST.filter;
+  render();$(".item.cur")?.scrollIntoView({block:"nearest"})}
+document.addEventListener("click",e=>{
+  const it=e.target.closest(".item");if(it){select(+it.dataset.i);return}
+  const op=e.target.closest("[data-open]");if(op){select(+op.dataset.open);return}
+  const f=e.target.closest("[data-f]");if(f){flushAll();ST.filter=f.dataset.f;render()}
+});
+document.addEventListener("keydown",e=>{
+  if(ST.filter==="voff"||document.querySelector("dialog[open]")) return;
+  if(e.ctrlKey&&e.key==="Enter"){e.preventDefault();commit(ST.lines[ST.cur],"approved",true)}
+  if(e.altKey&&e.key==="ArrowDown"){e.preventDefault();move(1,false)}
+  if(e.altKey&&e.key==="ArrowUp"){e.preventDefault();move(-1,false)}
+});
+
+/* ---------- start ---------- */
+function rerender(){
+  if(ST.filter==="voff"&&document.querySelector(".vo")){render();return}
+  const ta=$("#en"),focused=ta&&document.activeElement===ta,sel=focused?[ta.selectionStart,ta.selectionEnd]:null;
+  const nt=$("#note"),nfocused=nt&&document.activeElement===nt;
+  render();
+  if(focused&&$("#en")){$("#en").focus();$("#en").setSelectionRange(...sel)}
+  if(nfocused&&$("#note")){$("#note").focus()}
+}
+/* ---------- local storage, used outside Claude ---------- */
+// Same calls as the artifact database: collection(name).onSnapshot(cb) and doc("name/id").set(value), kept in this browser's
+// localStorage. restore() is used by Import.
+function localDB(){
+  const load=n=>{try{return JSON.parse(localStorage.getItem("db:"+n)||"{}")}catch(e){return {}}};
+  const subs={},snap=n=>({docs:Object.entries(load(n)).map(([id,v])=>({id,data:()=>v}))});
+  return {collection:n=>({onSnapshot:f=>{(subs[n]=subs[n]||[]).push(f);f(snap(n))}}),
+    doc:path=>({set:async v=>{const [n,id]=path.split("/"),all=load(n);all[id]=v;
+      localStorage.setItem("db:"+n,JSON.stringify(all));(subs[n]||[]).forEach(f=>f(snap(n)))}}),
+    restore:o=>{["rev","wide"].forEach(n=>{if(o[n])localStorage.setItem("db:"+n,JSON.stringify({...load(n),...o[n]}))})}};
+}
+/* ---------- export, import, help ---------- */
+// The export holds ST.rev and ST.wide: the same data in both modes (artifact database or this browser's storage).
+const EXPORT_FORMAT="neopoke-scriptdesk/1";
+async function flushNow(){await Promise.all(Object.keys(ST.dirty).map(k=>flush(k)))}
+function counts(rev,wide){
+  const c={saved:0,approved:0,flagged:0,edited:0,other:0};
+  for(const d of Object.values(rev)){c.saved++;c[d.status in c?d.status:"other"]++}
+  return [["Saved lines",c.saved],["Approved",c.approved],["Flagged",c.flagged],["Edited",c.edited],["Too wide flags",Object.keys(wide).length]];
+}
+const sumRows=rows=>rows.map(([k,v])=>`<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("");
+let EXP=null;
+async function openExport(){
+  await flushNow();
+  EXP={format:EXPORT_FORMAT,exported:new Date().toISOString(),source:window.claude?"artifact database":"browser storage",
+       lines:ST.lines.length,rev:{...ST.rev},wide:{...ST.wide}};
+  $("#expsum").innerHTML=sumRows(counts(EXP.rev,EXP.wide));$("#expmsg").textContent="";
+  $("#expdlg").showModal();
+}
+function downloadExport(){
+  const name="script_desk_"+EXP.exported.slice(0,10)+".json";
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([JSON.stringify(EXP,null,1)],{type:"application/json"}));
+  a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  $("#expmsg").textContent="Downloading "+name+". If nothing arrives, use Copy JSON and paste it into a file.";
+}
+async function copyExport(){
+  const s=JSON.stringify(EXP,null,1);
+  try{await navigator.clipboard.writeText(s);$("#expmsg").textContent="Copied "+Math.round(s.length/1024)+" KB of JSON."}
+  catch(e){const ta=document.createElement("textarea");ta.value=s;document.body.appendChild(ta);ta.select();
+    const ok=document.execCommand("copy");ta.remove();$("#expmsg").textContent=ok?"Copied.":"Copying is blocked here; use Download."}
+}
+let IMP=null;
+async function readImport(file){
+  let o;
+  try{o=JSON.parse(await file.text())}catch(e){alert("That file is not JSON.");return}
+  if(!o||typeof o.rev!=="object"||o.rev===null){alert('That file has no "rev" section, so it was not made by Export database.');return}
+  IMP={rev:o.rev,wide:(o.wide&&typeof o.wide==="object")?o.wide:{}};
+  const known=new Set(ST.lines.map(l=>l.key));
+  const keys=Object.keys(IMP.rev).filter(k=>known.has(k)),unknown=Object.keys(IMP.rev).length-keys.length;
+  const changed=keys.filter(k=>JSON.stringify(IMP.rev[k])!==JSON.stringify(ST.rev[k])).length;
+  $("#impsum").innerHTML=sumRows([["File",file.name],["Lines in the file",keys.length],["Different from this page",changed],
+    ...(unknown?[["Unknown line keys (skipped)",unknown]]:[]),["Too wide flags",Object.keys(IMP.wide).length]]);
+  IMP.keys=keys;$("#impmsg").textContent="";$("#impdlg").showModal();
+}
+async function applyImport(){
+  const db=ST.db;if(!db||!IMP) return;
+  $("#impgo").disabled=true;
+  try{
+    if(db.restore){db.restore({rev:Object.fromEntries(IMP.keys.map(k=>[k,IMP.rev[k]])),wide:IMP.wide});location.reload();return}
+    let n=0;
+    for(const k of IMP.keys){await db.doc("rev/"+k).set(IMP.rev[k]);n++;if(n%25===0)$("#impmsg").textContent=`Imported ${n} of ${IMP.keys.length}…`}
+    for(const [k,v] of Object.entries(IMP.wide)) await db.doc("wide/"+k).set(v);
+    $("#impdlg").close();rerender();
+  }catch(e){$("#impmsg").textContent="Import stopped: "+(e.message||e.code)}
+  finally{$("#impgo").disabled=false}
+}
+function setupTools(){
+  $("#exp").onclick=openExport;
+  $("#expdl").onclick=downloadExport;$("#expcopy").onclick=copyExport;$("#expclose").onclick=()=>$("#expdlg").close();
+  $("#impb").onclick=()=>{$("#imp").value="";$("#imp").click()};
+  $("#imp").onchange=e=>{const f=e.target.files[0];if(f)readImport(f)};
+  $("#impgo").onclick=applyImport;$("#impcancel").onclick=()=>$("#impdlg").close();
+  $("#helpb").onclick=()=>$("#helpdlg").showModal();$("#helpclose").onclick=()=>$("#helpdlg").close();
+  $("#helpsave").innerHTML=window.claude
+    ?"<li>Opened as a Claude artifact: every edit saves as you type to the artifact's shared database, so everyone with the page sees it.</li><li>Export database is still the way to get the lines into the build.</li>"
+    :"<li>Every edit saves as you type, in this browser's local storage for this address. Another browser, another port or clearing site data shows none of it.</li><li>Export database regularly: it is the only copy outside this browser.</li>";
+}
+setupTools();
+(async()=>{
+  try{ST.font=await (await fetch("font.json")).json()}catch(e){ST.font=null}
+  try{ST.lines=await (await fetch("lines.json")).json()}catch(e){$("#list").innerHTML='<p class="empty" style="padding:12px">The script file failed to load. Reload the page.</p>';return}
+  try{ST.cur=Math.min(+localStorage.getItem("cur")||0,ST.lines.length-1)}catch(e){}
+  render();
+  const db=window.claude?await claude.use("db"):localDB();
+  ST.db=db;
+  const t=setTimeout(()=>{$("#savestate").textContent="Saved work can't be reached yet."},10000);
+  db.collection("rev").onSnapshot(s=>{clearTimeout(t);s.docs.forEach(d=>ST.rev[d.id]=d.data());
+    if(ST.filter==="voff"&&document.querySelector(".vo")){patchVoff();return}
+    rerender()},e=>{clearTimeout(t)});
+  db.collection("wide").onSnapshot(s=>{ST.wide={};s.docs.forEach(d=>ST.wide[d.id]=d.data());
+    if(!ST.wideSeen&&s.docs.length){ST.wideSeen=true;if(ST.filter==="todo"){ST.filter="wide";const i=ST.lines.findIndex(l=>ST.wide[l.key]);if(i>=0&&!ST.wide[ST.lines[ST.cur].key])ST.cur=i}}
+    if(ST.filter==="voff"&&document.querySelector(".vo")) return;
+    rerender()},()=>{});
+})();
+</script>

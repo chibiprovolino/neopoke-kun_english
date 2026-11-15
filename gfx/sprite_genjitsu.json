@@ -1,0 +1,227 @@
+{
+ "name": "sprite_genjitsu",
+ "screen": "Sprite: stone block lettering (never seen in MAME; which minigame is unknown)",
+ "japanese": "現実",
+ "meaning": "Reality",
+ "png": "sprite_genjitsu.png",
+ "preview_4x": "sprite_genjitsu_ref.png",
+ "size_px": [
+  64,
+  32
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1a2d32",
+  "cpu": "0x3a2d32",
+  "count": 32,
+  "bytes": 512,
+  "end_rom": "0x1a2f32"
+ },
+ "frame": {
+  "rom": "0xf2bf3",
+  "format": "strip frame: [tiles*8 u16][tile ptr u32][x s8][y s8][rows u8][code0]{[code][dx s8]}; a row has (0x50-code)/5 tiles"
+ },
+ "cells": [
+  [
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   8,
+   0
+  ],
+  [
+   2,
+   16,
+   0
+  ],
+  [
+   3,
+   24,
+   0
+  ],
+  [
+   4,
+   32,
+   0
+  ],
+  [
+   5,
+   40,
+   0
+  ],
+  [
+   6,
+   48,
+   0
+  ],
+  [
+   7,
+   56,
+   0
+  ],
+  [
+   8,
+   0,
+   8
+  ],
+  [
+   9,
+   8,
+   8
+  ],
+  [
+   10,
+   16,
+   8
+  ],
+  [
+   11,
+   24,
+   8
+  ],
+  [
+   12,
+   32,
+   8
+  ],
+  [
+   13,
+   40,
+   8
+  ],
+  [
+   14,
+   48,
+   8
+  ],
+  [
+   15,
+   56,
+   8
+  ],
+  [
+   16,
+   0,
+   16
+  ],
+  [
+   17,
+   8,
+   16
+  ],
+  [
+   18,
+   16,
+   16
+  ],
+  [
+   19,
+   24,
+   16
+  ],
+  [
+   20,
+   32,
+   16
+  ],
+  [
+   21,
+   40,
+   16
+  ],
+  [
+   22,
+   48,
+   16
+  ],
+  [
+   23,
+   56,
+   16
+  ],
+  [
+   24,
+   0,
+   24
+  ],
+  [
+   25,
+   8,
+   24
+  ],
+  [
+   26,
+   16,
+   24
+  ],
+  [
+   27,
+   24,
+   24
+  ],
+  [
+   28,
+   32,
+   24
+  ],
+  [
+   29,
+   40,
+   24
+  ],
+  [
+   30,
+   48,
+   24
+  ],
+  [
+   31,
+   56,
+   24
+  ]
+ ],
+ "cells_format": "[tile, x px, y px] (sprites, 8x8 each)",
+ "palette": {
+  "source": "unknown: never on screen in MAME; greys stand for colours 1-3",
+  "png_index_map": [
+   {
+    "index": 0,
+    "note": "transparent, shown as magenta"
+   },
+   {
+    "index": 1,
+    "rgb": [
+     96,
+     96,
+     96
+    ]
+   },
+   {
+    "index": 2,
+    "rgb": [
+     176,
+     176,
+     176
+    ]
+   },
+   {
+    "index": 3,
+    "rgb": [
+     255,
+     255,
+     255
+    ]
+   }
+  ]
+ },
+ "max_size": {
+  "px": [
+   64,
+   32
+  ],
+  "note": "Sprite: keep the same cells (other frames of the animation may share these tiles)."
+ }
+}

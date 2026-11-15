@@ -1,0 +1,289 @@
+{
+ "name": "temple_stone_tamashii",
+ "screen": "Minigame g22 (temple stage background, standing stone on the left)",
+ "japanese": "魂",
+ "meaning": "Soul / spirit",
+ "png": "temple_stone_tamashii.png",
+ "preview_4x": "temple_stone_tamashii_ref.png",
+ "size_px": [
+  32,
+  24
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x1dead0",
+  "cpu": "0x3dead0",
+  "count": 255,
+  "bytes": 4080,
+  "end_rom": "0x1dfac0",
+  "odd_address": false,
+  "used_by_this_item": [
+   132,
+   133,
+   134,
+   135,
+   145,
+   146,
+   147,
+   148,
+   159,
+   160,
+   161,
+   162
+  ],
+  "shared_with_rest_of_screen": [
+   132,
+   145,
+   159
+  ]
+ },
+ "map": {
+  "rom": "0x1c6f04",
+  "cpu": "0x3c6f04",
+  "format": "word",
+  "header": null,
+  "width": 20,
+  "height": 19,
+  "entry": "VRAM map entry = ROM word + 0x100 (tile base; tile index = word & 0x1FF counts from the start of the tile block)",
+  "loader": "screen table record 0x1C0244 (pointer list at 0x1C0000): +0 map ptr, +4 tile ptr, +8 w, +10 h, +12 tile count, +14 flags",
+  "record_rom": "0x1c0244"
+ },
+ "rect_in_map": {
+  "x": 1,
+  "y": 11,
+  "w": 4,
+  "h": 3
+ },
+ "cells": [
+  [
+   133,
+   5,
+   0,
+   0
+  ],
+  [
+   134,
+   5,
+   0,
+   0
+  ],
+  [
+   135,
+   6,
+   0,
+   0
+  ],
+  [
+   132,
+   3,
+   0,
+   0
+  ],
+  [
+   146,
+   5,
+   0,
+   0
+  ],
+  [
+   147,
+   6,
+   0,
+   0
+  ],
+  [
+   148,
+   6,
+   0,
+   0
+  ],
+  [
+   145,
+   4,
+   0,
+   0
+  ],
+  [
+   160,
+   5,
+   0,
+   0
+  ],
+  [
+   161,
+   6,
+   0,
+   0
+  ],
+  [
+   162,
+   6,
+   0,
+   0
+  ],
+  [
+   159,
+   4,
+   0,
+   0
+  ]
+ ],
+ "cells_format": "[tile, palette, hflip, vflip] row by row",
+ "palette": {
+  "plane": "p2",
+  "png_index_map": [
+   {
+    "index": 0,
+    "palette": null,
+    "colour": 0,
+    "rgb": [
+     68,
+     0,
+     34
+    ],
+    "note": "transparent (colour 0 of every palette); shown as the screen backdrop colour"
+   },
+   {
+    "index": 1,
+    "palette": 3,
+    "colour": 1,
+    "rgb": [
+     102,
+     34,
+     68
+    ],
+    "rgb444": "0x426"
+   },
+   {
+    "index": 2,
+    "palette": 3,
+    "colour": 2,
+    "rgb": [
+     136,
+     51,
+     85
+    ],
+    "rgb444": "0x538"
+   },
+   {
+    "index": 3,
+    "palette": 3,
+    "colour": 3,
+    "rgb": [
+     221,
+     136,
+     85
+    ],
+    "rgb444": "0x58D"
+   },
+   {
+    "index": 4,
+    "palette": 4,
+    "colour": 1,
+    "rgb": [
+     102,
+     34,
+     68
+    ],
+    "rgb444": "0x426"
+   },
+   {
+    "index": 5,
+    "palette": 4,
+    "colour": 2,
+    "rgb": [
+     119,
+     51,
+     85
+    ],
+    "rgb444": "0x537"
+   },
+   {
+    "index": 6,
+    "palette": 4,
+    "colour": 3,
+    "rgb": [
+     153,
+     85,
+     85
+    ],
+    "rgb444": "0x559"
+   },
+   {
+    "index": 7,
+    "palette": 5,
+    "colour": 1,
+    "rgb": [
+     102,
+     34,
+     68
+    ],
+    "rgb444": "0x426"
+   },
+   {
+    "index": 8,
+    "palette": 5,
+    "colour": 2,
+    "rgb": [
+     153,
+     85,
+     85
+    ],
+    "rgb444": "0x559"
+   },
+   {
+    "index": 9,
+    "palette": 5,
+    "colour": 3,
+    "rgb": [
+     221,
+     136,
+     102
+    ],
+    "rgb444": "0x68D"
+   },
+   {
+    "index": 10,
+    "palette": 6,
+    "colour": 1,
+    "rgb": [
+     153,
+     85,
+     85
+    ],
+    "rgb444": "0x559"
+   },
+   {
+    "index": 11,
+    "palette": 6,
+    "colour": 2,
+    "rgb": [
+     238,
+     136,
+     85
+    ],
+    "rgb444": "0x58E"
+   },
+   {
+    "index": 12,
+    "palette": 6,
+    "colour": 3,
+    "rgb": [
+     187,
+     0,
+     0
+    ],
+    "rgb444": "0x00B"
+   }
+  ],
+  "source": "o_g22/v4410.bin (MAME VRAM dump)",
+  "assumed": null
+ },
+ "max_size": {
+  "px": [
+   32,
+   24
+  ],
+  "note": "Stay inside the 32x24 px area. The tile block holds 255 tiles; tiles listed in shared_with_rest_of_screen are also used outside this area and must not change (or the map must be repointed to free tiles)."
+ }
+}
