@@ -1,10 +1,22 @@
-# Ganbare Neo Poke-kun: English translation and gameplay tools
+# Ganbare Neo Poke-kun: English translation
 
-Tools to translate the Neo Geo Pocket Color game *Ganbare Neo Poke-kun* into English, plus research notes on how its
-room events and minigame unlocks work, and an optional gameplay patch that makes the unlocks less of a grind.
+Experimental English translation of Go for it, Neo Poke-kun! (SNK, 2000) for the Neo Geo Pocket Color.
+Text has been written by a non-native English speaker based on a first pass supervised by a native
+Japanese speaker. Some obscure cultural references have been simplified or adapted to appropriate
+Western equivalents.
+Completely vibe-coded. This is a public release, but it needs further testing on real hardware.
 
-This repository holds no game data: no ROM, no Japanese script, no game graphics, no screenshots. Every file that would
-contain any of that is generated from your own copy of the ROM by the scripts here.
+Download the IPS patch from the Releases page and apply it to your own dump of the game (CRC32 `6DF986A3`).
+
+All the graphics have been redrawn by a human. Some graphics have been left untranslated on purpose:
+they include gibberish, traditional text or other, mainly visual elements.
+Decision to translate the book cover in Neo Poke-kun's room is pending.
+
+An experimental bonus patch provides a way to make new events appear much faster, therefore making
+minigame unlocks less frustrating. An analysis of the original game's event and unlock logic
+is included in the documentation.
+
+Vibed technical specs:
 
 ## What you need
 
