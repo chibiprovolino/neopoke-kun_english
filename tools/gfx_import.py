@@ -169,6 +169,35 @@ def import_item(d, name, log=print):
     return len(todo)
 
 
+def import_raw(d, name, log=print):
+    """Items without a map (sprite frames, tiles loaded by code such as the Garou fight HUD name plates):
+    the PNG's 8x8 cells are written in order over the item's tile block, same size, in place."""
+    meta, im = load_item(name)
+    T0, N = int(meta['tiles']['rom'], 16), meta['tiles']['count']
+    w, h = meta['size_px']
+    if (w // 8) * (h // 8) != N: raise ValueError('%s: %dx%d px is not %d tiles' % (name, w, h, N))
+    idx = {tuple(e['rgb']): e['index'] for e in meta['palette']['png_index_map'] if 'rgb' in e}
+    rgb = im.convert('RGB'); changed = 0
+    for k in range(N):
+        cx, cy = (k % (w // 8)) * 8, (k // (w // 8)) * 8
+        rows = []
+        for y in range(8):
+            r = []
+            for x in range(8):
+                c = rgb.getpixel((cx+x, cy+y))
+                if c not in idx and c != (255, 0, 255):
+                    raise ValueError('%s: pixel (%d,%d) colour %s is not in the item palette' % (name, cx+x, cy+y, c))
+                r.append(idx.get(c, 0))
+            rows.append(tuple(r))
+        b = tile_bytes(tuple(rows))
+        if d[T0+k*16:T0+k*16+16] != b: d[T0+k*16:T0+k*16+16] = b; changed += 1
+    log('%-22s %s' % (name, '%d tiles rewritten (raw)' % changed if changed else 'unchanged'))
+    return changed
+
+
+RAW = ['garou_name_terry_hud', 'garou_name_andy_hud']
+
+
 def items():
     out = []
     for f in sorted(os.listdir(GFX)):
@@ -185,9 +214,9 @@ def items():
 def apply(d, names=None, log=print):
     """Import into bytearray d in place; returns number of changed cells."""
     n = 0
-    for name in names or items():
+    for name in names or items() + [r for r in RAW if os.path.exists(os.path.join(GFX, r + '.png'))]:
         try:
-            n += import_item(d, name, log)
+            n += (import_raw if name in RAW else import_item)(d, name, log)
         except ValueError as e:
             log('SKIPPED ' + str(e))
     return n

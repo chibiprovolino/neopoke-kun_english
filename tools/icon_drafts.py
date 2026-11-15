@@ -58,30 +58,35 @@ def _jpw(b):
     return x
 def _px(t): return sum(W[int(m[1], 16)] if m[1] else W[ord(m[2])] for m in re.finditer(r"\[([0-9A-F]{2})\]|(.)", t))
 def _pad(free): return "[1F]" * (free // 7) + ("[%02X]" % (0x18 + free % 7) if free % 7 else "") if free > 0 else ""
-def fit8(t, field):
+def fit8(t, field, vis=None):
+    vis = vis or field
     out = []; worst = 0
     for line in t.split("\n"):
         line = line.rstrip(" ")
         lead = len(line) - len(line.lstrip(" ")); head, body = line[:lead], line[lead:]
         ns = body.count(" "); sp = SPACE8
         if ns:
-            need = SPACE8 - -(-(_px(head + body.replace(" ", "")) + ns * SPACE8 - field) // ns)
+            need = SPACE8 - -(-(_px(head + body.replace(" ", "")) + ns * SPACE8 - vis) // ns)
             # narrower than a 3 px blank reads as one word in MAME, so lines that need it keep normal gaps and need rewording
             # (the Yabou labels are single words or "Summer 1576", which may go down to 1 px)
             lo = 1 if field < 64 else 3
             sp = min(SPACE8, need) if need >= lo else SPACE8
         line = head + body.replace(" ", "[%02X]" % (0x18 + sp))
-        free = field - _px(line); worst = min(worst, free)
+        free = field - _px(line); worst = min(worst, vis - _px(line))
         out.append(line + _pad(free))
     return "\n".join(out), -worst
 FIELDS = {i: None for i in list(range(69, 84)) + list(range(373, 380))}
 FIELDS.update({i: 104 for i in list(range(407, 438)) + list(range(548, 575))})
+# Intro/ending: the text starts at x=8 and the renderer clips at x=104, but the picture in the top right covers
+# x>=96 while the text scrolls up past it (seen in MAME, intro after one A press on the GO screen), so only 88 px
+# (+ the glyph's trailing 1 px gap) stay readable. The Japanese lines are at most 11 kana (88 px) + padding to 104.
+VIS = {i: 89 for i in list(range(407, 438)) + list(range(548, 575))}
 FIELDS.update({i: 144 for i in range(438, 548)})
 for i, field in FIELDS.items():
     if str(i) not in d: continue
     if field is None:
         a = int(_strs[i]["off"], 16); field = -(-_jpw(_rom[a:_rom.index(b"\0", a)]) // 8) * 8
-    d[str(i)], ex = fit8(d[str(i)], field)
+    d[str(i)], ex = fit8(d[str(i)], field, VIS.get(i))
     if ex > 0: over.append((i, "8x8", d[str(i)], ex))
 # Minigame-menu labels (ids 0-29) use this renderer too, into a 6-tile (48 px) slot (tiles 0x1A0+8*k, first 6 mapped).
 # Every Japanese label is 49+ px so it touches all 6 tiles; shorter English ones ("Shot", "S.M.D", "S.P.D") left the

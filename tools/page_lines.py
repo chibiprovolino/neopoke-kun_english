@@ -3,7 +3,7 @@ Adds to every line of review/lines.json:
   en      the current English (script/page.json), shown when the page has no save for the line
   font    "r8" for strings drawn by the game's own 8x8 renderer (Yabou screen, D&DQ monster names, V.OFF text windows):
           same glyphs and widths as "f8", but inner spaces are 4 px blanks and leading spaces stay 8 px (see tools/icon_drafts.py)
-  budget  that renderer's real field width (Yabou: Japanese width rounded up to tiles; V.OFF story 144 px, intro/ending 104 px;
+  budget  that renderer's real field width (Yabou: Japanese width rounded up to tiles; V.OFF story 144 px, intro/ending 88 px readable (picture covers the rest);
           monster names 32 px, assumed: the battle screen was never captured)
   part    for V.OFF lines: "Intro", "Story" or "Ending" (the page's V.OFF script view lists them in order)
   seg     sentence grouping from the page.json notes ("Segment 1/2 of: ...") when there is one
@@ -26,7 +26,7 @@ def jpw(i):
     return -(-x // 8) * 8
 R8 = {i: jpw(i) for i in list(range(69, 84)) + list(range(373, 380))}
 R8.update({i: 32 for i in range(384, 394)})
-R8.update({i: 104 for i in list(range(407, 438)) + list(range(548, 575))})
+R8.update({i: 89 for i in list(range(407, 438)) + list(range(548, 575))})
 R8.update({i: 144 for i in range(438, 548)})
 for l in L:
     p = P.get(l["key"])

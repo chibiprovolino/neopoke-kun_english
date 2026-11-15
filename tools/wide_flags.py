@@ -14,7 +14,7 @@ for m in re.finditer(r"too wide: (\d+) (\S+) (.*) by (\d+) px", out):
     if m[2] in ("Age", "Job", "Income", "Hobby", "Appeal"): new[key[i]] = f"stat value is {o} px over the 64 px field"
     elif 438 <= i < 548: new[key[i]] = (f"{o} px wider than the 144 px story window (V.OFF), even with 4 px spaces; squeezing the spaces "
                                        "under 3 px makes the words run together. Checked on screen in MAME")
-    elif 407 <= i < 575: new[key[i]] = f"{o} px wider than the 104 px window (Japanese width), even with 4 px spaces. This window has not been seen on screen yet"
+    elif 407 <= i < 575: new[key[i]] = f"{o} px wider than the 88 px readable part of the intro/ending window (the picture covers the rest), even with 4 px spaces"
     elif 384 <= i < 394: new[key[i]] = f"{o} px wider than the 32 px name field (assumed same rule as the Yabou fields; battle screen not captured)"
     else: new[key[i]] = f"{o} px wider than its {m[2]} field"
 for r in open("build/fit_page.txt", encoding="utf-8").read().splitlines()[2:]:

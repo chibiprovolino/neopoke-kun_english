@@ -23,8 +23,18 @@ IDLE_DRIFT = 0                 # mood added by the idle default event (the game'
 ROOM_EDGE = {34: 8, 35: 9, 67: 16, 68: 17}     # room mood bands: the game's edges at +-34/35 and +-67/68 move to +-8/9 and +-16/17
 OTHER_EDGE = {67: 8, 68: 9}                    # visitor and megaphone mood bands: +-67/68 move to +-8/9
 FOLLOWUP_CHANCE = 40           # room records that could only start as a follow-up (chance 0) can now also start alone (x/256 per check)
+STICK_REACTIONS = range(56, 65) # ...except these: short reactions to holding the stick (parents are events 75-78), which look odd unprompted
 DROP_ROOM_PREREQ = True        # visitors no longer need one particular room event to have been the last one
 SEASONAL_ANY_MOOD = (65, 66, 67, 68)   # room records for Christmas, New Year, Halloween and blossom: any mood
+MIN_HOLD = 0                   # room records: minimum seconds he holds an event's end pose (the game uses 1, 2, 5 or 10); 0 = unchanged
+IDLE_GAP = True                # after every room event the next one is an idle event from IDLE_RECORDS, unless a chained follow-up is pending or a direction is held;
+                               # IDLE_RECORDS also replace the game's lying-down fallback when no event qualifies
+# room records played as idle between events (any time, any mood). Chosen for being calm and having no side effects:
+# no work or bad-reaction chance, no follow-up, no date, no position, no held direction, held for 10 s.
+IDLE_RECORDS = [157, 133, 75, 165, 151, 126, 141, 136, 129, 127, 140, 92]
+#   157 stands still, 133 looks around, 75 sits reading, 165 plays his handheld, 151 walks to the shelf and puts on headphones,
+#   126 crouches and stretches, 141 thinks with a hand on his chin, 136 paces around, 129 sits calmly, 127 talks to himself,
+#   140 dozes sitting, 92 sits in the corner with a gadget
 BATHROOM = {182: 255}          # room record -> chance: he goes to the bathroom more often by day (visitors 70-89 only call then)
 BATHROOM_VISITORS_ANY_HOUR = True   # visitors 70-89: the bathroom events are daytime only, so their night-time records could never match
 BATHROOM_VISITORS_ANY_STATE = True  # visitors 70-89 also call while he is in the room (the automated player met only 3-5 of the 20 otherwise)
@@ -34,6 +44,7 @@ TIMES = [(10, 0), (12, 30), (16, 30), (18, 30), (19, 30), (22, 0), (2, 0)]
 # ---- addresses ----------------------------------------------------------------------------------------------
 ORG = 0x1F7800                 # file offset of the new code and tables (free up to the save area at 0x1F8000)
 SEEN_ROOM, SEEN_WIG, SEEN_MEGA, CAL = 0x4544, 0x454F, 0x4552, 0x4554   # RAM, all inside the saved block
+IDLE_DUE = 0x4555             # RAM: 1 = the next room pick must be the idle event
 MET = 0x4558                   # the game's own "visitor met" bits
 CPU = lambda f: f + 0x200000
 TABLES = [("room", 0x40000, 1, 202, 0x11, SEEN_ROOM), ("visitor", 0x42000, 1, 263, 0x13, MET),
@@ -65,7 +76,7 @@ class Asm:
 
 
 def build_code():
-    a = Asm(CPU(ORG)); sub = {}
+    a = Asm(CPU(ORG)); sub = {}; idle_fix = []
     def S(n): sub[n] = a.here()
     # BT: is bit A of the bitmap at XIX clear?  -> Z if clear.  Uses A, XHL, XIX.
     S("BT")
@@ -84,6 +95,11 @@ def build_code():
     # per-table award stubs, called with XIY = the chosen record (they replace "ld WA,(XIY+0x0d) / add (0x4520),WA")
     for name, off, lo, hi, key, bitmap in TABLES:
         S("AW_" + name)
+        if name == "room" and IDLE_GAP:
+            a.emit(0xC1, *a16(IDLE_DUE), 0x3F, 0x02); a.jr("NZ", "awreal")            # cp (IDLE_DUE),2
+            a.emit(0xF1, *a16(IDLE_DUE), 0x00, 0x00); a.jr("T", "awgo")               # ld (IDLE_DUE),0
+            a.L("awreal"); a.emit(0xF1, *a16(IDLE_DUE), 0x00, 0x01)                   # ld (IDLE_DUE),1
+            a.L("awgo")
         a.emit(0x8D, key, 0x21, 0x44, *i32(bitmap))                                  # ld A,(XIY+key) / ld XIX,bitmap
         if name == "visitor":                                                        # the game sets the met bit itself, later
             a.call(sub["BT"]); a.emit(0xB0, 0xFE); a.jp(sub["ADD"])                  # call BT / ret NZ / jp ADD
@@ -92,6 +108,12 @@ def build_code():
     # per-table filters: keep only the unseen candidates if there are any, then redo the game's "is the list empty" test
     for name, off, lo, hi, key, bitmap in TABLES:
         S("FI_" + name); p = name[0]
+        if name == "room" and IDLE_GAP:
+            a.emit(0xC1, *a16(IDLE_DUE), 0x3F, 0x00); a.jr("Z", "rnoidle")            # cp (IDLE_DUE),0
+            a.emit(0xC1, 0xC6, 0x44, 0x3F, 0x00); a.jr("NZ", "rnoidle")               # cp (0x44c6),0  (chained follow-up pending: idle after it)
+            a.emit(0xC1, 0xC3, 0x44, 0x3F, 0x00); a.jr("NZ", "rnoidle")               # cp (0x44c3),0  (a direction is held: react at once)
+            a.jr("T", "ifill")
+            a.L("rnoidle")
         if name != "visitor":       # byte list at 0x6202, count at 0x6201
             a.emit(0x44, *i32(0x6202), 0x45, *i32(0x6202), 0xC1, 0x01, 0x62, 0x23, 0x22, 0x00, 0xCB, 0xD8)   # XIX=XIY=list / ld C,(count) / ld B,0 / cp C,0
             a.jr("Z", p + "done")
@@ -104,7 +126,21 @@ def build_code():
             a.L(p + "next"); a.djnz("C", p + "loop")
             a.emit(0xCA, 0xD8); a.jr("Z", p + "done")                                # cp B,0
             a.emit(0xF1, 0x01, 0x62, 0x42)                                           # ld (0x6201),B
-            a.L(p + "done"); a.emit(0xC1, 0x01, 0x62, 0x3F, 0x00, 0x0E)              # cp (0x6201),0 / ret
+            a.L(p + "done"); a.emit(0xC1, 0x01, 0x62, 0x3F, 0x00)                    # cp (0x6201),0
+            if name == "room" and IDLE_GAP:
+                a.emit(0xB0, 0xFE)                                                   # ret NZ  (a real event qualifies)
+                a.L("ifill")                                                         # idle due, or nothing qualifies: pick from IDLE_RECORDS
+                a.emit(0xF1, *a16(IDLE_DUE), 0x00, 0x02)                              # ld (IDLE_DUE),2
+                n = len(IDLE_RECORDS)                                                # even choice (the game's own picker favours some list positions)
+                a.call(0x200DF2)                                                     # A = random 0..255
+                a.L("imod"); a.emit(0xC9, 0xCF, n); a.jr("C", "iok"); a.emit(0xC9, 0xCA, n); a.jr("T", "imod")   # A = A mod n
+                a.L("iok")
+                a.emit(0x44, *i32(0)); idle_fix.append(len(a.b) - 4)                 # ld XIX,IDLETAB
+                a.emit(0xEB, 0xA8, 0xC9, 0x8F, 0xEB, 0x84, 0x84, 0x21)              # ld XHL,0 / ld L,A / add XIX,XHL / ld A,(XIX)
+                a.emit(0x45, *i32(0x6202), 0x22, n, 0xF1, 0x01, 0x62, 0x00, n)       # ld XIY,0x6202 / ld B,n / ld (0x6201),n
+                a.L("icopy"); a.emit(0xF5, 0xF4, 0x41); a.djnz("B", "icopy")         # the chosen record n times, so any pick gives it
+                a.emit(0xC1, 0x01, 0x62, 0x3F, 0x00)                                 # cp (0x6201),0  (NZ: the game picks from the list)
+            a.emit(0x0E)                                                             # ret
         else:                       # word list at 0x6204, count at 0x6202; 0x6200 is free here and counts the kept ones
             a.emit(0x44, *i32(0x6204), 0x45, *i32(0x6204), 0xD1, 0x02, 0x62, 0x21, 0xF1, 0x00, 0x62, 0x02, 0x00, 0x00)   # XIX=XIY=list / ld BC,(count) / ld (0x6200),0
             a.emit(0xD1, 0x02, 0x62, 0x3F, 0x00, 0x00); a.jr("Z", p + "done")        # cp (0x6202),0
@@ -130,6 +166,8 @@ def build_code():
     S("INIT")
     a.emit(0xF1, 0x6C, 0x45, 0x00, 0x00, 0x30, 0x14, 0x00, 0x42, *i32(0x4544))       # ld (0x456c),0 / ld WA,20 / ld XDE,0x4544
     a.L("iloop"); a.emit(0xF5, 0xE8, 0x00, 0x00); a.djnz("WA", "iloop"); a.emit(0x0E)   # ld (XDE+),0 / djnz WA / ret
+    S("IDLETAB"); a.emit(*IDLE_RECORDS)
+    for pos in idle_fix: a.b[pos:pos + 4] = i32(sub["IDLETAB"])
     code = a.done()
     # calendar table: 256 entries of month, day, hour, minute (index = step mod 84, so a stray value is harmless)
     S("CALTAB")
@@ -200,7 +238,8 @@ def apply(d):
                 if abs(v) in edge: d[r + k] = u8(edge[abs(v)] * (1 if v > 0 else -1))
             a = struct.unpack_from("<H", d, r + 11)[0]
             struct.pack_into("<H", d, r + 11, int(round(a * MINA_SCALE / 5.0)) * 5)
-            if name == "room" and d[r + 15] == 0: d[r + 15] = FOLLOWUP_CHANCE
+            if name == "room" and d[r + 15] == 0 and i not in STICK_REACTIONS: d[r + 15] = FOLLOWUP_CHANCE
+            if name == "room" and d[r + 16] < MIN_HOLD: d[r + 16] = MIN_HOLD
             if name == "visitor" and DROP_ROOM_PREREQ: d[r + 27] = 0
             if name == "visitor" and s8(d[r + 8]) > s8(d[r + 9]): d[r + 8], d[r + 9] = d[r + 9], d[r + 8]      # two records have their mood bounds the wrong way round and can never match
             if name == "visitor" and BATHROOM_VISITORS_ANY_HOUR and d[r + 19] >= 70: d[r + 4:r + 8] = bytes([0, 0, 23, 59])

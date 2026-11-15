@@ -274,3 +274,19 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
   voff_dump measure with `vwf.fix8`. "Rocketman" is now 49 px (allowed: the extra column is the gap). D&DQ not seen in MAME.
 - Story line 465 is now "But the records believed to" (126/144 px; user approved, also on the Script Desk page rev/s465 v2).
   V.OFF: 0 lines over. build/page_lines.json refreshed (the Script Desk page's lines.json not republished).
+- Bot now waits 5 s with no input after each action ends (BOT_IDLE, default 300 frames). Rerun on the current build (runs U5/U6, 3 game-hours): all 30 games at 43 and 45 min; 182 of 194 scenes in both runs; room events 64 and 67 (were 66 and 64); all visitors and wiggle gags. Unseen in both: room events 5, 19, 20, 30, 51, 53, 58 and megaphone reaction 3. The idle pause changed little: progress is a few minutes slower and the scene count is the same.
+- Idle between events (2026-11-15, user: "he should wait at least 10 s before changing status; different idle animations"). After every room event the next pick is an idle event: one of 12 calm room records (IDLE_RECORDS in tools/redesign.py: standing, looking around, reading, handheld, headphones at the shelf, stretching, thinking, pacing, sitting, talking, dozing, gadget in the corner), chosen evenly by the patch and held 10 s. The same pool replaces the game's lying-down fallback when nothing qualifies. Skipped while a chained follow-up is pending or a direction is held (stick reactions stay immediate). Flag at RAM 0x4555 (1 = idle due, 2 = idle being picked). The stick-reaction records 56-64 are follow-up only again (they repeated when allowed to start alone).
+- Bot result with the idle pool (W5/W6): all 30 games at 46 and 49 min (43-45 before); 179-180 scenes in 3 game-hours (182 before). Reading still comes up about twice as often as the other idle activities, probably from the game's random table.
+
+## Bug fixes 2026-11-15 (user report)
+- Menu labels: s026 "Garou" -> "FFury", s017 "Mr.Yabou" -> "Mr Amb", s008 "S.M.D" -> "S.Maddest" (44/48 px).
+  s645 (instructions) now "Space Maddest / This is not your war! All you can do is run...".
+- Fatal Fury fight HUD names: plane tiles loaded by code, VRAM 0x90-0x94 (Andy, file 0x110107, 5 tiles) and 0x98-0x9B (Terry, file 0xFF65B).
+  `gfx_import.py` writes "raw" items (no map, cells in tile order) when their PNG exists: `RAW = garou_name_terry_hud, garou_name_andy_hud`;
+  `gfx_extract.py` makes their templates. The game's HUD plate = the player-select plate shifted 1 px right with colour index +1.
+- V.OFF intro window: text starts at x=8 and is clipped at x=104, but the picture covers x>=96 while the text scrolls past it, so only 88 px
+  (+1 px glyph gap) is readable, not 104. `icon_drafts.py` (VIS), `page_lines.py`, `voff_dump.py`, `wide_flags.py` use 89.
+  Intro reworded to fit: 418-420 "But suddenly, the / curtain rose on a / new era of war...", 425-429 "...a manlike machine once built by man.",
+  430-434 "The aliens raided Earth's major military bases, demanding total surrender." Ending 559 "starting: fighting to", 560 "live together".
+  Checked in MAME (intro: one A press on the GO screen); the ending was not seen on screen.
+- Beta 1 patches rebuilt with these fixes and the idle pool above.

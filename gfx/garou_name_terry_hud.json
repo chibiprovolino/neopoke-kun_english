@@ -1,6 +1,6 @@
 {
  "name": "garou_name_terry_hud",
- "screen": "Minigame \"Garou\": second copy of the Terry name plate (sprite tiles)",
+ "screen": "Minigame \"Garou\": fight HUD name plate (tiles 0-3 = plane tiles VRAM 0x98-0x9B, loaded by code; also sprite frame 0xE30C8)",
  "japanese": "テリ〜",
  "meaning": "Terry",
  "png": "garou_name_terry_hud.png",

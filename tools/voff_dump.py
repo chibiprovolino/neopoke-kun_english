@@ -1,6 +1,6 @@
 """Write the whole V.OFF script in reading order: python tools/voff_dump.py [build/page_lines.json] [script/voff_script.md]
 Run tools/merge_page.py and tools/page_lines.py first. Each line is measured the way the game draws it (8x8 renderer,
-inner spaces 4 px, leading spaces 8 px) against its window: story 144 px, intro/ending 104 px."""
+inner spaces 4 px, leading spaces 8 px) against its window: story 144 px, intro/ending 88 px (+1 px glyph gap)."""
 import json, sys
 sys.path.insert(0, "tools")
 from icons import WIDTHS
@@ -14,7 +14,7 @@ L = [l for l in json.load(open(src, encoding="utf-8")) if l.get("part")]
 out = ["# V.OFF script", "",
        "All shooter text in reading order, as the build has it now (script/page.json).",
        "Width is measured as the game draws it: inner spaces 4 px (the build narrows the game's 8 px space), leading spaces 8 px.",
-       "Windows: Intro and Ending 104 px (from the Japanese, not yet seen on screen), Story 144 px (checked in MAME).",
+       "Windows: Intro and Ending 89 px (88 px readable left of the picture + the glyph's 1 px gap; intro checked in MAME), Story 144 px (checked in MAME).",
        "`px` = width / window. **over** = does not fit; *tight* = fits only with 3 px spaces (the build squeezes these automatically).",
        "Known story screens: page 1 = 438-439, page 2 = 440-446, page 3 = 447-452, page 4 = 453-455 (later pages not captured yet).", ""]
 part = seg = None; n_over = n_tight = 0

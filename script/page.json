@@ -94,9 +94,9 @@
    "maxw": 7,
    "lines": 1,
    "draft": "[19] S.M.D ",
-   "en": "[19] S.M.D ",
-   "status": "flagged",
-   "note": "Space Maddist versus Muddiest was discussed, but no final explicit decision."
+   "en": "[19]S.Maddest",
+   "status": "approved",
+   "note": "Space Maddest (user decision 2026-11-15)."
   },
   {
    "key": "s009",
@@ -184,8 +184,8 @@
    "maxw": 6,
    "lines": 1,
    "draft": "[1C]Mr.Yabou ",
-   "en": "[1C]Mr.Yabou ",
-   "status": "flagged",
+   "en": "[1C]Mr Amb ",
+   "status": "approved",
    "note": "User chose full title Mr. Ambition for minigame. Abbreviated menu label not settled; don't alter position code or fit."
   },
   {
@@ -274,8 +274,8 @@
    "maxw": 6,
    "lines": 1,
    "draft": "[1C] Garou  ",
-   "en": "[1C] Garou  ",
-   "status": "flagged",
+   "en": "[1C] FFury  ",
+   "status": "approved",
    "note": "User chose full title Fatal Fury. Menu abbreviation still needs a fit-safe localization decision."
   },
   {
@@ -3624,7 +3624,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "But the tale ",
-   "en": "But without warning,",
+   "en": "But suddenly, the",
    "status": "edited",
    "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 1/3 of: But without warning, the curtain rose on a new era of war...; Assistant chose theatrical option after ambiguous yes; confirm this phrasing later"
   },
@@ -3634,7 +3634,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "of war began ",
-   "en": "the curtain rose on",
+   "en": "curtain rose on a",
    "status": "edited",
    "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 2/3 of: But without warning, the curtain rose on a new era of war...; Assistant chose theatrical option after ambiguous yes; confirm this phrasing later"
   },
@@ -3644,7 +3644,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "anew, unannounced...",
-   "en": "a new era of war...",
+   "en": "new era of war...",
    "status": "edited",
    "note": "PROVISIONAL / NOT EXPLICITLY APPROVED: Segment 3/3 of: But without warning, the curtain rose on a new era of war...; Assistant chose theatrical option after ambiguous yes; confirm this phrasing later"
   },
@@ -3704,7 +3704,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "resembled the",
-   "en": "closely resembled the",
+   "en": "closely resembled",
    "status": "approved",
    "note": "USER APPROVED: Segment 2/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
   },
@@ -3714,7 +3714,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "humanoid mecha",
-   "en": "Vantrooper, a manlike",
+   "en": "the Vantrooper, a",
    "status": "approved",
    "note": "USER APPROVED: Segment 3/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
   },
@@ -3724,7 +3724,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "`Vantrooper\"",
-   "en": "combat machine once",
+   "en": "manlike machine",
    "status": "approved",
    "note": "USER APPROVED: Segment 4/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
   },
@@ -3734,7 +3734,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "made by man. ",
-   "en": "developed by humanity.",
+   "en": "once built by man.",
    "status": "approved",
    "note": "USER APPROVED: Segment 5/5 of: Their weapons closely resembled the Vantrooper, a humanoid combat machine once developed by humanity."
   },
@@ -3744,7 +3744,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "The aliens   ",
-   "en": "The aliens launched",
+   "en": "The aliens raided",
    "status": "approved",
    "note": "USER APPROVED: Segment 1/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
   },
@@ -3754,7 +3754,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "attacked key ",
-   "en": "surprise attacks on",
+   "en": "Earth's major",
    "status": "approved",
    "note": "USER APPROVED: Segment 2/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
   },
@@ -3764,7 +3764,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "military bases",
-   "en": "Earth's major military",
+   "en": "military bases,",
    "status": "approved",
    "note": "USER APPROVED: Segment 3/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
   },
@@ -3774,7 +3774,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "and demanded ",
-   "en": "bases, demanding",
+   "en": "demanding total",
    "status": "approved",
    "note": "USER APPROVED: Segment 4/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
   },
@@ -3784,7 +3784,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "total surrender.",
-   "en": "total surrender.",
+   "en": "surrender.",
    "status": "approved",
    "note": "USER APPROVED: Segment 5/5 of: The aliens launched surprise attacks on Earth's major military bases, demanding unconditional surrender."
   },
@@ -5034,7 +5034,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "<Delphi>, as ",
-   "en": "beginning: the fight to",
+   "en": "starting: fighting to",
    "status": "approved",
    "note": "USER APPROVED: Segment 3/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
   },
@@ -5044,7 +5044,7 @@
    "maxw": 13,
    "lines": 1,
    "draft": "fellow humans",
-   "en": "build peace together",
+   "en": "live together",
    "status": "approved",
    "note": "USER APPROVED: Segment 4/7 of: Perhaps the true struggle was only beginning: the fight to build peace together with the people of Delphi, as fellow human beings..."
   },
@@ -5664,7 +5664,7 @@
    "maxw": 12,
    "lines": 6,
    "draft": " Space Muddiest\nYou're a civilian\nwith nothing to do\nwith the war. All\nyou can do is run...\n(<- -> : Run away)",
-   "en": " Space Muddiest\nYou're a civilian\nwith nothing to do\nwith the war. All\nyou can do is run...\n(<- -> : Run away)",
+   "en": " Space Maddest\nThis is not your war!\nAll you can do\nis run...\n(<- -> : Run away)",
    "status": "approved",
    "note": "User proposed Space Maddist; not confirmed. Keep original for now. | USER APPROVED: Final instruction wording from conversation. Controller descriptions preserved in substance. Width and runtime rendering not verified."
   },

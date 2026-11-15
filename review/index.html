@@ -260,7 +260,7 @@ function pxTable(l,counts){
 }
 function limitWhy(l){
   const fk=l.font||"f8";
-  if(fk==="r8") return l.part==="Story"?"V.OFF story window (checked in the game)":l.part?"V.OFF intro/ending window (from the Japanese)":l.ids[0]>=384?"monster name field (assumed)":"Yabou field (Japanese width)";
+  if(fk==="r8") return l.part==="Story"?"V.OFF story window (checked in the game)":l.part?"V.OFF intro/ending window: 88 px readable, the picture covers the rest (checked in the game)":l.ids[0]>=384?"monster name field (assumed)":"Yabou field (Japanese width)";
   if(fk==="cfc2") return "profile stat field";
   if(fk==="big") return "big-font window";
   return "Japanese line width (cautious)";

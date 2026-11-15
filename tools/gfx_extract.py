@@ -72,13 +72,32 @@ def _import_item(d, name):
     return px
 
 
+RAW_ITEMS = ["garou_name_terry_hud", "garou_name_andy_hud"]   # tiles loaded by code, no map: cells in tile order
+
+
+def _raw_item(d, name):
+    meta = json.load(open(os.path.join(GFX, name + ".json"), encoding="utf-8"))
+    T0, N = int(meta["tiles"]["rom"], 16), meta["tiles"]["count"]
+    col = {e["index"]: tuple(e.get("rgb", (255, 0, 255))) for e in meta["palette"]["png_index_map"]}
+    W, H = meta["size_px"]
+    px = [[col[0]] * W for _ in range(H)]
+    for k in range(N):
+        cx, cy = (k % (W // 8)) * 8, (k // (W // 8)) * 8
+        for y, r in enumerate(tile(d, T0 + k * 16)):
+            for x, c in enumerate(r):
+                px[cy + y][cx + x] = col[c]
+    return px
+
+
 def items():
-    return PATCH_ITEMS + import_items()
+    return PATCH_ITEMS + import_items() + RAW_ITEMS
 
 
 def original(d, name):
     if name in PATCH_ITEMS:
         return "P", _patch_item(d, name)
+    if name in RAW_ITEMS:
+        return "RGB", _raw_item(d, name)
     return "RGB", _import_item(d, name)
 
 

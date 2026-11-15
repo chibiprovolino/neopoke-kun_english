@@ -1,0 +1,92 @@
+{
+ "name": "garou_name_andy_hud",
+ "screen": "Minigame \"Garou\": fight HUD name plate under the left/right life bar (plane tiles, loaded by code)",
+ "japanese": "アンディ",
+ "meaning": "Andy",
+ "png": "garou_name_andy_hud.png",
+ "preview_4x": "garou_name_andy_hud_ref.png",
+ "size_px": [
+  40,
+  8
+ ],
+ "compression": "none (raw NGPC 2bpp tiles, 16 bytes per 8x8 tile)",
+ "tiles": {
+  "rom": "0x110107",
+  "cpu": "0x310107",
+  "count": 5,
+  "bytes": 80,
+  "end_rom": "0x110157"
+ },
+ "cells": [
+  [
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   8,
+   0
+  ],
+  [
+   2,
+   16,
+   0
+  ],
+  [
+   3,
+   24,
+   0
+  ],
+  [
+   4,
+   32,
+   0
+  ]
+ ],
+ "cells_format": "[tile, x px, y px] (sprites, 8x8 each)",
+ "palette": {
+  "source": "work/gfxsurvey/v_garou/v7310.bin, p1 palette 8 (VRAM tiles 0x90-0x94)",
+  "png_index_map": [
+   {
+    "index": 0,
+    "note": "transparent, shown as magenta"
+   },
+   {
+    "index": 1,
+    "rgb": [
+     0,
+     0,
+     0
+    ],
+    "rgb444": "0x000"
+   },
+   {
+    "index": 2,
+    "rgb": [
+     255,
+     204,
+     0
+    ],
+    "rgb444": "0x0CF"
+   },
+   {
+    "index": 3,
+    "rgb": [
+     255,
+     85,
+     0
+    ],
+    "rgb444": "0x05F"
+   }
+  ]
+ },
+ "max_size": {
+  "px": [
+   40,
+   8
+  ],
+  "note": "Fight HUD plate: all 5 tiles are shown (VRAM 0x90-0x94)."
+ },
+ "derived_from": "gfx/garou_name_andy.png (shifted 1 px right, colour index +1, the same rule as the game's own Terry plates); redraw freely"
+}
