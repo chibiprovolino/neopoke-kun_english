@@ -1,6 +1,6 @@
 # Ganbare Neo Poke-kun: English translation
 
-Experimental English translation of Go for it, Neo Poke-kun! (SNK, 2000) for the Neo Geo Pocket Color.
+English translation of Go for it, Neo Poke-kun! (SNK, 2000) for the Neo Geo Pocket Color.
 Text has been written by a non-native English speaker based on a first pass supervised by a native
 Japanese speaker. Some obscure cultural references have been simplified or adapted to appropriate
 Western equivalents.
