@@ -294,7 +294,7 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
   `gfx_extract.py` makes their templates. The game's HUD plate = the player-select plate shifted 1 px right with colour index +1.
 - V.OFF intro window: text starts at x=8 and is clipped at x=104, but the picture covers x>=96 while the text scrolls past it, so only 88 px
   (+1 px glyph gap) is readable, not 104. `icon_drafts.py` (VIS), `page_lines.py`, `voff_dump.py`, `wide_flags.py` use 89.
-  Intro reworded to fit: 418-420 "But suddenly, the / curtain rose on a / new era of war...", 425-429 "...a manlike machine once built by man.",
+  Intro reworded to fit: 418-420 "But suddenly, the / curtain rose on a / new era of war...", 425-429 "...the Vantrooper, an android once built by man.",
   430-434 "The aliens raided Earth's major military bases, demanding total surrender." Ending 559 "starting: fighting to", 560 "live together".
   Checked in MAME (intro: one A press on the GO screen); the ending was not seen on screen.
 - Beta 1 patches rebuilt with these fixes and the idle pool above.
