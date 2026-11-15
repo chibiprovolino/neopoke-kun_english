@@ -298,3 +298,6 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
   430-434 "The aliens raided Earth's major military bases, demanding total surrender." Ending 559 "starting: fighting to", 560 "live together".
   Checked in MAME (intro: one A press on the GO screen); the ending was not seen on screen.
 - Beta 1 patches rebuilt with these fixes and the idle pool above.
+- Release renamed "v1 beta" (2026-11-15): `ips_english/neopoke_en(_fastunlock)_v1beta.ips`, plus `_allgames` IPS patches again
+  (save built into the ROM's save area, for flashcarts) next to the Mednafen `.flash` saves (same save data, renamed; they hold no ROM data).
+  The all-games ROM was booted in MAME: no title screen, menu with every game unlocked and cleared, page E present.
