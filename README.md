@@ -1,20 +1,13 @@
 # Ganbare Neo Poke-kun: English translation
 
-English translation of Go for it, Neo Poke-kun! (SNK, 2000) for the Neo Geo Pocket Color.
-Text has been written by a non-native English speaker based on a first pass supervised by a native
-Japanese speaker. Some obscure cultural references have been simplified or adapted to appropriate
-Western equivalents.
-Completely vibe-coded. This is a public release, but it needs further testing on real hardware.
+English translation of Go for it, Neo Poke-kun! (SNK, 2000) for the Neo Geo Pocket Color. Text has been written by a non-native English speaker, based on a first pass supervised by a native Japanese speaker. Some obscure cultural references have been simplified or adapted to appropriate Western equivalents. Tested on real hardware. Completely vibe-coded.
 
-Download the IPS patch from the Releases page and apply it to your own dump of the game (CRC32 `6DF986A3`).
+All the graphics have been redrawn by a human. Some graphics have been left untranslated on purpose: they include gibberish, traditional text or other, mainly visual elements. Decision to translate the book cover in Neo Poke-kun's room is pending.
 
-All the graphics have been redrawn by a human. Some graphics have been left untranslated on purpose:
-they include gibberish, traditional text or other, mainly visual elements.
-Decision to translate the book cover in Neo Poke-kun's room is pending.
+An experimental bonus patch provides a way to make new events appear much faster, making minigame unlocks less frustrating. An analysis of the original game's event and unlock code is included in the documentation.
+Patches that start with the games fully unlocked are available in the repo for both versions. This solution was applied for ease of use with NGPC flash carts.
 
-An experimental bonus patch provides a way to make new events appear much faster, therefore making
-minigame unlocks less frustrating. An analysis of the original game's event and unlock logic
-is included in the documentation.
+Download the IPS files from the Releases page and apply them to your own dump of the game (CRC32 6DF986A3).
 
 Vibed technical specs:
 
