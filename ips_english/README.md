@@ -36,5 +36,5 @@ neopoke_en.e33ca19773adf510bc73e0b947c42319.flash
 ```
 
 Delete or move any save Mednafen already made for that ROM first. Other emulators that use the NeoPop flash format may
-read these files too; only Mednafen was tested. The page E update to the saves was checked in MAME (same save data put
-into the cartridge's save area), not yet in Mednafen.
+read these files too; only Mednafen was tested. The all-games save, page E included, was confirmed on real hardware
+and in MAME.
