@@ -34,11 +34,11 @@ python tools/setup.py path/to/your/rom.ngc
 ```
 
 ```bash
-python tools/build.py --redesign --ips
+python tools/build.py --fastunlock --ips
 ```
 
 `setup.py` checks the ROM, copies it to `rom/original.ngc` and extracts the script (`script/strings.json`) and the line list
-(`review/lines.json`). `build.py` writes `build/neopoke_en.ngc`, with `--redesign` also `build/neopoke_en_redesign.ngc`,
+(`review/lines.json`). `build.py` writes `build/neopoke_en.ngc`, with `--fastunlock` also `build/neopoke_en_fastunlock.ngc`,
 and with `--ips` an IPS patch for each in `build/patches/`.
 
 The English text is `script/page.json` (`en` field per line). The file carries no Japanese; the tools look it up in the
@@ -87,18 +87,18 @@ The profile icons (`font/icons.png`) are original art made for this project; `to
 
 | Path | Contents |
 | --- | --- |
-| `tools/` | Extraction, build, fonts (VWF), graphics, profile icons, redesign, IPS, MAME tour |
+| `tools/` | Extraction, build, fonts (VWF), graphics, profile icons, fast-unlock patch, IPS, MAME tour |
 | `script/` | English script (`page.json`), drafts, font plan, notes |
 | `gfx/*.json` | Location, tiles, map and palette of each graphics-text item |
 | `font/` | `cfc2_vwf.json` (dating-profile stat font), `icons.png` |
 | `review/index.html` | Script Desk, the script revision page |
-| `docs/` | Event system, unlock rules and the redesign |
+| `docs/` | Event system, unlock rules and the fast-unlock patch |
 | `work/` | Research scripts: MAME harnesses, graphics survey, disassembly |
 | `ROADMAP.md` | Project log, with every decision and test |
 
 ## Documentation
 
-- [docs/events-unlocks-redesign.md](docs/events-unlocks-redesign.md): tools, the event system, unlock rules and the redesign patch.
+- [docs/events-unlocks-fastunlock.md](docs/events-unlocks-fastunlock.md): tools, the event system, unlock rules and the fast-unlock patch.
 - [docs/script-desk.md](docs/script-desk.md): the script revision page, its saving, export format and the merge into the build.
 - [docs/how-minigames-unlock.md](docs/how-minigames-unlock.md): the full unlock write-up, with tables, MAME tests and community claims checked against the code.
 

@@ -1,4 +1,4 @@
--- Automated player for the redesign prototype. It plays "blind": it never reads mood or the seen flags to decide what to do.
+-- Automated player for the fast-unlock prototype. It plays "blind": it never reads mood or the seen flags to decide what to do.
 -- Env: BOT_OUT, BOT_STOP (frames), BOT_SEED, BOT_EXIT (leave the menu after this many room actions), BOT_GAME (1 = also start a minigame now and then)
 local OUT = os.getenv("BOT_OUT")
 local STOP = tonumber(os.getenv("BOT_STOP") or "400000")

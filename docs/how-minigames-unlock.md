@@ -326,7 +326,7 @@ All 194 scenes were forced in MAME and pictured: 75 room events, 89 visitors, 16
 - **Spare room:** each slot has 177 unused bytes. RAM straight after `0x456C` holds the random-number state, so extra saved data needs its own copy loop.
 - **Conflict with the translation build:** the VWF code and big-font glyphs sit at `0x1F8000`–`0x1FA5FF`. In `build/test_fonts3.ngc` no save slot is blank, so the first save should erase the VWF code. Four slots of blank glyph data also pass as a valid empty save. Reproduced in MAME: that build went to a white screen on its first save. Fixed in build/test\_fonts4.ngc by moving the VWF block to 0x1F5000–0x1F75FF; it saved three times with the VWF intact and loaded the save after a reset.
 
-## Proposed redesign: "seen it once" progression
+## Proposed fast-unlock patch: "seen it once" progression
 
 An alternative to a straight translation patch: keep the two counters, the construction icons and the work loop, but change what earns progress. Seeing something new always pays, work is never a dice roll, and the calendar comes to the player. This is a design only; nothing is built or tested.
 
@@ -372,7 +372,7 @@ Events are random, and some are several times rarer than others. Each picker mak
 - **Chance-0 room records are chain follow-ups,** not unreachable. They play straight after their parent record.
 - **The random source** is a 256-byte table at `0x200e12`, indexed from three bytes at `0x456d`–`0x456f`.
 
-### Why the redesign fits the code
+### Why the fast-unlock patch fits the code
 
 - **One clock hook:** every event picker and the day-period routine read the time through `0x205acc`. Substituting the virtual calendar there covers them all.
 - **One shared condition check:** all four picker loops call `0x205a1a` and build a candidate list before picking. An unseen-first filter fits in that loop.
@@ -384,14 +384,14 @@ Events are random, and some are several times rarer than others. Each picker mak
 - **Translation build first:** the save-area conflict in "Save format" is fixed in build/test\_fonts4.ngc; gameplay patches should start from that build.
 - **Save space is settled.** Each slot has 177 spare bytes. Visitors need none, because the met bits at `0x4558` already record first meetings. Seen-flags by event id for the other three tables need about 18 bytes.
 - **Love Love File is settled.** Bits are set by visitor id, in stages. An unseen-first picker must keep the stage prerequisites, which it does if it only filters the candidate list.
-- **Exit branch is settled.** `0x21629d` is the staff roll, three credits per showing. The redesign should let the work roll run after it and show it far more often than 1 exit in 16.
-- **Default event:** records 5–8 add +2 mood whenever the player is idle. The redesign should set that to 0, or guaranteed work is eroded by waiting.
+- **Exit branch is settled.** `0x21629d` is the staff roll, three credits per showing. The fast-unlock patch should let the work roll run after it and show it far more often than 1 exit in 16.
+- **Default event:** records 5–8 add +2 mood whenever the player is idle. The fast-unlock patch should set that to 0, or guaranteed work is eroded by waiting.
 - **Input conditions:** most room events need recent stick input, so the pacing estimate must assume an active player.
 - **Traced since:** the held inputs, stick wiggling, Poke-kun's states, the broken door, the megaphone and the staff roll are in "Traced inputs and scenes". Every scene is now pictured in the scene catalogue (see "Scene catalogue").
 
 ### Prototype built (2026-11-14)
 
-A first prototype exists: `build/proto_redesign.ngc` (on the reviewed translation) and `build/proto_redesign_jp.ngc` (on the original ROM). `python tools/redesign.py <in> <out>` builds it, and every pacing number is a constant at the top of that file. The pity unlock was left out, as decided.
+A first prototype exists: `build/proto_fastunlock.ngc` (on the reviewed translation) and `build/proto_fastunlock_jp.ngc` (on the original ROM). `python tools/fastunlock.py <in> <out>` builds it, and every pacing number is a constant at the top of that file. The pity unlock was left out, as decided.
 
 | Rule | What the prototype does | Checked in MAME |
 | --- | --- | --- |
@@ -449,7 +449,7 @@ After the play test the conditions on the unreached scenes were loosened, and th
 - **Bathroom visitors (70 to 89):** they now call at any hour and while Poke-kun is in the room. The game blocks them in code as well as in the records, which is why a first attempt changed nothing. The joke of calling on an empty room is lost; he stands and watches instead.
 - **Game data fix:** two visitor records had their mood bounds the wrong way round and could never match. They are corrected.
 - **Still unseen in both final runs:** room events 4, 19, 20, 30, 33, 41, 51, 53 and 58, and megaphone reaction 3. They need a strong mood together with a narrow time of day or season.
-- **Speed:** all 30 minigames in about 40 minutes may be faster than wanted. `A_STEP` in `tools/redesign.py` sets it; the player reached 180 scenes only after about two hours.
+- **Speed:** all 30 minigames in about 40 minutes may be faster than wanted. `A_STEP` in `tools/fastunlock.py` sets it; the player reached 180 scenes only after about two hours.
 - **Not tested:** a human player, and minigames other than the first.
 
 ## Open questions

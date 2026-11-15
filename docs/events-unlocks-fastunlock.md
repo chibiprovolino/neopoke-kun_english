@@ -1,7 +1,7 @@
-# Ganbare Neo Poke-kun: tools, event system, unlocks and the redesign
+# Ganbare Neo Poke-kun: tools, event system, unlocks and the fast-unlock patch
 
 Technical notes for the gameplay side of the project: how the game decides what happens in the room, how minigames unlock,
-what `tools/redesign.py` changes, and the tools used to find all of it. Translation work (script, fonts, VWF, graphics)
+what `tools/fastunlock.py` changes, and the tools used to find all of it. Translation work (script, fonts, VWF, graphics)
 is covered in `ROADMAP.md`. Setup and build steps are in the README.
 
 Status as of 2026-11-15. Sources: the disassembly (`work/dis/code.asm`), the ROM tables, and MAME runs on the original ROM.
@@ -38,7 +38,7 @@ and are driven by environment variables. Output goes to `out/<name>/` beside eac
 | Room trace | `work/trace/run.sh <name> [abs rom]` | General-purpose: `TR_SEQ` button script, `TR_POKE`/`TR_HOLD` RAM writes, `TR_WATCH` logs bytes on change, `TR_FORCE` replaces every write to a byte (used to force a given event, visitor or reaction), `TR_EVENT`, `TR_TRIG` snapshot on a value, `TR_EVERY` periodic snapshots, `TR_DUMP` finds which bytes in a range are ever non-zero, `TR_RESET` soft reset mid-run |
 | Scene jobs | `work/trace/job.sh "<line>"` | One line of `jobs.txt` (194 scenes) or `jobs_v.txt` (89 visitors, longer window). Each forces one scene through `TR_FORCE` on `0x44b2` (event id), `0x44f7` (class), `0x44ff` (visitor), `0x44fe` (reaction) |
 | Catalogue | `python work/trace/strip.py <names>`, `python work/trace/catalogue.py` | Builds snapshot strips and the scene catalogue page from the job output, `catalogue_desc.py` (one sentence per scene) and the ROM records |
-| Bot | `work/trace/runbot.sh <name> [abs rom]` | `bot.lua`, an automated player for the redesign: rings the bell (60%), holds a direction (20%), wiggles (10%), leaves the menu every `BOT_EXIT` actions. It never reads mood or seen flags. Logs counters, games, scenes seen and who writes `0x4544`–`0x4557` to `bot.txt` |
+| Bot | `work/trace/runbot.sh <name> [abs rom]` | `bot.lua`, an automated player for the fast-unlock patch: rings the bell (60%), holds a direction (20%), wiggles (10%), leaves the menu every `BOT_EXIT` actions. It never reads mood or seen flags. Logs counters, games, scenes seen and who writes `0x4544`–`0x4557` to `bot.txt` |
 | Save test | `work/savetest/run.sh <name> <rom>` | Saves, checks the VWF code survives, soft-resets and checks the save loads (`ST_SEQ`, `ST_CODE`, `ST_RESET`) |
 | Graphics harness | `work/gfxharness/run.sh <rom> <cfg.lua> <outdir>` | Scripted routes with VRAM dumps; used to find free VRAM and compare old/new screens |
 | Tour | `python tools/tour/run_tour.py <rom> [route]` | Translation coverage: logs which script ids are read on each screen. `debugmenu` route opens the hidden debug menu |
@@ -47,7 +47,7 @@ and are driven by environment variables. Output goes to `out/<name>/` beside eac
 
 | Tool | Does |
 | --- | --- |
-| `tools/redesign.py <in> <out>` | Applies the redesign (section 4). Asserts the original bytes at every patch site |
+| `tools/fastunlock.py <in> <out>` | Applies the fast-unlock patch (section 4). Asserts the original bytes at every patch site |
 | `tools/make_save.py <in> <out>` | Writes save slot 0 into a build's flash area: all 30 games unlocked (flag `0xF0`), counter A 1000, counter B 255, mood 0 |
 | `tools/make_ips.py <build> <out.ips>` | IPS patch against the original ROM (CRC32 `6DF986A3`), with a round-trip check |
 | `work/trace/make_bonus.py` | Writes the test ROM `work/trace/bonus.ngc`: file `0x14093` = 0, so every menu exit with counter A ≥ 500 plays the staff roll |
@@ -201,7 +201,7 @@ All in the 77-byte saved block `0x4520`–`0x456C`. Routine `0x205a89` clamps th
 | `0x4523` (16-bit) | Counter B, 0–255. Raised only by work |
 | `0x4525` | Unused flag slot 0 |
 | `0x4526`–`0x4543` | Flag byte per game 1–30 |
-| `0x4544`–`0x4557` | Never referenced by the game's code (used by the redesign) |
+| `0x4544`–`0x4557` | Never referenced by the game's code (used by the fast-unlock patch) |
 | `0x4558`– | Visitor met bits / Love Love File |
 | `0x4568`, `0x456c` | Staff roll bitmap and count |
 
@@ -272,13 +272,13 @@ Holding `0x4803` non-zero in MAME is enough to reach the catalog for testing.
 
 ---
 
-## 4. The redesign ("seen it once")
+## 4. The fast-unlock patch ("seen it once")
 
 An optional gameplay patch on top of the translation. Goal: every new scene pays, work is never a dice roll, and the calendar
 comes to the player instead of the real clock.
 
 ```
-python tools/redesign.py build/neopoke_en.ngc build/neopoke_en_redesign.ngc
+python tools/fastunlock.py build/neopoke_en.ngc build/neopoke_en_fastunlock.ngc
 ```
 
 It works on the original ROM or any translated build whose VWF block ends below `0x1F7800`. Every pacing number is a constant at
@@ -286,7 +286,7 @@ the top of the file. The tool refuses to run if a patch site doesn't hold the ex
 
 ### 4.1 What changes
 
-| Area | Original | Redesign |
+| Area | Original | Fast unlock |
 | --- | --- | --- |
 | Counter A | +0/+1/+2 per event, repeats included | +5 (`GAIN`) the first time a scene plays, 0 after. Scene = room event id, visitor id, wiggle gag or megaphone reaction: 194 scenes, 970 points |
 | Picking | Uniform among survivors | Survivors not yet seen are kept first; seen ones only if nothing new qualifies |
@@ -392,7 +392,7 @@ reaction 3.
 | File | Contents |
 | --- | --- |
 | `build/neopoke_en.ngc` | Translation + graphics |
-| `build/neopoke_en_redesign.ngc` | Same + redesign |
+| `build/neopoke_en_fastunlock.ngc` | Same + fast-unlock patch |
 | `build/*_allgames.ngc` | Same, with `make_save.py` slot 0 (all games unlocked) |
-| `build/proto_redesign_jp.ngc` | Redesign on the original Japanese ROM, used for the MAME tests |
+| `build/proto_fastunlock_jp.ngc` | Fast-unlock patch on the original Japanese ROM, used for the MAME tests |
 | `build/patches/*.ips` | IPS patches for the four English builds |

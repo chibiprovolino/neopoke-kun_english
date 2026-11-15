@@ -1,9 +1,9 @@
-"""Build the English ROM: python tools/build.py [--redesign] [--ips]
+"""Build the English ROM: python tools/build.py [--fastunlock] [--ips]
 
   script/page.json -> build/tr_page.json         (tools/build_from_revised.py)
                    -> build/tr_page_icons.json   (tools/icon_drafts.py: profile icons, field padding)
                    -> build/neopoke_en.ngc        (tools/insert.py: text, VWF, fonts, graphics from gfx/*.png, icons)
-  --redesign       -> build/neopoke_en_redesign.ngc (tools/redesign.py)
+  --fastunlock     -> build/neopoke_en_fastunlock.ngc (tools/fastunlock.py)
   --ips            -> build/patches/<name>.ips    (tools/make_ips.py)
 Needs tools/setup.py to have run. Graphics: any gfx/<png> present is imported (make templates with tools/gfx_extract.py);
 items without a PNG stay as in the ROM, except the title logo and menu icon text, which get draft lettering."""
@@ -22,9 +22,9 @@ if __name__ == "__main__":
     run("tools/icon_drafts.py", "build/tr_page.json", "build/tr_page_icons.json")
     run("tools/insert.py", "rom/original.ngc", "build/tr_page_icons.json", "build/neopoke_en.ngc")
     outs = ["build/neopoke_en.ngc"]
-    if "--redesign" in sys.argv:
-        run("tools/redesign.py", "build/neopoke_en.ngc", "build/neopoke_en_redesign.ngc")
-        outs.append("build/neopoke_en_redesign.ngc")
+    if "--fastunlock" in sys.argv:
+        run("tools/fastunlock.py", "build/neopoke_en.ngc", "build/neopoke_en_fastunlock.ngc")
+        outs.append("build/neopoke_en_fastunlock.ngc")
     if "--ips" in sys.argv:
         os.makedirs("build/patches", exist_ok=True)
         for o in outs:

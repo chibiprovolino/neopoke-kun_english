@@ -183,22 +183,22 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
 - Findings (held directions, stick wiggling, broken door, megaphone, Poke-kun states, staff roll) are in the doc, section "Traced inputs and scenes".
 - Scene catalogue (2026-11-14): all 194 room scenes pictured, built by `work/trace/catalogue.py` into `work/trace/catalogue.html` (not in the repository: it holds game screenshots). `work/trace/jobs.txt` holds one MAME run per scene (`bash work/trace/job.sh "<line>"`; visitors use the longer window in `jobs_v.txt`), `TR_FORCE "addr=val"` replaces writes to a RAM byte (event id 0x44b2, class 0x44f7, visitor 0x44ff, reaction 0x44fe, wiggle result 0x450a, megaphone result 0x4513). `python work/trace/strip.py <names>` makes the strips, `python work/trace/catalogue.py` rebuilds the page; descriptions live in `work/trace/catalogue_desc.py` (my reading of the sprites; profile names there are guesses).
 
-## Redesign prototype ("seen it once", built 2026-11-14)
-- `python tools/redesign.py <in.ngc> <out.ngc>`: `build/proto_redesign.ngc` (from `build/test_reviewed.ngc`) and `build/proto_redesign_jp.ngc` (from the original, used for the MAME tests). All pacing numbers are constants at the top of the tool. No pity unlock (user decision).
+## Fast-unlock prototype ("seen it once", built 2026-11-14)
+- `python tools/fastunlock.py <in.ngc> <out.ngc>`: `build/proto_fastunlock.ngc` (from `build/test_reviewed.ngc`) and `build/proto_fastunlock_jp.ngc` (from the original, used for the MAME tests). All pacing numbers are constants at the top of the tool. No pity unlock (user decision).
 - New code and the calendar table sit at file 0x1F7800 (1525 bytes as of 2026-11-15: 501 of code, 1024 of calendar table; free space ends at the save area 0x1F8000). Hooks: list filters at 0x5549 / 0x584B / 0x59D1 / 0x542C, counter A awards at 0x5578 / 0x587E / 0x59FC / 0x5457, clock routine 0x5ACC replaced, calendar step at 0x14081, new-game init at 0x18EE. The tool asserts the original bytes at every site.
 - New saved RAM: 0x4544 room seen bits (11 bytes), 0x454F wiggle (3), 0x4552 megaphone (2), 0x4554 calendar step. Visitors reuse the met bits at 0x4558. These 20 bytes are inside the saved block and have no reference in the game's code; not yet verified against minigame play.
 - Tested in MAME with `work/trace/run.sh` (runs p1-p8): first-time +5, repeat +0, guaranteed work, calendar step, save + reset, unlock thresholds. `TR_RESET frame` does one soft reset and logs the second boot to log2.txt.
 - Not tested: long play, staff roll rate, minigames. The translated build shows "Crossin&" for "Crossing" in the minigame menu (already present in test_reviewed, not caused by the prototype; not investigated).
 
-## Redesign play test (2026-11-14)
+## Fast-unlock play test (2026-11-14)
 - `bash work/trace/runbot.sh <name> [absolute rom]` runs `work/trace/bot.lua`, an automated player (rings, holds directions, wiggles, leaves the menu every 6 actions; it never reads mood or seen flags). Env: BOT_STOP frames, BOT_SEED, BOT_EXIT, BOT_FULL=1 (keep playing after 30 games; the bot then stalls because it detects the menu by a locked game's stage being rewritten), BOT_GAME=1 (starts a minigame; the bot cannot leave it again). Output `work/trace/out/<name>/bot.txt`.
 - MAME problem (MAME 0.277), also on the unpatched ROM: after a voice sample (megaphone, some gags) the sound CPU's heartbeat byte 0x70c3 stops, and the next sound command waits on it forever in the loop at 0x2a94df. The bot works around it with a read tap on 0x70c3. Not a patch bug; not checked on other emulators or hardware.
-- Tuning after the test (now in tools/redesign.py and both proto builds): work on any exit with mood below 0 (five brackets, pay 3-8), the staff roll no longer replaces a work exit (stub STAFFRNG, hook at 0x1408D), game n needs counter A 5+20(n-1) and counter B n.
+- Tuning after the test (now in tools/fastunlock.py and both proto builds): work on any exit with mood below 0 (five brackets, pay 3-8), the staff roll no longer replaces a work exit (stub STAFFRNG, hook at 0x1408D), game n needs counter A 5+20(n-1) and counter B n.
 - Results with that tuning, two seeds: all 30 games at 65 and 99 game-minutes; 118-125 of 194 scenes seen by then; no crash, no hang, and only the BIOS, the game's boot init and the patch wrote to 0x4544-0x4557 (one minigame ran for 3 hours in another run without touching them).
 - Never seen by the bot: scenes that need mood above +35 or below -35 (work resets mood to about 0 and idling pushes it up), seasonal chains (visitors 7-10 and 65 need a specific room event just before), follow-up-only events, and visitors 70-89, which only come while Poke-kun is in the bathroom (records blocked in states 0-4).
 
-## Redesign: loosened conditions (2026-11-14, user asked for it after the play test)
-- All in tools/redesign.py as constants: mood band edges (room 34/35 -> 8/9 and 67/68 -> 16/17; visitors and megaphone 67/68 -> 8/9, also the default-event edge at 0x55CA), follow-up-only room records get chance 40, visitors need no particular last room event (byte 27 cleared), seasonal room records 65-68 take any mood, bathroom record 182 chance 255 and any mood, visitors 70-89 at any hour and in any state (record flags plus the hard-coded id test at 0x5980), two visitor records with reversed mood bounds fixed, idle drift 0, work spends 8-30 mood instead of resetting it, game n needs counter A 5+24(n-1) and counter B n.
+## Fast-unlock patch: loosened conditions (2026-11-14, user asked for it after the play test)
+- All in tools/fastunlock.py as constants: mood band edges (room 34/35 -> 8/9 and 67/68 -> 16/17; visitors and megaphone 67/68 -> 8/9, also the default-event edge at 0x55CA), follow-up-only room records get chance 40, visitors need no particular last room event (byte 27 cleared), seasonal room records 65-68 take any mood, bathroom record 182 chance 255 and any mood, visitors 70-89 at any hour and in any state (record flags plus the hard-coded id test at 0x5980), two visitor records with reversed mood bounds fixed, idle drift 0, work spends 8-30 mood instead of resetting it, game n needs counter A 5+24(n-1) and counter B n.
 - Bot results (2 seeds, 3 game-hours, runs T5/T6): all 30 games at 39 and 42 min; 181 and 184 of 194 scenes; all 89 visitors and all 16 wiggle gags; no crash or hang. Still unseen in both runs: room events 4, 19, 20, 30, 33, 41, 51, 53, 58 (strong mood plus narrow hours or season) and megaphone reaction 3.
 - Earlier steps for comparison: before loosening 118-133 scenes; first loosening 156-160; mood rebalance 163-168; bathroom flags only 169-170 (the hard-coded test still blocked them).
 - bot.lua now keeps playing after all 30 games are unlocked (BOT_FULL=1).
@@ -247,15 +247,23 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
   Refresh the page data: `tools/merge_page.py <dir>` -> `tools/page_lines.py` (-> build/page_lines.json, publish as lines.json).
   `tools/voff_dump.py` writes `script/voff_script.md` (V.OFF in reading order with widths).
 - Builds 2026-11-15 from the page (59 lines taken from it): `build/neopoke_en.ngc` (translation + all graphics) and
-  `build/neopoke_en_redesign.ngc` (same + `tools/redesign.py`). All lines fit except 151/200/256 (dialog, a few px over the
+  `build/neopoke_en_fastunlock.ngc` (same + `tools/fastunlock.py`). All lines fit except 151/200/256 (dialog, a few px over the
   cautious Japanese-width limit). Pipeline: merge_page -> build_from_revised -> check_fit -> wide_flags (page flags) ->
-  page_lines/voff_dump -> icon_drafts -> insert -> redesign.
+  page_lines/voff_dump -> icon_drafts -> insert -> fastunlock.
 - All-games save: `python tools/make_save.py <in> <out>` writes save slot 0 into the cartridge flash area of a build (games 1-30
-  flag 0xF0, counter A 1000, counter B 255, mood 0). `build/neopoke_en_allgames.ngc`, `build/neopoke_en_redesign_allgames.ngc`;
+  flag 0xF0, counter A 1000, counter B 255, mood 0). `build/neopoke_en_allgames.ngc`, `build/neopoke_en_fastunlock_allgames.ngc`;
   checked in MAME: the game loads it at boot (no title screen), RAM 0x4520+ holds the values, menu page 1 shows the five games.
   To open the menu in MAME scripts with constant visitors, repeat A then B (`work/gfxsurvey/x_menusave3.lua`).
+- Page E in the all-games saves (2026-11-15, user report: the Love Love Profile page was missing). The saves had flag bytes 0xF0,
+  and page E needs bit 3 (cleared) in all 30, so it never showed. `make_save.py` now writes 0xF8 (unlocked + cleared, rank 0) and
+  sets the visitor-met bits 0x4558-0x4563 to 0xFF (every profile unlocked); the two `ips_english/*_allgames.flash` saves got the
+  same bytes and a new checksum, everything else in them unchanged. Checked in MAME with no RAM pokes (each beta 1 patch plus its
+  save slot at file 0x1F8100): 0x4803 = FF, crowns on all games, page E, catalog, profiles 1-3. Side effect on the fast-unlock
+  patch: every visitor counts as already seen by its unseen-first picker.
+- Renamed the "redesign" patch to "fast-unlock" (2026-11-15, user: "redesign" oversold it): `tools/fastunlock.py`,
+  `build.py --fastunlock`, `docs/events-unlocks-fastunlock.md`, `ips_english/neopoke_en_fastunlock_beta1.ips`. Patch content unchanged.
 - IPS patches: `python tools/make_ips.py <build> <out.ips>` (checks the round trip) -> `build/patches/` for neopoke_en,
-  neopoke_en_redesign and their _allgames variants. Base ROM CRC32 6DF986A3.
+  neopoke_en_fastunlock and their _allgames variants. Base ROM CRC32 6DF986A3.
 - Not reached yet: later story pages (need stage clears), intro, ending. Waiting on the V.OFF title shows no attract demo.
   Code at 0x6C4A3 loads ids 437 then 438 (ld BC,#id; call 0x212290) for the first story page.
 
@@ -264,7 +272,7 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
   "Shot", "S.M.D", "S.P.D" (35-40 px) never touched the 6th tile, so it showed stale art on the first draw (a page switch
   overwrote it); labels over 48 px were clipped. `tools/icon_drafts.py` now strips each label's leading/trailing
   spaces and blanks, turns inner spaces into 4 px blanks (3, then 2 px if needed: only "Sasuke inO"), centres it and pads it
-  to 48 px. Rebuilt neopoke_en(_redesign)(_allgames) + IPS; all 6 pages checked in MAME (`work/gfxsurvey/x_stray3.lua`).
+  to 48 px. Rebuilt neopoke_en(_fastunlock)(_allgames) + IPS; all 6 pages checked in MAME (`work/gfxsurvey/x_stray3.lua`).
 - Label 6 is now "SasukeInO" (exactly 48 px; user's choice; also saved on the Script Desk page, rev/s006 v2).
   The game's 8x8 "g" (looks like "&") stays as is (user decision).
 - Minigame instructions 637-666: the menu hand covers the first ~12 px of the title line. `icon_drafts.py` re-centres each
@@ -275,7 +283,7 @@ draft lettering fallback in `tools/gfx_patch.py`, which the hand-drawn PNGs in `
 - Story line 465 is now "But the records believed to" (126/144 px; user approved, also on the Script Desk page rev/s465 v2).
   V.OFF: 0 lines over. build/page_lines.json refreshed (the Script Desk page's lines.json not republished).
 - Bot now waits 5 s with no input after each action ends (BOT_IDLE, default 300 frames). Rerun on the current build (runs U5/U6, 3 game-hours): all 30 games at 43 and 45 min; 182 of 194 scenes in both runs; room events 64 and 67 (were 66 and 64); all visitors and wiggle gags. Unseen in both: room events 5, 19, 20, 30, 51, 53, 58 and megaphone reaction 3. The idle pause changed little: progress is a few minutes slower and the scene count is the same.
-- Idle between events (2026-11-15, user: "he should wait at least 10 s before changing status; different idle animations"). After every room event the next pick is an idle event: one of 12 calm room records (IDLE_RECORDS in tools/redesign.py: standing, looking around, reading, handheld, headphones at the shelf, stretching, thinking, pacing, sitting, talking, dozing, gadget in the corner), chosen evenly by the patch and held 10 s. The same pool replaces the game's lying-down fallback when nothing qualifies. Skipped while a chained follow-up is pending or a direction is held (stick reactions stay immediate). Flag at RAM 0x4555 (1 = idle due, 2 = idle being picked). The stick-reaction records 56-64 are follow-up only again (they repeated when allowed to start alone).
+- Idle between events (2026-11-15, user: "he should wait at least 10 s before changing status; different idle animations"). After every room event the next pick is an idle event: one of 12 calm room records (IDLE_RECORDS in tools/fastunlock.py: standing, looking around, reading, handheld, headphones at the shelf, stretching, thinking, pacing, sitting, talking, dozing, gadget in the corner), chosen evenly by the patch and held 10 s. The same pool replaces the game's lying-down fallback when nothing qualifies. Skipped while a chained follow-up is pending or a direction is held (stick reactions stay immediate). Flag at RAM 0x4555 (1 = idle due, 2 = idle being picked). The stick-reaction records 56-64 are follow-up only again (they repeated when allowed to start alone).
 - Bot result with the idle pool (W5/W6): all 30 games at 46 and 49 min (43-45 before); 179-180 scenes in 3 game-hours (182 before). Reading still comes up about twice as often as the other idle activities, probably from the game's random table.
 
 ## Bug fixes 2026-11-15 (user report)

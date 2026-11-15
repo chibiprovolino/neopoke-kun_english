@@ -1,5 +1,5 @@
 """Prototype of the "seen it once" progression (alternative to the plain translation patch).
-  python tools/redesign.py <in.ngc> <out.ngc>
+  python tools/fastunlock.py <in.ngc> <out.ngc>
 Works on the original ROM or on a translated build (the VWF block must end below 0x1F7800).
 
 What it changes
